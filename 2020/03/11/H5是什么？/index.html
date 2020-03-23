@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="H5," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="先科普一下，HTML5并不是一项技术，而是一个标准。标准的意思就是：学生准则手册。你可以按照准则做，甚至可以超出准则更加严格的要求自己，也可以不按照准则来，但是会被老师训斥小伙伴讨厌，别人都不找你玩，就像IE6一样。 那HTML5这些标准浏览器厂商到底姿持不姿持呢？这要看他们各自的尿性了。像chrome这种不仅在很多标准上支持的非常好，还积极上进很多地方超出了标准，支持一些标准中还是草案的部分。">
+<meta name="keywords" content="H5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5是什么？">
+<meta property="og:url" content="http://yoursite.com/2020/03/11/H5是什么？/index.html">
+<meta property="og:site_name" content="Kil Notes">
+<meta property="og:description" content="先科普一下，HTML5并不是一项技术，而是一个标准。标准的意思就是：学生准则手册。你可以按照准则做，甚至可以超出准则更加严格的要求自己，也可以不按照准则来，但是会被老师训斥小伙伴讨厌，别人都不找你玩，就像IE6一样。 那HTML5这些标准浏览器厂商到底姿持不姿持呢？这要看他们各自的尿性了。像chrome这种不仅在很多标准上支持的非常好，还积极上进很多地方超出了标准，支持一些标准中还是草案的部分。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-23T01:31:48.673Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="H5是什么？">
+<meta name="twitter:description" content="先科普一下，HTML5并不是一项技术，而是一个标准。标准的意思就是：学生准则手册。你可以按照准则做，甚至可以超出准则更加严格的要求自己，也可以不按照准则来，但是会被老师训斥小伙伴讨厌，别人都不找你玩，就像IE6一样。 那HTML5这些标准浏览器厂商到底姿持不姿持呢？这要看他们各自的尿性了。像chrome这种不仅在很多标准上支持的非常好，还积极上进很多地方超出了标准，支持一些标准中还是草案的部分。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/11/H5是什么？/"/>
+
+
+
+
+
+  <title>H5是什么？ | Kil Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kil Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/H5是什么？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">H5是什么？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-11T13:45:47+08:00">
+                2020-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>先科普一下，HTML5并不是一项技术，而是一个标准。<br>标准的意思就是：学生准则手册。你可以按照准则做，甚至可以超出准则更加严格的要求自己，也可以不按照准则来，但是会被老师训斥小伙伴讨厌，别人都不找你玩，就像IE6一样。</p>
+<p>那HTML5这些标准浏览器厂商到底姿持不姿持呢？这要看他们各自的尿性了。像chrome这种不仅在很多标准上支持的非常好，还积极上进很多地方超出了标准，支持一些标准中还是草案的部分。</p>
+<p>所以其实要么我们是作为理论派讨论HTML5标准，要么是作为实践派讨论HTML5标准在某浏览器的应用。但是实际上我们在说到H5的时候，并不是指标准，也不是指标准的应用，而是一个硬生生造出来的奇怪概念合集，所以我是旗帜鲜明的反对这个称呼的。</p>
+<p>最近一年的时间，我主要靠这个东西养家（并没有家）糊口。所以我是懂得甲方打电话过来询问，“你是不是会做H5开发？”的时候，我知道他们要的是那种可以在朋友圈分享的，看起来很酷炫的小页面，他们实际要的东西拆开来看大概包括以下技术点;</p>
+<ol>
+<li>页面素材预加载技术，可以使用createJS之中的preloadJS。我没有看preloadJS的源码，不过预加载并不是HTML5标准中更新的方法。</li>
+<li>音乐加载播放技术，createJS中同样有soundJS可以实现，而且这部分说起来确实是HTML5标准支持的内容，在上个时代并没有audio这样的标签。<br>3.可以滑动的页面，大多数是用了swiper.js这个Jquery插件，也有一些是手写的swipe，比较拙劣的手写版页面是不会跟手滑动的，其中touchstart等四个touch系列的事件是HTML5标准中的事件<br>4.可以涂抹擦除，多半是canvas叠加层，canvas是HTML5标准里面的标签，是代表了先进生产力的标签。<br>5.有动态的文字和图片，常见的是使用了css3或者直接使用js动画。很多时候提到HTML5多半还会带上CSS3，而CSS的分级又是另外的一个问题了，在不同的项目标准上，CSS会独立定级，以后应该不会有CSS4这个东西，所以大家也不用担心在H5以后又冒出来了C4（不过真是想用C4炸死那些每天把H5挂在嘴上的人）<br>6.可以填表报名，这是最基本的表单，是有网页以来就有的东西。<br>7.可以支持分享自定义的文案和图片，这个是用到了微信的jssdk，和HTML标准半毛钱关系都没有。<br>8.还有其他我想起来再补充的。</li>
+</ol>
+<p>所以我们在谈论H5的时候，实际上是一个解决方案，一个看起来酷炫的移动端onepage网站的解决方案。而这个解决方案不仅包含了HTML5新增的audio标签，canvas，拖拽特性，本地存储，websocket通信，同时也包括了盒模型，包括绝对定位，包括一切前端的基本知识。</p>
+<p>有学弟来问我说，学长我想学H5，应该从哪里开始？<br>我说HTML5新增特性在W3C上都可以查得到的。<br>学弟说，不，我想学的是H5，想做H5的页面。<br>于是我猜测他所指的就是上面论述的这种酷炫小页面，我就说，那你要先学习HTML，包括HTML5的新标准和之前的全部标准，然后学CSS以及CSS3，了解它们在浏览器的实现情况，原生JS了解一点就可以，大多的操作可以用Jquery，了解常用的几个Jquery插件的用法，应该就差不多了。如果想要做更酷炫的的，学一下egret或者cocos2d更好。如果要优化加载速度，还要学一下grunt一类的自动化工具。微信的sdk有很多坑，至少nodejs或者php一类的后端语言要会一点。</p>
+<p>学弟说，那这不就是前端了么？我只是想学H5啊。</p>
+<p>所以你看，当我们对一个概念的内涵无法统一的时候，我们根本不知道彼此之间在谈论的是什么。</p>
+<p>”H5“本应是一个技术合集，却被意会成了一项技术，变成可以在质上而不是量上描述的概念。</p>
+<p>对于营销来说，我们只要讲我们可以做H5或者不能做，这种定性的描述就够了。但是对于技术上，这是定量的事情，只能在具体某个技术项上是否，无法对这个本不存在的概念说是否。</p>
+<p>就比如我遇到过有甲方说，我们之前找了一个人做H5，做的还不错，但是这个case他又说做不了，我也搞不懂H5和H5之间也有那么大差别吗？我只能笑笑和他说，世界这么大，各种各样的H5都是有的。</p>
+<p>这就是为什么我反对H5，因为这个名词和它表示的内涵是严重不符的，这让我们难以沟通，让营销人和技术人之间产生误解，让浑水摸鱼的培训师们赚的盆满钵满，让技术新人不踏踏实实的学习技术。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/H5/" rel="tag"># H5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/11/跨平台框架/" rel="next" title="跨平台框架">
+                <i class="fa fa-chevron-left"></i> 跨平台框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/18/名词/" rel="prev" title="名词">
+                名词 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/avatar/pazu.jpg"
+                alt="kil" />
+            
+              <p class="site-author-name" itemprop="name">kil</p>
+              <p class="site-description motion-element" itemprop="description">潜心修行，任重道远</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kilfront" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaifaweb@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kil</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="TypeScript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="learn教程 简介TypeScript 只会进行静态检查，如果发现有错误，编译的时候就会报错。1234$ tsc hello.tshello.ts:6:22 - error TS2345: Argument of type &apos;number[]&apos; is not assignable to parameter of type &apos;string&apos;.可转让的“number[]”类型的参数不能分配给“str">
+<meta name="keywords" content="TypeScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript">
+<meta property="og:url" content="http://yoursite.com/2020/02/27/TypeScript/index.html">
+<meta property="og:site_name" content="Kil Notes">
+<meta property="og:description" content="learn教程 简介TypeScript 只会进行静态检查，如果发现有错误，编译的时候就会报错。1234$ tsc hello.tshello.ts:6:22 - error TS2345: Argument of type &apos;number[]&apos; is not assignable to parameter of type &apos;string&apos;.可转让的“number[]”类型的参数不能分配给“str">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-02T04:57:41.116Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript">
+<meta name="twitter:description" content="learn教程 简介TypeScript 只会进行静态检查，如果发现有错误，编译的时候就会报错。1234$ tsc hello.tshello.ts:6:22 - error TS2345: Argument of type &apos;number[]&apos; is not assignable to parameter of type &apos;string&apos;.可转让的“number[]”类型的参数不能分配给“str">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/27/TypeScript/"/>
+
+
+
+
+
+  <title>TypeScript | Kil Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kil Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/27/TypeScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TypeScript</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-27T12:19:48+08:00">
+                2020-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TypeScript/" itemprop="url" rel="index">
+                    <span itemprop="name">TypeScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="learn"><a href="#learn" class="headerlink" title="learn"></a>learn</h1><p><a href="https://ts.xcatliu.com/" target="_blank" rel="noopener">教程</a></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>TypeScript 只会进行静态检查，如果发现有错误，编译的时候就会报错。<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tsc hello.ts</span><br><span class="line">hello.ts:6:22 - error TS2345: Argument of <span class="built_in">type</span> <span class="string">'number[]'</span> is not assignable to parameter of <span class="built_in">type</span> <span class="string">'string'</span>.</span><br><span class="line">可转让的</span><br><span class="line">“number[]”类型的参数不能分配给“string”类型的参数。</span><br></pre></td></tr></table></figure></p>
+<p>TypeScript 编译的时候即使报错了，还是会生成编译结果，我们仍然可以使用这个编译之后的文件。</p>
+<p>如果要在报错的时候终止 js 文件的生成，可以在 <code>tsconfig.json</code> 中配置 noEmitOnError 即可。关于 <code>tsconfig.json</code>，请参阅<a href="http://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank" rel="noopener">官方手册</a></p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h3><p>JavaScript 的类型分为两种：原始数据类型（Primitive data types）和对象类型（Object types）。<br>原始数据类型包括：布尔值、数值、字符串、<code>null</code>、<code>undefined</code> 以及 <a href="https://es6.ruanyifeng.com/#docs/symbol" target="_blank" rel="noopener">ES6 中的新类型 Symbol</a>。<br>对象类型包括：Object</p>
+<h4 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h4><p>注意，使用构造函数 Boolean 创造的对象不是布尔值：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> createdByNewBoolean: <span class="built_in">boolean</span> = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Type 'Boolean' is not assignable to type 'boolean'.</span></span><br><span class="line"><span class="comment">//   'boolean' is a primitive, but 'Boolean' is a wrapper object. Prefer using 'boolean' when possible.</span></span><br></pre></td></tr></table></figure></p>
+<p>事实上 <code>new Boolean()</code> 返回的是一个 Boolean 对象：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> createdByNewBoolean: <span class="built_in">Boolean</span> = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
+<p>直接调用 Boolean 也可以返回一个 boolean 类型：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> createdByBoolean: <span class="built_in">boolean</span> = <span class="built_in">Boolean</span>(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
+<p>在 TypeScript 中，<code>boolean</code> 是 JavaScript 中的基本类型，而 <code>Boolean</code> 是 JavaScript 中的构造函数。其他基本类型（除了 <code>null</code> 和 <code>undefined</code>）一样，不再赘述。</p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myName: <span class="built_in">string</span> = <span class="string">'Tom'</span>;</span><br><span class="line"><span class="keyword">let</span> myAge: <span class="built_in">number</span> = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模板字符串</span></span><br><span class="line"><span class="keyword">let</span> sentence: <span class="built_in">string</span> = <span class="string">`Hello, my name is <span class="subst">$&#123;myName&#125;</span>.</span></span><br><span class="line"><span class="string">I'll be <span class="subst">$&#123;myAge + 1&#125;</span> years old next month.`</span>;</span><br></pre></td></tr></table></figure>
+<p>其中 &#96; 用来定义 ES6 中的模板字符串，<code>${expr}</code> 用来在模板字符串中嵌入表达式。</p>
+<h4 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h4><p>JavaScript 没有空值（Void）的概念，在 TypeScript 中，可以用 <code>void</code> 表示没有任何返回值的函数：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">alertName</span>(<span class="params"></span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">    alert(<span class="string">'My name is Tom'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>声明一个 <code>void</code> 类型的变量没有什么用，因为你只能将它赋值为 <code>undefined</code> 和 <code>null</code>：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> unusable: <span class="built_in">void</span> = <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="类型推理"><a href="#类型推理" class="headerlink" title="类型推理"></a>类型推理</h3><p>如果没有明确的指定类型，那么 TypeScript 会依照类型推论（Type Inference）的规则推断出一个类型。<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myFavoriteNumber = <span class="string">'seven'</span>; <span class="comment">// 等价于 let myFavoriteNumber: string = 'seven';</span></span><br><span class="line">myFavoriteNumber = <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.ts(2,1): error TS2322: Type 'number' is not assignable to type 'string'.</span></span><br></pre></td></tr></table></figure></p>
+<p>如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成 any 类型而完全不被类型检查：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myFavoriteNumber;</span><br><span class="line">myFavoriteNumber = <span class="string">'seven'</span>;</span><br><span class="line">myFavoriteNumber = <span class="number">7</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h3><p>联合类型（Union Types）表示取值可以为多种类型中的一种。<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myFavoriteNumber: <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line">myFavoriteNumber = <span class="string">'seven'</span>;</span><br><span class="line">myFavoriteNumber = <span class="number">7</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="对象的类型–接口"><a href="#对象的类型–接口" class="headerlink" title="对象的类型–接口"></a>对象的类型–接口</h3><p>在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。</p>
+<p>在面向对象语言中，接口（Interfaces）是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类（classes）去实现（implement）。<br>TypeScript 中的接口是一个非常灵活的概念，除了可用于对类的一部分行为进行抽象以外，也常用于对「对象的形状（Shape）」进行描述。<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    age: <span class="number">25</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面的例子中，我们定义了一个接口 <code>Person</code>，接着定义了一个变量 <code>tom</code>，它的类型是 <code>Person</code>。这样，我们就约束了 <code>tom</code> 的形状必须和接口 <code>Person</code> 一致。<br>接口一般首字母大写。<a href="https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-1.1/8bc1fexb(v=vs.71" target="_blank" rel="noopener">有的编程语言中会建议接口的名称加上 I 前缀</a>?redirectedfrom=MSDN)。</p>
+<h4 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性"></a>可选属性</h4><p>有时我们希望不要完全匹配一个形状，那么可以用可选属性：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age?: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    name: <span class="string">'Tom'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h4 id="任意属性"><a href="#任意属性" class="headerlink" title="任意属性"></a>任意属性</h4><p>有时候我们希望一个接口允许有任意的属性，可以使用如下方式：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age?: <span class="built_in">number</span>;</span><br><span class="line">    [propName: <span class="built_in">string</span>]: <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    gender: <span class="string">'male'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>使用 [propName: string] 定义了任意属性取 string 类型的值。<br>需要注意的是，一旦定义了任意属性，那么确定属性和可选属性的类型都必须是它的类型的子集：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age?: <span class="built_in">number</span>;</span><br><span class="line">    [propName: <span class="built_in">string</span>]: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    age: <span class="number">25</span>,</span><br><span class="line">    gender: <span class="string">'male'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.ts(3,5): error TS2411: Property 'age' of type 'number' is not assignable to string index type 'string'.</span></span><br><span class="line"><span class="comment">// index.ts(7,5): error TS2322: Type '&#123; [x: string]: string | number; name: string; age: number; gender: string; &#125;' is not assignable to type 'Person'.</span></span><br><span class="line"><span class="comment">//   Index signatures are incompatible.</span></span><br><span class="line"><span class="comment">//     Type 'string | number' is not assignable to type 'string'.</span></span><br><span class="line"><span class="comment">//       Type 'number' is not assignable to type 'string'.</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h4><p>有时候我们希望对象中的一些字段只能在创建的时候被赋值，那么可以用 <code>readonly</code> 定义只读属性：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    readonly id: <span class="built_in">number</span>;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age?: <span class="built_in">number</span>;</span><br><span class="line">    [propName: <span class="built_in">string</span>]: <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    id: <span class="number">89757</span>,</span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    gender: <span class="string">'male'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tom.id = <span class="number">9527</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上例中，使用 readonly 定义的属性 id 初始化后，又被赋值了，所以报错了。</span></span><br><span class="line"><span class="comment">// index.ts(14,5): error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="数组的类型"><a href="#数组的类型" class="headerlink" title="数组的类型"></a>数组的类型</h3><p>在 TypeScript 中，数组类型有多种定义方式，比较灵活。</p>
+<h4 id="「类型-方括号」表示法"><a href="#「类型-方括号」表示法" class="headerlink" title="「类型 + 方括号」表示法"></a>「类型 + 方括号」表示法</h4><p>最简单的方法是使用「类型 + 方括号」来表示数组：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fibonacci: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></p>
+<h4 id="数组泛型"><a href="#数组泛型" class="headerlink" title="数组泛型"></a>数组泛型</h4><p>我们也可以使用数组泛型（Array Generic） <code>Array&lt;elemType&gt;</code> 来表示数组：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fibonacci: <span class="built_in">Array</span>&lt;<span class="built_in">number</span>&gt; = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></p>
+<h4 id="用接口表示数组"><a href="#用接口表示数组" class="headerlink" title="用接口表示数组"></a>用接口表示数组</h4><p>接口也可以用来描述数组：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> NumberArray &#123;</span><br><span class="line">    [index: <span class="built_in">number</span>]: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> fibonacci: NumberArray = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></p>
+<h4 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h4><p>类数组（Array-like Object）不是数组类型，比如 arguments：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> args: <span class="built_in">number</span>[] = <span class="built_in">arguments</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Type 'IArguments' is missing the following properties from type 'number[]': pop, push, concat, join, and 24 more.</span></span><br></pre></td></tr></table></figure></p>
+<p>上例中，arguments 实际上是一个类数组，不能用普通的数组的方式来描述，而应该用接口：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> args: &#123;</span><br><span class="line">        [index: <span class="built_in">number</span>]: <span class="built_in">number</span>;</span><br><span class="line">        length: <span class="built_in">number</span>;</span><br><span class="line">        callee: <span class="built_in">Function</span>;</span><br><span class="line">    &#125; = <span class="built_in">arguments</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="any-在数组中的应用"><a href="#any-在数组中的应用" class="headerlink" title="any 在数组中的应用"></a>any 在数组中的应用</h4><p>一个比较常见的做法是，用 any 表示数组中允许出现任意类型：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> list: <span class="built_in">any</span>[] = [<span class="string">'xcatliu'</span>, <span class="number">25</span>, &#123; website: <span class="string">'http://xcatliu.com'</span> &#125;];</span><br></pre></td></tr></table></figure></p>
+<h3 id="函数的类型"><a href="#函数的类型" class="headerlink" title="函数的类型"></a>函数的类型</h3><p><a href="https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/ch2.html" target="_blank" rel="noopener">函数是 JavaScript 中的一等公民</a></p>
+<h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><p>在 JavaScript 中，有两种常见的定义函数的方式——函数声明（Function Declaration）和函数表达式（Function Expression）：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明（Function Declaration）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数表达式（Function Expression）</span></span><br><span class="line"><span class="keyword">let</span> mySum = <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>一个函数有输入和输出，要在 TypeScript 中对其进行约束，需要把输入和输出都考虑到，其中函数声明的类型定义较简单：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x: <span class="built_in">number</span>, y: <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h4><p>如果要我们现在写一个对函数表达式（Function Expression）的定义，可能会写成这样：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySum = <span class="function"><span class="keyword">function</span> (<span class="params">x: <span class="built_in">number</span>, y: <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这是可以通过编译的，不过事实上，上面的代码只对等号右侧的匿名函数进行了类型定义，而等号左边的 mySum，是通过赋值操作进行类型推论而推断出来的。如果需要我们手动给 mySum 添加类型，则应该是这样：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySum: <span class="function">(<span class="params">x: <span class="built_in">number</span>, y: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">number</span> = <span class="function"><span class="keyword">function</span> (<span class="params">x: <span class="built_in">number</span>, y: <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>注意不要混淆了 TypeScript 中的 =&gt; 和 ES6 中的 =&gt;。<br>在 TypeScript 的类型定义中，=&gt; 用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。<br>在 ES6 中，=&gt; 叫做箭头函数，应用十分广泛，可以参考 <a href="http://es6.ruanyifeng.com/#docs/function#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">ES6 中的箭头函数</a>。</p>
+<h4 id="用接口定义函数的形状"><a href="#用接口定义函数的形状" class="headerlink" title="用接口定义函数的形状"></a>用接口定义函数的形状</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> SearchFunc &#123;</span><br><span class="line">    (source: <span class="built_in">string</span>, subString: <span class="built_in">string</span>): <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mySearch: SearchFunc;</span><br><span class="line">mySearch = <span class="function"><span class="keyword">function</span>(<span class="params">source: <span class="built_in">string</span>, subString: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> source.search(subString) !== <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="参数默认值"><a href="#参数默认值" class="headerlink" title="参数默认值"></a>参数默认值</h4><p>在 ES6 中，我们允许给函数的参数添加默认值，TypeScript 会将添加了默认值的参数识别为可选参数：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function buildName(firstName: string, lastName: string = 'Cat') &#123;</span><br><span class="line">    <span class="keyword">return</span> firstName + <span class="string">' '</span> + lastName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> tomcat = buildName(<span class="string">'Tom'</span>, <span class="string">'Cat'</span>);</span><br><span class="line"><span class="keyword">let</span> tom = buildName(<span class="string">'Tom'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>此时就不受「可选参数必须接在必需参数后面」的限制了：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function buildName(firstName: string = 'Tom', lastName: string) &#123;</span><br><span class="line">    <span class="keyword">return</span> firstName + <span class="string">' '</span> + lastName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> tomcat = buildName(<span class="string">'Tom'</span>, <span class="string">'Cat'</span>);</span><br><span class="line"><span class="keyword">let</span> cat = buildName(<span class="literal">undefined</span>, <span class="string">'Cat'</span>);</span><br></pre></td></tr></table></figure></p>
+<h4 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">array, ...items</span>) </span>&#123;</span><br><span class="line">    items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">        array.push(item);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = [];</span><br><span class="line">push(a, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><p>重载允许一个函数接受不同数量或类型的参数时，作出不同的处理。<br>比如，我们需要实现一个函数 reverse，输入数字 123 的时候，输出反转的数字 321，输入字符串 ‘hello’ 的时候，输出反转的字符串 ‘olleh’。<br>利用联合类型，我们可以这么实现：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">x: <span class="built_in">number</span> | <span class="built_in">string</span></span>): <span class="title">number</span> | <span class="title">string</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> x === <span class="string">'number'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Number</span>(x.toString().split(<span class="string">''</span>).reverse().join(<span class="string">''</span>));</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> x === <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然而这样有一个缺点，就是不能够精确的表达，输入为数字的时候，输出也应该为数字，输入为字符串的时候，输出也应该为字符串。<br>这时，我们可以使用重载定义多个 reverse 的函数类型：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">x: <span class="built_in">number</span></span>): <span class="title">number</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">x: <span class="built_in">string</span></span>): <span class="title">string</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">x: <span class="built_in">number</span> | <span class="built_in">string</span></span>): <span class="title">number</span> | <span class="title">string</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> x === <span class="string">'number'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Number</span>(x.toString().split(<span class="string">''</span>).reverse().join(<span class="string">''</span>));</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> x === <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上例中，我们重复定义了多次函数 reverse，前几次都是函数定义，最后一次是函数实现。在编辑器的代码提示中，可以正确的看到前两个提示。<br>注意，TypeScript 会优先从最前面的函数定义开始匹配，所以多个函数定义如果有包含关系，需要优先把精确的定义写在前面。</p>
+<h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;类型&gt;值</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line">值 <span class="keyword">as</span> 类型</span><br></pre></td></tr></table></figure>
+<h4 id="例子：将一个联合类型的变量指定为一个更加具体的类型"><a href="#例子：将一个联合类型的变量指定为一个更加具体的类型" class="headerlink" title="例子：将一个联合类型的变量指定为一个更加具体的类型"></a>例子：将一个联合类型的变量指定为一个更加具体的类型</h4><p>有时候，我们确实需要在还不确定类型的时候就访问其中一个类型的属性或方法，比如<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (something.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> something.length;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> something.toString().length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.ts(2,19): error TS2339: Property 'length' does not exist on type 'string | number'.</span></span><br><span class="line"><span class="comment">//   Property 'length' does not exist on type 'number'.</span></span><br><span class="line"><span class="comment">// index.ts(3,26): error TS2339: Property 'length' does not exist on type 'string | number'.</span></span><br><span class="line"><span class="comment">//   Property 'length' does not exist on type 'number'.</span></span><br></pre></td></tr></table></figure></p>
+<p>上例中，获取 something.length 的时候会报错。<br>此时可以使用类型断言，将 something 断言成 string：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((&lt;<span class="built_in">string</span>&gt;something).length) &#123;</span><br><span class="line">        <span class="keyword">return</span> (&lt;<span class="built_in">string</span>&gt;something).length;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> something.toString().length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">类型断言不是类型转换，断言成一个联合类型中不存在的类型是不允许的.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## Class</span></span><br><span class="line"><span class="string">购物车功能</span></span><br><span class="line"><span class="string">**Model**：购物车内商品item（商品，数量），购物车（商品item集合）</span></span><br><span class="line"><span class="string">**View**：购物车模板</span></span><br><span class="line"><span class="string">**Controller**: 购物车组件</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### Model</span></span><br><span class="line"><span class="string">#### cartItem.model.ts</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> ts</span><br><span class="line"><span class="keyword">import</span> &#123; ICommodity &#125; <span class="keyword">from</span> <span class="string">'../mall/mall.model'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; User &#125; <span class="keyword">from</span> <span class="string">"../user/user.model"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> CartItem &#123;</span><br><span class="line">  <span class="keyword">private</span> quantity: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> _id: <span class="built_in">string</span>,</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> checked: <span class="built_in">boolean</span>,</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> commodity: ICommodity,</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> owner: User</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.quantity = <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span> __id(): <span class="built_in">string</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>._id; &#125;</span><br><span class="line">  <span class="keyword">get</span> _checked(): <span class="built_in">boolean</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>.checked; &#125;</span><br><span class="line">  <span class="keyword">get</span> _commodity(): ICommodity &#123; <span class="keyword">return</span> <span class="keyword">this</span>.commodity; &#125;</span><br><span class="line">  <span class="keyword">get</span> _owner(): User &#123; <span class="keyword">return</span> <span class="keyword">this</span>.owner; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 数量的增减</span></span><br><span class="line">  decreaseQuantity(): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="comment">// service update</span></span><br><span class="line">    <span class="keyword">this</span>.cartService.update(&#123;</span><br><span class="line">        commodity: <span class="keyword">this</span>.commdity._id,</span><br><span class="line">        checked: <span class="keyword">this</span>.checked,</span><br><span class="line">        quantity: --<span class="keyword">this</span>.quantity</span><br><span class="line">    &#125;).subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.quantity; </span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  increaseQuantity(): <span class="built_in">number</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>.quantity++; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// item 总价格</span></span><br><span class="line">  <span class="keyword">get</span> commodityTotal(): <span class="built_in">number</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>.quantity * <span class="keyword">this</span>.commodity.price; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="cart-model-ts"><a href="#cart-model-ts" class="headerlink" title="cart.model.ts"></a>cart.model.ts</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; CartItem &#125; <span class="keyword">from</span> <span class="string">"./cartItem.model"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> Cart &#123;</span><br><span class="line">  <span class="keyword">private</span> content: <span class="built_in">Array</span>&lt;CartItem&gt;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.content = <span class="keyword">new</span> <span class="built_in">Array</span>&lt;CartItem&gt;(); </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 购物车中所有的商品</span></span><br><span class="line">  getContent(): <span class="built_in">Array</span>&lt;CartItem&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.content;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 选中的商品总价格</span></span><br><span class="line">  <span class="keyword">get</span> selectedTotal(): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> total = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">this</span>.content.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (item._checked) &#123;</span><br><span class="line">        total += item.commodityTotal;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> total;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  addItem(item:CartItem) &#123;</span><br><span class="line">        <span class="keyword">let</span> cartItem = <span class="keyword">new</span> CartItem(item._id, item.checked, item.commodity, item.owner);</span><br><span class="line">        <span class="keyword">let</span> found:<span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">this</span>._content.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 判断购物车中是否有该商品，有商品就数量加一</span></span><br><span class="line">            <span class="keyword">if</span> (item._id == cartItem._id) &#123;</span><br><span class="line">                item.increaseAmount();</span><br><span class="line">                found = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 没有找到商品，添加</span></span><br><span class="line">        <span class="keyword">if</span>(!found) &#123;</span><br><span class="line">            <span class="keyword">this</span>.cartService.add(cartItem).subscribe(</span><br><span class="line">                () =&gt; &#123;</span><br><span class="line">                    <span class="comment">// 添加成功后？ push or get</span></span><br><span class="line">                    <span class="keyword">this</span>._content.push(cartItem);</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">this</span>.getitems();</span><br><span class="line">                &#125;</span><br><span class="line">            ) </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getItems(): <span class="built_in">void</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.cartService.get().subscribe(</span><br><span class="line">          data =&gt; &#123;</span><br><span class="line">            <span class="keyword">this</span>.content = res;</span><br><span class="line">          &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  toggleChecked(parame) &#123;</span><br><span class="line">    <span class="keyword">this</span>.httpCommonService.postCommon(<span class="string">"cart/toggle_checked_all"</span>, parame).subscribe(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"toggle"</span>, res);</span><br><span class="line">        <span class="keyword">this</span>.getCartItems();</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  removeItem(parame) &#123;</span><br><span class="line">    <span class="keyword">this</span>.httpCommonService.postCommon(<span class="string">"cart/delete"</span>, &#123; commodityIds: parame &#125;).subscribe(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"delete"</span>, res);</span><br><span class="line">        <span class="keyword">this</span>.alertService.alertSuccess(<span class="string">"删除成功"</span>);</span><br><span class="line">        <span class="keyword">this</span>.getCartItems();</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="cart-component-ts"><a href="#cart-component-ts" class="headerlink" title="cart.component.ts"></a>cart.component.ts</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> CartComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">public</span> cartService: CartService,</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> router: Router,</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> alertService: AlertService,</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> personalService: PersonalService,</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> cartsSubjectService: CartSubjectService,</span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> cartSubjectService: CartSubjectService,</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.cartSubjectService.cartsInit(<span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.cartSubjectService.carts.subscribe(</span><br><span class="line">      (carts: <span class="built_in">any</span>[]) =&gt; &#123;</span><br><span class="line">        <span class="keyword">this</span>.commodityIds = carts.map(<span class="function"><span class="params">doc</span> =&gt;</span> doc.commodity._id);</span><br><span class="line">        <span class="keyword">this</span>.checkedIds = _.filter(carts, &#123;<span class="string">'checked'</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">        <span class="keyword">this</span>.carts = _.groupBy(carts, <span class="string">"commodity.owner.nickname"</span>);</span><br><span class="line">        <span class="keyword">this</span>.itemChecked();</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TypeScript/" rel="tag"># TypeScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/26/js-error/" rel="next" title="js-error">
+                <i class="fa fa-chevron-left"></i> js-error
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/01/Guitar/" rel="prev" title="Guitar">
+                Guitar <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/avatar/pazu.jpg"
+                alt="kil" />
+            
+              <p class="site-author-name" itemprop="name">kil</p>
+              <p class="site-description motion-element" itemprop="description">潜心修行，任重道远</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kilfront" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaifaweb@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#learn"><span class="nav-number">1.</span> <span class="nav-text">learn</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.2.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始数据类型"><span class="nav-number">1.2.1.</span> <span class="nav-text">原始数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔值"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空值"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">空值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型推理"><span class="nav-number">1.2.2.</span> <span class="nav-text">类型推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联合类型"><span class="nav-number">1.2.3.</span> <span class="nav-text">联合类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的类型–接口"><span class="nav-number">1.2.4.</span> <span class="nav-text">对象的类型–接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可选属性"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">可选属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任意属性"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">任意属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#只读属性"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">只读属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的类型"><span class="nav-number">1.2.5.</span> <span class="nav-text">数组的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#「类型-方括号」表示法"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">「类型 + 方括号」表示法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组泛型"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">数组泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用接口表示数组"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">用接口表示数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类数组"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">类数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#any-在数组中的应用"><span class="nav-number">1.2.5.5.</span> <span class="nav-text">any 在数组中的应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的类型"><span class="nav-number">1.2.6.</span> <span class="nav-text">函数的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数声明"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">函数声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数表达式"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">函数表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用接口定义函数的形状"><span class="nav-number">1.2.6.3.</span> <span class="nav-text">用接口定义函数的形状</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数默认值"><span class="nav-number">1.2.6.4.</span> <span class="nav-text">参数默认值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#剩余参数"><span class="nav-number">1.2.6.5.</span> <span class="nav-text">剩余参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重载"><span class="nav-number">1.2.6.6.</span> <span class="nav-text">重载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型断言"><span class="nav-number">1.2.7.</span> <span class="nav-text">类型断言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例子：将一个联合类型的变量指定为一个更加具体的类型"><span class="nav-number">1.2.7.2.</span> <span class="nav-text">例子：将一个联合类型的变量指定为一个更加具体的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cart-model-ts"><span class="nav-number">1.2.7.3.</span> <span class="nav-text">cart.model.ts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cart-component-ts"><span class="nav-number">1.2.7.4.</span> <span class="nav-text">cart.component.ts</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kil</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

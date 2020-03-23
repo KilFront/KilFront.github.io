@@ -190,6 +190,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -206,16 +216,6 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
           </a>
         </li>
       
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/07/VS Code快捷键/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/HHKB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kil">
@@ -271,7 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/07/VS Code快捷键/" itemprop="url">VS Code快捷键</a></h1>
+                <a class="post-title-link" href="/2020/03/23/HHKB/" itemprop="url">HHKB</a></h1>
         
 
         <div class="post-meta">
@@ -283,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-07T14:22:58+08:00">
-                2020-01-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T14:29:28+08:00">
+                2020-03-23
               </time>
             
 
@@ -345,289 +345,513 @@
       
         
           
-            <p><strong><em>工欲善其事，必先利其器</em></strong></p>
-<p>前言：写这篇博客，是因为我的webStorm账号到期了，登录别人的账号发现主题和快捷都不是我习惯的了，还有一个重要原因是Jetbrains账号小贵。贫穷让我另寻出路，所以我准备用VS Code，这些将是以Max OS 的快捷键，帮助我更快速的写代码。</p>
-<h2 id="VS-Code介绍"><a href="#VS-Code介绍" class="headerlink" title="VS Code介绍"></a>VS Code介绍</h2><p>VS Code 的全称是 Visual Studio Code，是一款开源的、免费的、跨平台的、高性能的、轻量级的代码编辑器。它在性能、语言支持、开源社区方面，都做的很不错。</p>
-<h3 id="编辑器-与-IDE"><a href="#编辑器-与-IDE" class="headerlink" title="编辑器 与 IDE"></a>编辑器 与 IDE</h3><p><code>IDE</code>和<code>编辑器</code>是有区别的：</p>
-<ul>
-<li><p><strong>IDE</strong>：对代码会有较好的智能提示，同时侧重于工程项目，对项目的开发、调试工作有较好的图像化界面的支持，因此比较笨重。比如 Eclipse 的定位就是 IDE。</p>
+            <h1 id="中英文切换"><a href="#中英文切换" class="headerlink" title="中英文切换"></a>中英文切换</h1><p>背景：每次Control + space 实在是太繁琐，中英文每天要用100多次。如果不想办法的话，估计一辈子用的次数会绕地球两圈。</p>
+<p>现在切换按键：shift</p>
+<p>方法：<br>1、安装 Karabiner-Elements<br><a href="https://karabiner-elements.pqrs.org/index.html" target="_blank" rel="noopener">https://karabiner-elements.pqrs.org/index.html</a></p>
+<p>2、找到文件编辑<br><code>.config/karabiner/karabiner.json</code><br>配置文件进行编辑，如果没有此文件，请随意在软件软件界面建立一条规则再删除即可。<br>添加配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">"rules": [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">"description"</span>: <span class="string">"Change caps to left_shift. (Post leftshift if alone)"</span>,</span><br><span class="line">        <span class="attr">"manipulators"</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"from"</span>: &#123;</span><br><span class="line">                    <span class="attr">"key_code"</span>: <span class="string">"left_shift"</span>,</span><br><span class="line">                    <span class="attr">"modifiers"</span>: &#123;</span><br><span class="line">                        <span class="attr">"optional"</span>: [</span><br><span class="line">                            <span class="string">"any"</span></span><br><span class="line">                        ]</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">"to"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="attr">"key_code"</span>: <span class="string">"left_shift"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="attr">"to_if_alone"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="attr">"key_code"</span>: <span class="string">"caps_lock"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="attr">"type"</span>: <span class="string">"basic"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>设置完成，保存文件即可立即生效，此时短按左shift键，应该可以切换中/英文功能了。<br><a href="https://kknews.cc/digital/o2nb86o.html" target="_blank" rel="noopener">原文</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/MacOS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/MacOS/" itemprop="url">OS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T09:33:26+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MacOS/" itemprop="url" rel="index">
+                    <span itemprop="name">MacOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="系统更新"><a href="#系统更新" class="headerlink" title="系统更新"></a>系统更新</h1><p><code><img src="/2020/03/23/MacOS/mac_os.jpeg"></code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/22/JavaScript/" itemprop="url">JavaScript</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T15:19:52+08:00">
+                2020-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 sort()"></a>排序 sort()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">99</span>, <span class="number">33</span>, <span class="number">14</span>];</span><br><span class="line">arr.sort();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'sort:'</span>, arr); <span class="comment">// sort: [ 12, 14, 33, 5, 8, 99 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要给一个比较函数</span></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">n1, n2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> n1 - n2;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'sort:'</span>, arr); <span class="comment">// sort: [ 5, 8, 12, 14, 33, 99 ]</span></span><br></pre></td></tr></table></figure>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p><code>this</code> 是 JavaScript 语言的一个关键字。<br>它是函数运行时，在函数体内部自动生成的一个对象，只能在函数体内部使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">　<span class="keyword">this</span>.x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，函数test运行时，内部会自动有一个this对象可以使用。</p>
+<p>那么，this的值是什么呢？</p>
+<p>函数的不同使用场合，this有不同的值。总的来说，this就是函数运行时所在的环境对象。下面分四种情况，详细讨论this的用法。</p>
+<h3 id="情况一：纯粹的函数调用"><a href="#情况一：纯粹的函数调用" class="headerlink" title="情况一：纯粹的函数调用"></a>情况一：纯粹的函数调用</h3><p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象。请看下面这段代码，它的运行结果是1。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line">test();  <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="情况二：作为对象方法的调用"><a href="#情况二：作为对象方法的调用" class="headerlink" title="情况二：作为对象方法的调用"></a>情况二：作为对象方法的调用</h3><p>函数还可以作为某个对象的方法调用，这时this就指这个上级对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.x = <span class="number">1</span>;</span><br><span class="line">obj.m = test;</span><br><span class="line"></span><br><span class="line">obj.m(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="情况三-作为构造函数调用"><a href="#情况三-作为构造函数调用" class="headerlink" title="情况三 作为构造函数调用"></a>情况三 作为构造函数调用</h3><p>所谓构造函数，就是通过这个函数，可以生成一个新对象。这时，this就指这个新对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">　<span class="keyword">this</span>.x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> test();</span><br><span class="line">obj.x <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p>运行结果为1。为了表明这时this不是全局对象，我们对代码做一些改变：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">2</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> test();</span><br><span class="line">x  <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>运行结果为2，表明全局变量x的值根本没变。</p>
+<h3 id="情况四-apply-调用"><a href="#情况四-apply-调用" class="headerlink" title="情况四 apply 调用"></a>情况四 apply 调用</h3><p>apply()是函数的一个方法，作用是改变函数的调用对象。它的第一个参数就表示改变后的调用这个函数的对象。因此，这时this指的就是这第一个参数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">　<span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.x = <span class="number">1</span>;</span><br><span class="line">obj.m = test;</span><br><span class="line">obj.m.apply() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure></p>
+<p>apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。</p>
+<p>如果把最后一行代码修改为<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.m.apply(obj); <span class="comment">//1</span></span><br></pre></td></tr></table></figure></p>
+<p>运行结果就变成了1，证明了这时this代表的是对象obj。</p>
+<h3 id="箭头函数中的this"><a href="#箭头函数中的this" class="headerlink" title="箭头函数中的this"></a>箭头函数中的this</h3><p>在浏览器中, window 对象同时也是全局对象：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> g = <span class="string">'global'</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    g: <span class="string">'g'</span>,</span><br><span class="line">    a: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.g) &#125;,</span><br><span class="line">    b: &#123;</span><br><span class="line">        c: <span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.g) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.a() </span><br><span class="line">obj.b.c() </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'ggg'</span>, <span class="built_in">window</span>.g);</span><br><span class="line">VM99:<span class="number">4</span> g</span><br><span class="line">VM99:<span class="number">6</span> global</span><br><span class="line">VM99:<span class="number">12</span> ggg global</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>) &#125;,</span><br><span class="line">    b: &#123;</span><br><span class="line">    	c: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>)&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.a()  <span class="comment">// 打出的是obj对象, 相当于obj.a.call(obj)</span></span><br><span class="line">obj.b.c() <span class="comment">//打出的是obj.b对象, 相当于obj.b.c.call(obj.b)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用箭头函数</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>) &#125;,</span><br><span class="line">    b: &#123;</span><br><span class="line">    	c: <span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>)&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.a()   <span class="comment">//没有使用箭头函数打出的是obj</span></span><br><span class="line">obj.b.c()  <span class="comment">//打出的是window对象！！</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/ES6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/21/ES6/" itemprop="url">ES6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T12:30:39+08:00">
+                2020-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ECMAScript/" itemprop="url" rel="index">
+                    <span itemprop="name">ECMAScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><h3 id="ECMAScript-和-JavaScript-关系"><a href="#ECMAScript-和-JavaScript-关系" class="headerlink" title="ECMAScript 和 JavaScript 关系"></a>ECMAScript 和 JavaScript 关系</h3><ul>
+<li>ECMA是标准，JS是实现<ul>
+<li>类似于HTML5是标准，IE10、Chrome、FF都是实现</li>
+<li>换句话说，将来也能有其他XXXScript来实现ECMA</li>
+</ul>
 </li>
-<li><p><strong>编辑器</strong>：要相对轻量许多，侧重于文本的编辑。比如 Sublime Text 的定位就是编辑器。再比如 Windows 系统自带的「记事本」就是最简单的编辑器。</p>
+<li>ECMAScript简称<strong>ECMA或ES</strong></li>
+<li>目前版本<ul>
+<li>低级浏览器主要支持ES 3.1</li>
+<li>高级浏览器正在从ES 5过渡到ES 6</li>
+</ul>
 </li>
 </ul>
-<p>需要注意的是，VS Code 的定位是编辑器，而非IDE。但 VS Code 又比一般的编辑器的功能要丰富许多。</p>
-<p>快捷键列表： VS Code 左下角的齿轮按钮 -&gt; 键盘快捷方式</p>
-<h2 id="VS-Code快捷键"><a href="#VS-Code快捷键" class="headerlink" title="VS Code快捷键"></a>VS Code快捷键</h2><h3 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h3><table>
+<h3 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h3><table>
 <thead>
 <tr>
-<th style="text-align:left">Mac快捷键</th>
-<th style="text-align:left">作用</th>
+<th>时间</th>
+<th>ECMA</th>
+<th>解释</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Ctrl + F</td>
-<td style="text-align:left">光标前进一个字符，相当于右键（F = Forward）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + B</td>
-<td style="text-align:left">光标后退一个字符，相当于左键（B = Backward）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + P</td>
-<td style="text-align:left">上移一行，相当于上键（P = Previous）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + N</td>
-<td style="text-align:left">下移一行，相当于下键（N = Next）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + A</td>
-<td style="text-align:left">移动到一行的开头（A = Ahead）</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + E</td>
-<td style="text-align:left">移动到一行的结尾（E = End）</td>
-</tr>
-<tr>
-<td style="text-align:left">按住 option</td>
-<td style="text-align:left">多光标使用</td>
+<td>2015.06</td>
+<td>ES 6.0</td>
+<td>ES 6.0预计发布正式版；JavaScript.next开始指向ES 7.0</td>
 </tr>
 </tbody>
 </table>
-<h3 id="鼠标操作"><a href="#鼠标操作" class="headerlink" title="鼠标操作"></a>鼠标操作</h3><ul>
-<li>在当前行的位置，鼠标三击，可以选中当前行。</li>
-<li>用鼠标单击文件的行号，可以选中当前行。</li>
-<li>在某个行号的位置，上下移动鼠标，可以选中多行。</li>
-</ul>
-<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">Mac快捷键</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">option + Backspace</td>
-<td style="text-align:left">删除光标之前的一个单词</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + delete</td>
-<td style="text-align:left">删除光标之前的整行内容</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + shift + K</td>
-<td style="text-align:left">删除整行</td>
-</tr>
-</tbody>
-</table>
-<h3 id="编辑操作"><a href="#编辑操作" class="headerlink" title="编辑操作"></a>编辑操作</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">Mac快捷键</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Cmd + Enter</td>
-<td style="text-align:left">在当前行下面新增一行，然后跳至该行</td>
-</tr>
-<tr>
-<td style="text-align:left">Option + P</td>
-<td style="text-align:left">将代码向上移动</td>
-</tr>
-<tr>
-<td style="text-align:left">Option + N</td>
-<td style="text-align:left">将代码向下移动</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + D</td>
-<td style="text-align:left">将代码向下复制</td>
-</tr>
-</tbody>
-</table>
-<h3 id="JS语音相关"><a href="#JS语音相关" class="headerlink" title="JS语音相关"></a>JS语音相关</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">Mac快捷键</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Cmd + /</td>
-<td style="text-align:left">添加单行注释</td>
-</tr>
-<tr>
-<td style="text-align:left">Option + Shift + F</td>
-<td style="text-align:left">代码格式化</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + J</td>
-<td style="text-align:left">将多行代码合并为一行</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + U</td>
-<td style="text-align:left">将光标的移动回退到上一个位置</td>
-</tr>
-</tbody>
-</table>
-<h3 id="跳转操作"><a href="#跳转操作" class="headerlink" title="跳转操作"></a>跳转操作</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">Mac快捷键</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Cmd + P</td>
-<td style="text-align:left">在当前的项目工程里，<strong>全局</strong>搜索文件    很常用</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + Tab</td>
-<td style="text-align:left">在已经打开的文件之间进行跳转</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + G</td>
-<td style="text-align:left">跳转到指定行</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + Shift + O</td>
-<td style="text-align:left">在当前文件的各种方法之间进行跳转</td>
-</tr>
-</tbody>
-</table>
-<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">Mac快捷键</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Cmd + F</td>
-<td style="text-align:left">在当前文件中搜索，光标在搜索框里</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + G</td>
-<td style="text-align:left">在当前文件中搜索，光标仍停留在编辑器里</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + G</td>
-<td style="text-align:left">跳转到指定行</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + Shift + F</td>
-<td style="text-align:left">全局搜索</td>
-</tr>
-</tbody>
-</table>
-<h3 id="工作区快捷键"><a href="#工作区快捷键" class="headerlink" title="工作区快捷键"></a>工作区快捷键</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">Mac快捷键</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Cmd + +/-</td>
-<td style="text-align:left">将工作区放大/缩小（包括代码字体、左侧导航栏）</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + B</td>
-<td style="text-align:left">显示/隐藏侧边栏</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + \</td>
-<td style="text-align:left">创建多个编辑器</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + Shift + 、（中文）</td>
-<td style="text-align:left">对象/标签开始跳到结束</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + Option + 左右方向键</td>
-<td style="text-align:left">在已经打开的文件之间进行切换</td>
-</tr>
-<tr>
-<td style="text-align:left">Cmd + J</td>
-<td style="text-align:left">显示/隐藏控制台</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + `</td>
-<td style="text-align:left">打开自带终端</td>
-</tr>
-<tr>
-<td style="text-align:left">Ctrl + Tab</td>
-<td style="text-align:left">在已经打开的文件之间进行跳转</td>
-</tr>
-</tbody>
-</table>
-<h2 id="命令面板"><a href="#命令面板" class="headerlink" title="命令面板"></a>命令面板</h2><p>Mac用户按住快捷键 <span class="custom_red">Cmd+Shift+P<span></span></span></p>
-<h3 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h3><p>在命令面板输入“字体”，可以进行字体的设置</p>
-<h3 id="快捷键设置"><a href="#快捷键设置" class="headerlink" title="快捷键设置"></a>快捷键设置</h3><p>在命令面板输入“快捷键”，就可以进入快捷键的设置。</p>
-<h3 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h3><p>选中文本后，在命令面板中输入transfrom，就可以修改文本的大小写了。</p>
-<h3 id="使用命令行启动-VS-Code"><a href="#使用命令行启动-VS-Code" class="headerlink" title="使用命令行启动 VS Code"></a>使用命令行启动 VS Code</h3><p>（1）输入快捷键「Cmd + Shift + P 」，选择install code command：<br>（2）使用命令行：</p>
+<h3 id="JS历史"><a href="#JS历史" class="headerlink" title="JS历史"></a>JS历史</h3><p>JS是艾奇仅仅10天时间设计出的原型<br>语音必有迭代的过程，它总有一些自己的问题</p>
+<p>Java是世界上最流行的语言，没有之一。原因是：非常严谨、死板<br>开心的语言，不严谨，无法开发大型项目</p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>ES6 推出来的时候，各路浏览器已经出来了，没法兼容所有的浏览器<br><a href="http://kangax.github.io/compat-table/es6/" target="_blank" rel="noopener"><strong>ES6兼容性查看表</strong></a></p>
+<p>ES6(ES2015)兼容情况<br>IE10+、Chrome、FireFox、</p>
+<p>编译、转换（bable）</p>
 <ul>
-<li><p><strong>IDE</strong>：code命令：启动 VS Code 软件</p>
-</li>
-<li><p><strong>编辑器</strong>：code pathName/fileName命令：通过 VS Code 软件打开指定目录/指定文件。</p>
-</li>
+<li>在线转换</li>
+<li>提前编译</li>
 </ul>
-<h2 id="VS-Code-的常见设置项"><a href="#VS-Code-的常见设置项" class="headerlink" title="VS Code 的常见设置项"></a>VS Code 的常见设置项</h2><h3 id="VS-Code-设置为中文语言"><a href="#VS-Code-设置为中文语言" class="headerlink" title="VS Code 设置为中文语言"></a>VS Code 设置为中文语言</h3><p>Mac用户按住快捷键 Cmd+Shift+P （Windows用户按住快捷键Ctrl+Shift+P），打开命令面板。<br>在命令面板中，输入Configure Display Language，选择Install additional languages，然后安装插件Chinese (Simplified) Language Pack for Visual Studio Code即可。<br>或者，我们可以直接安装插件Chinese (Simplified) Language Pack for Visual Studio Code，是一样的。<br>安装完成后，重启VS Code。</p>
-<h3 id="文件路径面包屑（Breadcrumb）"><a href="#文件路径面包屑（Breadcrumb）" class="headerlink" title="文件路径面包屑（Breadcrumb）"></a>文件路径面包屑（Breadcrumb）</h3><p>打开 VS Code 的设置项，选择「用户设置 -&gt; 工作台 -&gt; 导航路径」<br>上图中，将红框部分打钩即可。<br>设置成功后，我们就可以查看到当前文件的「层级结构」，非常方便。</p>
-<h3 id="是否显示代码的行号"><a href="#是否显示代码的行号" class="headerlink" title="是否显示代码的行号"></a>是否显示代码的行号</h3><p>VS Code 默认显示代码的行号。你可以在设置项里搜索 editor.lineNumbers修改设置</p>
-<h3 id="右侧是否显示代码的缩略图"><a href="#右侧是否显示代码的缩略图" class="headerlink" title="右侧是否显示代码的缩略图"></a>右侧是否显示代码的缩略图</h3><p>VS Code 会在代码的右侧，默认显示缩略图。你可以在设置项里搜索 editor.minimap进行设置</p>
-<h3 id="将当前行代码高亮显示（更改光标所在行的背景色）"><a href="#将当前行代码高亮显示（更改光标所在行的背景色）" class="headerlink" title="将当前行代码高亮显示（更改光标所在行的背景色）"></a>将当前行代码高亮显示（更改光标所在行的背景色）</h3><p>当我们把光标放在某一行时，这一行的背景色并没有发生变化。如果想高亮显示当前行的代码，需要设置两步：<br>（1）在设置项里搜索editor.renderLineHighlight，将选项值设置为all或者line。<br>（2）在设置项里增加如下内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"workbench.colorCustomizations": &#123;</span><br><span class="line">    "editor.lineHighlightBackground": "#00000090",</span><br><span class="line">    "editor.lineHighlightBorder": "#00000000"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="./img/tool/settings.png" alt=""></p>
-<p>复制代码上面两行代码的意思是，修改光标所在行的背景色（背景色设置为全黑，透明度90%），修改光标所在行的边框色。</p>
-<h3 id="改完代码后立即自动保存"><a href="#改完代码后立即自动保存" class="headerlink" title="改完代码后立即自动保存"></a>改完代码后立即自动保存</h3><p>方式一：<br>改完代码后，默认不会自动保存。你可以在设置项里搜索files.autoSave<br>我们将配置项修改为onFocusChange之后，那么，当光标离开该文件后，这个文件就会自动保存了。非常方便。</p>
-<p>方式二：<br>当然，你也可以直接在菜单栏选择「文件-自动保存」。勾选年后，当你写完代码后，文件会立即实时保存。</p>
-<h3 id="保存代码后，是否立即格式化"><a href="#保存代码后，是否立即格式化" class="headerlink" title="保存代码后，是否立即格式化"></a>保存代码后，是否立即格式化</h3><p>保存代码后，默认不会立即进行代码的格式化。你可以在设置项里搜索editor.formatOnSave查看该配置项：</p>
-<h2 id="VS-Code-设置-高级进阶"><a href="#VS-Code-设置-高级进阶" class="headerlink" title="VS Code 设置-高级进阶"></a>VS Code 设置-高级进阶</h2><h3 id="文件对比"><a href="#文件对比" class="headerlink" title="文件对比"></a>文件对比</h3><p>VS Code 默认支持对比两个文件的内容。选中两个文件，然后右键选择「将已选项进行比较」即可<br>VS Code自带的对比功能并不够强大，我们可以安装插件compareit，进行更丰富的对比。比如说，安装完插件compareit之后，我们可以将「当前文件」与「剪切板」里的内容进行对比：</p>
-<h3 id="创建多层子文件夹"><a href="#创建多层子文件夹" class="headerlink" title="创建多层子文件夹"></a>创建多层子文件夹</h3><p>我们可以在新建文件夹的时候，如果直接输入aa/bb/cc</p>
-<h3 id="markdown语法支持"><a href="#markdown语法支持" class="headerlink" title="markdown语法支持"></a>markdown语法支持</h3><p>VS Code自带 markdown 语法高亮，写完 md 文件之后，你可以点击右上角的按钮进行预览，如下图所示：</p>
-<h3 id="Emmet-in-VS-Code"><a href="#Emmet-in-VS-Code" class="headerlink" title="Emmet in VS Code"></a>Emmet in VS Code</h3><p>Emmet可以极大的提高 html 和 css 的编写效率，它提供了一种非常简练的语法规则。<br>举个例子，我们在编辑器中输入缩写代码：ul&gt;li*6 ，然后按下 Tab 键，即可得到如下代码片段：<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></div></p>
-<p><a href="https://www.jianshu.com/p/9e2f55776bc0" target="_blank" rel="noopener">Emmet语法</a></p>
-<h2 id="VS-Code-插件推荐"><a href="#VS-Code-插件推荐" class="headerlink" title="VS Code 插件推荐"></a>VS Code 插件推荐</h2><h3 id="GitLens"><a href="#GitLens" class="headerlink" title="GitLens"></a>GitLens</h3><p>我强烈建议你安装插件GitLens，它是 VS Code 中我最推荐的一个插件，简直是Git神器，码农必备。如果你不知道，那真是out了。<br>GitLens 在 Git 管理上有很多强大的功能，比如：</p>
-<p>将光标放置在代码的当前行，可以看到这样代码的提交者是谁，以及提交时间。这一点，是 GitLens 最便捷的功能。</p>
-<p>查看某个 commit 的代码改动记录</p>
-<p>查看不同的分支</p>
-<p>可以将两个 commit 进行代码对比</p>
-<p>甚至可以将两个 branch 分支进行整体的代码对比。这一点，简直是 GitLens 最强大的功能。当我们在不同分支review代码的时候，就可以用到这一招。</p>
-<h3 id="Bracket-Pair-Colorizer-2：突出显示成对的括号【荐】"><a href="#Bracket-Pair-Colorizer-2：突出显示成对的括号【荐】" class="headerlink" title="Bracket Pair Colorizer 2：突出显示成对的括号【荐】"></a>Bracket Pair Colorizer 2：突出显示成对的括号【荐】</h3><p>Bracket Pair Colorizer 2插件：以不同颜色显示成对的括号，并用连线标注括号范围。<br>另外，还有个Rainbow Brackets插件，也可以突出显示成对的括号。</p>
-<h3 id="sftp：文件传输"><a href="#sftp：文件传输" class="headerlink" title="sftp：文件传输"></a>sftp：文件传输</h3><p>如果你需要将本地文件通过 ftp 的形式上传到局域网的服务器，可以安装sftp这个插件，很好用。在公司会经常用到。<br>步骤如下：<br>（1）安装插件sftp。<br>（2）配置 sftp.json文件。 插件安装完成后，输入快捷键「cmd+shift+P」弹出命令面板，然后输入sftp:config，回车，当前工程的.vscode文件夹下就会自动生成一个sftp.json文件，我们需要在这个文件里配置的内容可以是：</p>
-<p>host：服务器的IP地址</p>
-<p>username：工作站自己的用户名</p>
-<p>privateKeyPath：存放在本地的已配置好的用于登录工作站的密钥文件（也可以是ppk文件）</p>
-<p>remotePath：工作站上与本地工程同步的文件夹路径，需要和本地工程文件根目录同名，且在使用sftp上传文件之前，要手动在工作站上mkdir生成这个根目录</p>
-<p>ignore：指定在使用sftp: sync to remote的时候忽略的文件及文件夹，注意每一行后面有逗号，最后一行没有逗号</p>
-<p>举例如下：(注意，其中的注释需要去掉)<br>{<br>    “host”: “192.168.xxx.xxx”,     //服务器ip<br>    “port”: 22,     //端口，sftp模式是22<br>    “username”: “”, //用户名<br>    “password”: “”, //密码<br>    “protocol”: “sftp”, //模式<br>    “agent”: null,<br>    “privateKeyPath”: null,<br>    “passphrase”: null,<br>    “passive”: false,<br>    “interactiveAuth”: false,<br>    “remotePath”: “/root/node/build/“,  //服务器上的文件地址<br>    “context”: “./server/build”,        //本地的文件地址</p>
-<pre><code>&quot;uploadOnSave&quot;: true,   //监听保存并上传
-&quot;syncMode&quot;: &quot;update&quot;,
-&quot;watcher&quot;: {            //监听外部文件
-    &quot;files&quot;: false,     //外部文件的绝对路径
-    &quot;autoUpload&quot;: false,
-    &quot;autoDelete&quot;: false
-},
-&quot;ignore&quot;: [             //忽略项
-    &quot;**/.vscode/**&quot;,
-    &quot;**/.git/**&quot;,
-    &quot;**/.DS_Store&quot;
-]
-</code></pre><p>}<br>复制代码（3）在 VS Code的当前文件里，选择「右键 -&gt; upload」，就可以将本地的代码上传到 指定的 ftp 服务器上（也就是在上方 host 中配置的服务器ip）。<br>我们还可以选择「右键 -&gt; Diff with Remote」，就可以将本地的代码和 ftp 服务器上的代码做对比。</p>
-<h3 id="Project-Manager"><a href="#Project-Manager" class="headerlink" title="Project Manager"></a>Project Manager</h3><p>工作中，我们经常会来回切换多个项目，每次都要找到对应项目的目录再打开，比较麻烦。Project Manager插件可以解决这样的烦恼，它提供了专门的视图来展示你的项目，我们可以把常用的项目保存在这里，需要时一键切换，十分方便。</p>
-<h3 id="open-in-browser"><a href="#open-in-browser" class="headerlink" title="open in browser"></a>open in browser</h3><p>安装open in browser插件后，在 HTML 文件中「右键选择 –&gt; Open in Default Browser」，即可在浏览器中预览网页。</p>
-<h3 id="TODO-Highlight"><a href="#TODO-Highlight" class="headerlink" title="TODO Highlight"></a>TODO Highlight</h3><p>写代码过程中，突然发现一个Bug，但是又不想停下来手中的活，以免打断思路，怎么办？按照代码规范，我们一般是在代码中加个TODO注释。比如：（注意，一定要写成大写TODO，而不是小写的todo）<br>//TODO:这里有个bug，我一会儿再收拾你<br>复制代码或者：<br>//FIXME:我也不知道为啥， but it works only that way.<br>复制代码安装了插件 TODO Highlight之后，按住「Cmd + Shift + P」打开命令面板，输入「Todohighlist」，选择相关的命令，我们就可以看到一个 todoList 的清单。</p>
-<h3 id="Code-Time"><a href="#Code-Time" class="headerlink" title="Code Time"></a>Code Time</h3><p>Code Time插件：记录编程时间，统计代码行数。摸鱼必备。<br>安装该插件后，VS Code 底部的状态栏右下角可以看到时间统计。点击那个位置之后，选择「Code Time Dashboard」，即可查看统计结果。</p>
-<h3 id="Settings-Sync"><a href="#Settings-Sync" class="headerlink" title="Settings Sync"></a>Settings Sync</h3><p>多台设备之间，同步 VS Code 配置。通过登录 GitHub 账号来使用这个同步工具</p>
-<h3 id="vscode-syncing"><a href="#vscode-syncing" class="headerlink" title="vscode-syncing"></a>vscode-syncing</h3><p>多台设备之间，同步 VS Code 配置</p>
-<p><a href="https://juejin.im/post/5cb87c6e6fb9a068a03af93a#heading-47" target="_blank" rel="noopener">原作者</a></p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="generator"><a href="#generator" class="headerlink" title="generator"></a>generator</h2><h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h1 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h1><h2 id="ES5-变量问题"><a href="#ES5-变量问题" class="headerlink" title="ES5 变量问题"></a>ES5 变量问题</h2><p>1、可以重复声明：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2、无法限制修改</span></span><br><span class="line"><span class="string">PI = 3.1415926</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3、没有块级作用域</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 新增变量声明</span></span><br><span class="line"><span class="string">let   不能重复声明，变量-可以修改，块级作用域</span></span><br><span class="line"><span class="string">const  不能重复声明，常量-不能修改，块级作用域</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 块级作用域有什么</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> js</span><br><span class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮1"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮2"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮3"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> aBtn = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i&lt;aBtn.length; i++) &#123;</span><br><span class="line">    aBtn[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(i); <span class="comment">// 点击三个按钮都是 3</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 以前解决这个问题，创建一个封闭空间，封在里面; 利用函数作为作用域,垫一层</span></span><br><span class="line">  <span class="comment">// <span class="doctag">TODO:</span> 不理解去看原生JS教程</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">    aBtn[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(i); <span class="comment">// 点击三个按钮 0 , 1 , 2</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(i);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 现在用ES6</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i&lt;aBtn.length; i++) &#123;</span><br><span class="line">    aBtn[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(i); <span class="comment">// 点击三个按钮 0 , 1 , 2</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h1><h2 id="新增箭头函数"><a href="#新增箭头函数" class="headerlink" title="新增箭头函数"></a>新增箭头函数</h2><p>借鉴python lambda<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 名字(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">() =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>1、如果只有一个参数，（）可以省<br>2、如果只有一个return，{} 可以省</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> show = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="圆括号可以省略"><a href="#圆括号可以省略" class="headerlink" title="圆括号可以省略"></a>圆括号可以省略</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> show = <span class="function"><span class="params">a</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a*<span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="花括号可以省略"><a href="#花括号可以省略" class="headerlink" title="花括号可以省略"></a>花括号可以省略</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> show = <span class="function"><span class="params">a</span>=&gt;</span> a*<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><h3 id="参数扩展-数组展开"><a href="#参数扩展-数组展开" class="headerlink" title="参数扩展/数组展开"></a>参数扩展/数组展开</h3><p>1、收集剩余的参数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">a, b, ...args</span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">show(<span class="number">3</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>*Rest Parameter必须是最后一个</li>
+</ul>
+<p>2、展开数组<br>   展开后的效果，跟直接把数组的内容写在这儿一样<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">let</span> arr = [...a, ...b] <span class="comment">// [1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">a, b=<span class="number">1</span>, c=<span class="number">3</span></span>)</span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>1、左右两边结构必须一样<br>2、右边必须是个东西<br>3、声明和赋值不能分开（必须在一句话里完成）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> a = arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">let</span> b = arr[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解构赋值</span></span><br><span class="line"><span class="comment">// 数组</span></span><br><span class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象</span></span><br><span class="line"><span class="keyword">let</span> &#123;a, b, c&#125; = &#123;<span class="attr">a</span>: <span class="number">2</span>, <span class="attr">b</span>: <span class="number">3</span>, <span class="attr">c</span>:<span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h1><h2 id="map-映射"><a href="#map-映射" class="headerlink" title="map 映射"></a>map 映射</h2><p>一个对一个<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = arr.map(<span class="function"><span class="params">item</span> =&gt;</span> item*<span class="number">2</span>);</span><br><span class="line">result <span class="comment">// [6, 8, 12]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 成绩</span></span><br><span class="line"><span class="keyword">let</span> score = [<span class="number">23</span>, <span class="number">34</span>, <span class="number">99</span>, <span class="number">22</span>, <span class="number">44</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = score.map(<span class="function"><span class="params">item</span> =&gt;</span> item&gt;=<span class="number">60</span>?<span class="string">'及格'</span>:<span class="string">'不及格'</span>);</span><br><span class="line">score <span class="comment">//[23, 34, 99, 22, 44]</span></span><br><span class="line">result <span class="comment">//[不及格，不及格，及格，不及格，不及格]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="reduce-汇总"><a href="#reduce-汇总" class="headerlink" title="reduce 汇总"></a>reduce 汇总</h2><p>一堆出来一个<br>求和，求平均数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">12</span>, <span class="number">68</span>, <span class="number">190</span>, <span class="number">390</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">tmp, item, index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (index!=arr.length<span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> tmp + item;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (tmp + item)/arr.length;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="filter-过滤器"><a href="#filter-过滤器" class="headerlink" title="filter 过滤器"></a>filter 过滤器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">99</span>, <span class="number">36</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (item%<span class="number">3</span> == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">result <span class="comment">// 12, 99, 36</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line"><span class="keyword">let</span> result = arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> item%<span class="number">3</span> == <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="forEach-迭代"><a href="#forEach-迭代" class="headerlink" title="forEach 迭代"></a>forEach 迭代</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</span><br><span class="line"></span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index + <span class="string">':'</span> + item);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h1><h2 id="多了两个新方法"><a href="#多了两个新方法" class="headerlink" title="多了两个新方法"></a>多了两个新方法</h2><p><code>startsWith</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'htts://www.google.com'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (str.startsWith(<span class="string">'http://'</span>)) &#123;</span><br><span class="line">  alert(<span class="string">'普通网址'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(str.startsWith(<span class="string">'htts://'</span>)) &#123;</span><br><span class="line">  alert(<span class="string">'加密网址'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">'其他'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>endsWith</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'1.txt'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (str.endsWith(<span class="string">'.txt'</span>)) &#123;</span><br><span class="line">  alert(<span class="string">'文本文件'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (str.endsWith(<span class="string">'.jpg'</span>)) &#123;</span><br><span class="line">  alert(<span class="string">'JPG图片'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">'其他'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h2><p>` 反单引号<br>1、直接把变量塞到字符串里面  ${变量}<br>2、可以折行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> srt = <span class="string">'&lt;div&gt;\</span></span><br><span class="line"><span class="string">  &lt;h1&gt;'</span> + title + <span class="string">'&lt;/h1&gt;\</span></span><br><span class="line"><span class="string">  &lt;/div&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str2 = <span class="string">`&lt;div&gt;</span></span><br><span class="line"><span class="string">  &lt;h1&gt;<span class="subst">$&#123;titel&#125;</span>&lt;/h1&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;`</span>;  </span><br><span class="line"><span class="string">``</span><span class="string">`        </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 面向对象</span></span><br><span class="line"><span class="string">## ES4, ES5 写法</span></span><br><span class="line"><span class="string">1、类 和 构造函数 不分的...</span></span><br><span class="line"><span class="string">2、类 散开了</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> js</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">name, pass</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.pass = pass;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">User.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">User.prototype.showPass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.pass);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> u1 = <span class="keyword">new</span> User(<span class="string">'kil'</span>, <span class="number">123456</span>);</span><br><span class="line">u1.showName();</span><br><span class="line">u2.showPass();</span><br></pre></td></tr></table></figure></p>
+<h2 id="ES6-写法"><a href="#ES6-写法" class="headerlink" title="ES6 写法"></a>ES6 写法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, pass) &#123; <span class="comment">// 构造函数 或着 构造器</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.pass = pass;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showName() &#123;  <span class="comment">// 注意：此处写的是class，不是json 。json的话，showName： function()&#123;&#125;</span></span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">  showPass() &#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.pass);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1、<code>class</code>关键字，专门的构造器<br>2、class里面直接加方法</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>归根到底，最有价值的<br>面向对象：我可以不断完善我的东西，增加功能<br>站在前人的肩膀上，才能走得越来越远。人类社会就是这么发展的。<br>继承一个已有的类，来扩展它的功能。</p>
+<h3 id="ES4-ES5写法"><a href="#ES4-ES5写法" class="headerlink" title="ES4, ES5写法"></a>ES4, ES5写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">VipUser</span>(<span class="params">name, pass, level</span>) </span>&#123;</span><br><span class="line">  User.call(<span class="keyword">this</span>, name, pass);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.level = level;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">VipUser.prototype = <span class="keyword">new</span> User();</span><br><span class="line">VipUser.prototype.constructor = VipUser;</span><br><span class="line"></span><br><span class="line">VipUser.prototype.showLevel = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.level);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> v1 = <span class="keyword">new</span> VipUser(<span class="string">'kil'</span>, <span class="string">'123456'</span>, <span class="number">3</span>);</span><br><span class="line">v1.showName();</span><br><span class="line">v1.showPass();</span><br><span class="line">V1.showLevel();</span><br></pre></td></tr></table></figure>
+<h3 id="ES6写法"><a href="#ES6写法" class="headerlink" title="ES6写法"></a>ES6写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VipUser</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, pass, level) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name, pass);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.level = level;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showLevel() &#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.level);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -676,7 +900,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/工具设置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/18/名词/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kil">
@@ -695,7 +919,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/04/工具设置/" itemprop="url">工具设置</a></h1>
+                <a class="post-title-link" href="/2020/03/18/名词/" itemprop="url">名词</a></h1>
         
 
         <div class="post-meta">
@@ -707,8 +931,128 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-04T17:58:53+08:00">
-                2020-01-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T23:10:31+08:00">
+                2020-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="RBAC"><a href="#RBAC" class="headerlink" title="RBAC"></a>RBAC</h2><p>基于角色的访问控制（RBAC）是实施面向企业安全策略的一种有效的访问控制方式。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/H5是什么？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/11/H5是什么？/" itemprop="url">H5是什么？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-11T13:45:47+08:00">
+                2020-03-11
               </time>
             
 
@@ -730,8 +1074,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
                   </a>
                 </span>
 
@@ -769,10 +1113,22 @@
       
         
           
-            <h2 id="WebStorm"><a href="#WebStorm" class="headerlink" title="WebStorm"></a>WebStorm</h2><h3 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h3><p>主题样式在文件夹 ikyu/tool<br>导入方法：file–&gt;Import Setting–&gt;*.jar(找到下载的主题包)</p>
-<p><strong>JSON样式</strong><br>Editor &gt; Color Scheme &gt; JSON<br>Scheme: Monokai</p>
-<p><strong>字体样式</strong><br>Editor &gt; Font<br>Font: Ayuthaya</p>
-<p><strong>字体大小</strong><br>Editor &gt; Font<br>Size: 14</p>
+            <p>先科普一下，HTML5并不是一项技术，而是一个标准。<br>标准的意思就是：学生准则手册。你可以按照准则做，甚至可以超出准则更加严格的要求自己，也可以不按照准则来，但是会被老师训斥小伙伴讨厌，别人都不找你玩，就像IE6一样。</p>
+<p>那HTML5这些标准浏览器厂商到底姿持不姿持呢？这要看他们各自的尿性了。像chrome这种不仅在很多标准上支持的非常好，还积极上进很多地方超出了标准，支持一些标准中还是草案的部分。</p>
+<p>所以其实要么我们是作为理论派讨论HTML5标准，要么是作为实践派讨论HTML5标准在某浏览器的应用。但是实际上我们在说到H5的时候，并不是指标准，也不是指标准的应用，而是一个硬生生造出来的奇怪概念合集，所以我是旗帜鲜明的反对这个称呼的。</p>
+<p>最近一年的时间，我主要靠这个东西养家（并没有家）糊口。所以我是懂得甲方打电话过来询问，“你是不是会做H5开发？”的时候，我知道他们要的是那种可以在朋友圈分享的，看起来很酷炫的小页面，他们实际要的东西拆开来看大概包括以下技术点;</p>
+<ol>
+<li>页面素材预加载技术，可以使用createJS之中的preloadJS。我没有看preloadJS的源码，不过预加载并不是HTML5标准中更新的方法。</li>
+<li>音乐加载播放技术，createJS中同样有soundJS可以实现，而且这部分说起来确实是HTML5标准支持的内容，在上个时代并没有audio这样的标签。<br>3.可以滑动的页面，大多数是用了swiper.js这个Jquery插件，也有一些是手写的swipe，比较拙劣的手写版页面是不会跟手滑动的，其中touchstart等四个touch系列的事件是HTML5标准中的事件<br>4.可以涂抹擦除，多半是canvas叠加层，canvas是HTML5标准里面的标签，是代表了先进生产力的标签。<br>5.有动态的文字和图片，常见的是使用了css3或者直接使用js动画。很多时候提到HTML5多半还会带上CSS3，而CSS的分级又是另外的一个问题了，在不同的项目标准上，CSS会独立定级，以后应该不会有CSS4这个东西，所以大家也不用担心在H5以后又冒出来了C4（不过真是想用C4炸死那些每天把H5挂在嘴上的人）<br>6.可以填表报名，这是最基本的表单，是有网页以来就有的东西。<br>7.可以支持分享自定义的文案和图片，这个是用到了微信的jssdk，和HTML标准半毛钱关系都没有。<br>8.还有其他我想起来再补充的。</li>
+</ol>
+<p>所以我们在谈论H5的时候，实际上是一个解决方案，一个看起来酷炫的移动端onepage网站的解决方案。而这个解决方案不仅包含了HTML5新增的audio标签，canvas，拖拽特性，本地存储，websocket通信，同时也包括了盒模型，包括绝对定位，包括一切前端的基本知识。</p>
+<p>有学弟来问我说，学长我想学H5，应该从哪里开始？<br>我说HTML5新增特性在W3C上都可以查得到的。<br>学弟说，不，我想学的是H5，想做H5的页面。<br>于是我猜测他所指的就是上面论述的这种酷炫小页面，我就说，那你要先学习HTML，包括HTML5的新标准和之前的全部标准，然后学CSS以及CSS3，了解它们在浏览器的实现情况，原生JS了解一点就可以，大多的操作可以用Jquery，了解常用的几个Jquery插件的用法，应该就差不多了。如果想要做更酷炫的的，学一下egret或者cocos2d更好。如果要优化加载速度，还要学一下grunt一类的自动化工具。微信的sdk有很多坑，至少nodejs或者php一类的后端语言要会一点。</p>
+<p>学弟说，那这不就是前端了么？我只是想学H5啊。</p>
+<p>所以你看，当我们对一个概念的内涵无法统一的时候，我们根本不知道彼此之间在谈论的是什么。</p>
+<p>”H5“本应是一个技术合集，却被意会成了一项技术，变成可以在质上而不是量上描述的概念。</p>
+<p>对于营销来说，我们只要讲我们可以做H5或者不能做，这种定性的描述就够了。但是对于技术上，这是定量的事情，只能在具体某个技术项上是否，无法对这个本不存在的概念说是否。</p>
+<p>就比如我遇到过有甲方说，我们之前找了一个人做H5，做的还不错，但是这个case他又说做不了，我也搞不懂H5和H5之间也有那么大差别吗？我只能笑笑和他说，世界这么大，各种各样的H5都是有的。</p>
+<p>这就是为什么我反对H5，因为这个名词和它表示的内涵是严重不符的，这让我们难以沟通，让营销人和技术人之间产生误解，让浑水摸鱼的培训师们赚的盆满钵满，让技术新人不踏踏实实的学习技术。</p>
 
           
         
@@ -821,7 +1177,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/Linux/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/跨平台框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kil">
@@ -840,7 +1196,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/28/Linux/" itemprop="url">Linux</a></h1>
+                <a class="post-title-link" href="/2020/03/11/跨平台框架/" itemprop="url">跨平台框架</a></h1>
         
 
         <div class="post-meta">
@@ -852,1123 +1208,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-28T13:54:02+08:00">
-                2019-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h3 id="域名操作"><a href="#域名操作" class="headerlink" title="域名操作"></a>域名操作</h3><h4 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h4><p>curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。<br>它的功能非常强大，命令行参数多达几十种。如果熟练的话，完全可以取代 Postman 这一类的图形界面工具。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">curl</span><br><span class="line">返回</span><br><span class="line">* Connected to kaifa.in (209.141.38.71) port 80 (#0)</span><br><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line">&gt; Host: kaifa.in</span><br><span class="line">&gt; User-Agent: curl/7.54.0</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 301 Moved Permanently</span><br><span class="line">&lt; Server: nginx</span><br><span class="line">&lt; Date: Mon, 30 Dec 2019 09:27:00 GMT</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt; Content-Length: 178</span><br><span class="line">&lt; Connection: keep-alive</span><br><span class="line">&lt; Location: http://www.kaifa.in/</span><br></pre></td></tr></table></figure></div>
-<h4 id="dig"><a href="#dig" class="headerlink" title="dig"></a>dig</h4><p>dig命令是常用的域名查询工具，可以用来测试域名系统工作是否正常。<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dig kaifa.in</span><br><span class="line">返回</span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">kaifa.in.		16478	IN	A	209.141.38.71</span><br></pre></td></tr></table></figure></div></p>
-<h2 id="ssh-快捷登录"><a href="#ssh-快捷登录" class="headerlink" title="ssh 快捷登录"></a>ssh 快捷登录</h2><h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>客户端配置文件 ～/.ssh/config<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host hk1</span><br><span class="line">  HostName 47.56.157.52</span><br><span class="line">  User root</span><br></pre></td></tr></table></figure></div></p>
-<p>服务端配置文件 ～/.ssh/authorized_keys<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#k</span></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTzGvV166P2ST3VEyxC/wsAViF7kg0X5Fsn6ucyeIhvEfbObp/L68LxjE+UXmQnk0tIaXsK7Cch9c4LMAppFE+6pUZykTA5lsKUWyOPR9tRiHsYwoeS2AM9+tmo3GwYjDtFKsEPRhSvVPYUfH2sC6c+w2gQ6v6LtKEw2/iKb+3upOY3bkhP3YcNXD+QwEkJFLG0KsbXqLlSfDQpdpPG8obgtoPfOWQxOWh4OmxQdJlJIAU7IDNZBLHVyZh112Z5B7LiVm26FIOb66mpVUwf2YsjS5zwoahGoaGa9H4I5vDJmNT0NpaEBFvHQMefdn2NtFo+LZgHWttj</span><br></pre></td></tr></table></figure></div></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/Observable/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/05/Observable/" itemprop="url">Observable(可观察对象)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-05T10:41:15+08:00">
-                2019-11-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Rxjs/" itemprop="url" rel="index">
-                    <span itemprop="name">Rxjs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>获取前后路由变化 地址<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.router.events</span><br><span class="line">  .pipe(filter(<span class="function">(<span class="params">evt: any</span>) =&gt;</span> evt <span class="keyword">instanceof</span> RoutesRecognized), pairwise())</span><br><span class="line">  .subscribe(<span class="function">(<span class="params">events: RoutesRecognized[]</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'previous url'</span>, events[<span class="number">0</span>].urlAfterRedirects);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'current url'</span>, events[<span class="number">1</span>].urlAfterRedirects);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></div></p>
-<h2 id="router-events-路由事件"><a href="#router-events-路由事件" class="headerlink" title="router.events(路由事件)"></a>router.events(路由事件)</h2><p>在每次导航中，Router都会通过 Router.events 属性发布一些导航事件。这些事件的范围涵盖了从开始导航到结束导航之间的很多时间点。</p>
-<p>返回 Observable</p>
-<h2 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h2><h3 id="what"><a href="#what" class="headerlink" title="what"></a>what</h3><p>可观察对象支持在应用中的发布者和订阅者之间传递消息。 在需要进行事件处理、异步编程和处理多个值的时候，可观察对象相对其它技术有着显著的优点。</p>
-<p>可观察对象是声明式的 —— 也就是说，虽然你定义了一个用于发布值的函数，但是在有消费者订阅它之前，这个函数并不会实际执行。 订阅之后，当这个函数执行完或取消订阅时，订阅者就会收到通知。</p>
-<h3 id="why"><a href="#why" class="headerlink" title="why"></a>why</h3><p>可观察对象可以发送多个任意类型的值 —— 字面量、消息、事件。无论这些值是同步发送的还是异步发送的，接收这些值的 API 都是一样的。 由于准备（setup）和清场（teardown）的逻辑都是由可观察对象自己处理的，因此你的应用代码只管订阅并消费这些值就可以了，做完之后，取消订阅。无论这个流是击键流、HTTP 响应流还是定时器，对这些值进行监听和停止监听的接口都是一样的。</p>
-<p>由于这些优点，可观察对象在 Angular 中得到广泛使用，也同样建议应用开发者好好使用它。</p>
-<h3 id="how"><a href="#how" class="headerlink" title="how"></a>how</h3><p>作为发布者，你创建一个 Observable 的实例，其中定义了一个订阅者（subscriber）函数。 当有消费者调用 subscribe() 方法时，这个函数就会执行。 订阅者函数用于定义“如何获取或生成那些要发布的值或消息”。</p>
-<p>要执行所创建的可观察对象，并开始从中接收通知，你就要调用它的 subscribe() 方法，并传入一个观察者（observer）。 这是一个 JavaScript 对象，它定义了你收到的这些消息的处理器（handler）。 subscribe() 调用会返回一个 Subscription 对象，该对象具有一个 unsubscribe() 方法。 当调用该方法时，你就会停止接收通知。</p>
-<h2 id="pipe-Operators-操作符"><a href="#pipe-Operators-操作符" class="headerlink" title="pipe (Operators 操作符)"></a>pipe (Operators 操作符)</h2><h3 id="what-1"><a href="#what-1" class="headerlink" title="what"></a>what</h3><p>简而言之，就是可以与当前的 let 操作符一起使用的函数。无论名称起的是否合适，这就是它的由来。基本上来说，pipeable 操作符可以是任何函数，但是它需要返回签名为 &lt;T, R&gt;(source: Observable<t>) =&gt; Observable<r> 的函数。</r></t></p>
-<p>现在 Observable 中有一个内置的 pipe 方法 (Observable.prototype.pipe)，它可以用类似于之前的链式调用的方式来组合操作符 (如下所示)。</p>
-<p>There is also a pipe utility function at rxjs/util/pipe that can be used to build reusable pipeable operators from other pipeable operators.</p>
-<p>在 rxjs/util/pipe 中还有一个名为 pipe 的工具函数，它可用于构建基于其他 pipeable 操作符的可复用的 pipeable 操作符。</p>
-<h3 id="why-1"><a href="#why-1" class="headerlink" title="why"></a>why</h3><p>打补丁的操作符主要是为了链式调用，但它存在如下问题:</p>
-<ul>
-<li><p>任何导入了补丁操作符的库都会导致该库的所有消费者的 Observable.prototype 增大，这会创建一种依赖上的盲区。如果此库移除了某个操作符的导入，这会在无形之中破坏其他所有人的使用。使用 pipeable 操作符的话，你必须在每个用到它们的页面中都导入你所需要用到的操作符。</p>
-</li>
-<li><p>通过打补丁的方式将操作符挂在原型上是无法通过像 rollup 或 webpack 这样的工具进行“摇树优化” ( tree-shakeable ) 。而 pipeable 操作符只是直接从模块中提取的函数而已。</p>
-</li>
-<li><p>对于在应用中导入的未使用过的操作符，任何类型的构建工具或 lint 规则都无法可靠地检测出它们。例如，比如你导入了 scan，但后来不再使用了，但它仍会被添加到打包后的文件中。使用 pipeable 操作符的话，如果你不再使用它的简化，lint 规则可以帮你检测到。</p>
-</li>
-<li><p>函数组合 ( functional composition )很棒。创建自定义操作符也变得非常简单，它们就像 rxjs 中的其他所有操作符一样。你不再需要扩展 Observable 或重写 lift 。</p>
-</li>
-</ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; range &#125; <span class="keyword">from</span> <span class="string">'rxjs/observable/range'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; map, filter, scan &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> source$ = range(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">source$.pipe(</span><br><span class="line">  filter(<span class="function"><span class="params">x</span> =&gt;</span> x % <span class="number">2</span> === <span class="number">0</span>),</span><br><span class="line">  map(<span class="function"><span class="params">x</span> =&gt;</span> x + x),</span><br><span class="line">  scan(<span class="function">(<span class="params">acc, x</span>) =&gt;</span> acc + x, <span class="number">0</span>)</span><br><span class="line">)</span><br><span class="line">.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x))</span><br></pre></td></tr></table></figure></div>
-<h2 id="filter-Operators-操作符"><a href="#filter-Operators-操作符" class="headerlink" title="filter (Operators 操作符)"></a>filter (Operators 操作符)</h2><p>发出符合给定条件的值</p>
-<p><img src="/img/js/rxjs_filter.png" alt=""></p>
-<ul>
-<li><p>示例 1: 过滤出偶数</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RxJS v6+</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">from</span> &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; filter &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发出 (1,2,3,4,5)</span></span><br><span class="line"><span class="keyword">const</span> source = <span class="keyword">from</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);</span><br><span class="line"><span class="comment">// 过滤掉奇数</span></span><br><span class="line"><span class="keyword">const</span> example = source.pipe(filter(<span class="function"><span class="params">num</span> =&gt;</span> num % <span class="number">2</span> === <span class="number">0</span>));</span><br><span class="line"><span class="comment">// 输出: "Even number: 2", "Even number: 4"</span></span><br><span class="line"><span class="keyword">const</span> subscribe = example.subscribe(<span class="function"><span class="params">val</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Even number: <span class="subst">$&#123;val&#125;</span>`</span>));</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>示例 2: 基于属性过滤对象</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RxJS v6+</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">from</span> &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; filter &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发出 (&#123;name: 'Joe', age: 31&#125;, &#123;name: 'Bob', age:25&#125;)</span></span><br><span class="line"><span class="keyword">const</span> source = <span class="keyword">from</span>([&#123; <span class="attr">name</span>: <span class="string">'Joe'</span>, <span class="attr">age</span>: <span class="number">31</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">'Bob'</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;]);</span><br><span class="line"><span class="comment">// 过滤掉年龄小于30岁的人</span></span><br><span class="line"><span class="keyword">const</span> example = source.pipe(filter(<span class="function"><span class="params">person</span> =&gt;</span> person.age &gt;= <span class="number">30</span>));</span><br><span class="line"><span class="comment">// 输出: "Over 30: Joe"</span></span><br><span class="line"><span class="keyword">const</span> subscribe = example.subscribe(<span class="function"><span class="params">val</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Over 30: <span class="subst">$&#123;val.name&#125;</span>`</span>));</span><br></pre></td></tr></table></figure></div>
-</li>
-</ul>
-<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof 左操作数是一个类，右操作数是标识对象的类。如果左侧的对象是右侧类的实例，则返回true.而js中对象的类是通过初始化它们的构造函数来定义的。即instanceof的右操作数应当是一个函数。所有的对象都是object的实例。如果左操作数不是对象，则返回false,如果右操作数不是函数，则抛出typeError。</p>
-<p>instanceof 运算符是用来测试一个对象是否在其原型链原型构造函数的属性。其语法是object instanceof constructor</p>
-<p>instanceof 操作符用来比较两个操作数的构造函数。只有在比较自定义的对象时才有意义。 如果用来比较内置类型，将会和 typeof 操作符 一样用处不大。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bar</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Bar.prototype = <span class="keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Bar() <span class="keyword">instanceof</span> Bar; <span class="comment">// true</span></span><br><span class="line"><span class="keyword">new</span> Bar() <span class="keyword">instanceof</span> Foo; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果仅仅设置 Bar.prototype 为函数 Foo 本身，而不是 Foo 构造函数的一个实例</span></span><br><span class="line">Bar.prototype = Foo;</span><br><span class="line"><span class="keyword">new</span> Bar() <span class="keyword">instanceof</span> Foo; <span class="comment">// false</span></span><br></pre></td></tr></table></figure></div>
-<p><a href="https://segmentfault.com/a/1190000000730982" target="_blank" rel="noopener">typeof 和 instanceOf的区别</a></p>
-<h2 id="pairwise-Operators-操作符"><a href="#pairwise-Operators-操作符" class="headerlink" title="pairwise (Operators 操作符)"></a>pairwise (Operators 操作符)</h2><p>pairwise<t>(): OperatorFunction&lt;T, [T, T]&gt;</t></p>
-<p>将连续发射对成组在一起，并以两个值的数组形式发射它们。</p>
-<p><img src="./img/js/rxjs_pairwise.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/Webpack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/01/Webpack/" itemprop="url">Webpack</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-01T12:00:14+08:00">
-                2019-11-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">Webpack</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="seven-搭建angular-webpack配置"><a href="#seven-搭建angular-webpack配置" class="headerlink" title="seven 搭建angular webpack配置"></a>seven 搭建angular webpack配置</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> CopyWebpackPlugin = <span class="built_in">require</span>(<span class="string">'copy-webpack-plugin'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;AngularCompilerPlugin&#125; = <span class="built_in">require</span>(<span class="string">"@ngtools/webpack"</span>);</span><br><span class="line"><span class="keyword">const</span> rxPaths = <span class="built_in">require</span>(<span class="string">"rxjs/_esm5/path-mapping"</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;IndexHtmlWebpackPlugin&#125; = <span class="built_in">require</span>(<span class="string">"@angular-devkit/build-angular/src/angular-cli-files/plugins/index-html-webpack-plugin"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'development'</span>,</span><br><span class="line"></span><br><span class="line">  devtool: <span class="string">'source-map'</span>,</span><br><span class="line"></span><br><span class="line">  target: <span class="string">"web"</span>,</span><br><span class="line"></span><br><span class="line">  entry: &#123;</span><br><span class="line">    polyfills: <span class="string">'./src/polyfills.ts'</span>,</span><br><span class="line">    vendor: <span class="string">'./src/vendor.ts'</span>,</span><br><span class="line">    main: <span class="string">'./src/main.ts'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(<span class="string">"./dist"</span>),</span><br><span class="line">    filename: <span class="string">"[name].js"</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  resolve: &#123;</span><br><span class="line">    extensions: [<span class="string">'.ts'</span>, <span class="string">'.js'</span>],</span><br><span class="line">    alias: <span class="built_in">Object</span>.assign(rxPaths(), &#123;</span><br><span class="line">      pixi: path.join(__dirname, <span class="string">'node_modules/pixi.js/dist/pixi.js'</span>),</span><br><span class="line">      dragonBones: path.join(__dirname, <span class="string">'src/libs/dragonBones/dragonBones.js'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  performance: &#123;</span><br><span class="line">    hints: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|dbbin|ico)$/</span>,</span><br><span class="line">        loader: <span class="string">'file-loader?name=assets/[name].[hash].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.ts$/</span>,</span><br><span class="line">        use: [<span class="string">'awesome-typescript-loader'</span>, <span class="string">'angular2-template-loader'</span>],</span><br><span class="line">        exclude: <span class="string">'/node_modules/'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">        use: <span class="string">'html-loader'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.scss$/</span>,</span><br><span class="line">        exclude: [<span class="regexp">/\.global\.scss$/</span>],</span><br><span class="line">        use: [<span class="string">'to-string-loader'</span>, <span class="string">'sass-loader'</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.global\.scss$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="string">'style-loader'</span>,</span><br><span class="line">          <span class="string">'sass-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        type: <span class="string">'javascript/auto'</span>,</span><br><span class="line">        test: <span class="regexp">/\.json$/</span>,</span><br><span class="line">        loader: <span class="string">'file-loader?name=assets/[name].[hash].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// This hides some deprecation warnings that Webpack throws</span></span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/[\/\\]@angular[\/\\]core[\/\\].+\.js$/</span>,</span><br><span class="line">        parser: &#123;<span class="attr">system</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/pixi\.js$/</span>, <span class="attr">loader</span>: <span class="string">'expose-loader?PIXI'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/dragonBones\.js$/</span>, <span class="attr">loader</span>: <span class="string">'expose-loader?dragonBones'</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> IndexHtmlWebpackPlugin(&#123;</span><br><span class="line">      input: <span class="string">"./index.html"</span>,</span><br><span class="line">      output: <span class="string">"index.html"</span>,</span><br><span class="line">      entrypoints: [</span><br><span class="line">        <span class="string">"vendor"</span>,</span><br><span class="line">        <span class="string">"polyfills"</span>,</span><br><span class="line">        <span class="string">"main"</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> AngularCompilerPlugin(&#123;</span><br><span class="line">      mainPath: path.resolve(<span class="string">"./src/main.ts"</span>),</span><br><span class="line">      sourceMap: <span class="literal">true</span>,</span><br><span class="line">      nameLazyFiles: <span class="literal">true</span>,</span><br><span class="line">      tsConfigPath: path.resolve(<span class="string">"./src/tsconfig.app.json"</span>),</span><br><span class="line">      skipCodeGeneration: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> CopyWebpackPlugin([</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">from</span>: <span class="string">'src/assets'</span>,</span><br><span class="line">        to: <span class="string">'assets'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">from</span>: <span class="string">'src/favicon.ico'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]),</span><br><span class="line">  ],</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    historyApiFallback: &#123;</span><br><span class="line">      disableDotRule: <span class="literal">true</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h2 id="scss-问题"><a href="#scss-问题" class="headerlink" title="scss 问题"></a>scss 问题</h2><font color="#FF0000"><br>ERROR in ./src/app/page/home/home.component.scss<br>You may need an additional loader to handle the result of these loaders.<br>&gt; p {<br>|   color: #f00; }<br></font>
-
-<p>解决：添加 css-loader</p>
-<pre><code class="js">{
-  test: <span class="regexp">/\.scss$/</span>,
-  exclude: [<span class="regexp">/\.global\.scss$/</span>],
-  use: [<span class="string">'to-string-loader'</span>, <span class="string">'css-loader'</span>, <span class="string">'sass-loader'</span>]
-}
-</code></pre>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/Angular-CLI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/21/Angular-CLI/" itemprop="url">Angular-CLI</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T21:33:49+08:00">
-                2019-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Angular/" itemprop="url" rel="index">
-                    <span itemprop="name">Angular</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ng g c app</span><br><span class="line">CREATE src/app/app/app.component.ts (257 bytes)</span><br><span class="line">已有app文件，使用此指令依然创建app文件</span><br><span class="line"></span><br><span class="line">正确方法：</span><br><span class="line">ng g c app --flat</span><br><span class="line">CREATE src/app/app.component.ts (257 bytes)</span><br><span class="line">默认不创建文件夹，在已有app文件下</span><br></pre></td></tr></table></figure></div>
-<h3 id="本地版本升级-6-gt-7"><a href="#本地版本升级-6-gt-7" class="headerlink" title="本地版本升级 6 -&gt; 7"></a>本地版本升级 6 -&gt; 7</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall -g @angular/cli</span><br><span class="line">$ npm install -g @angular/cli@7.x.x</span><br><span class="line">$ ng -v</span><br></pre></td></tr></table></figure></div>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/Angular依赖包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/21/Angular依赖包/" itemprop="url">Angular依赖包</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T12:16:16+08:00">
-                2019-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Angular/" itemprop="url" rel="index">
-                    <span itemprop="name">Angular</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="基础包"><a href="#基础包" class="headerlink" title="基础包"></a>基础包</h3><h4 id="angular-core"><a href="#angular-core" class="headerlink" title="@angular-core"></a>@angular-core</h4><p>实现Angular的核心功能，低级服务和实用程序</p>
-<ul>
-<li>为组件，视图层次结构，更改检测，渲染和事件处理定义基础结构。</li>
-<li>定义为Angular构造提供元数据和上下文的装饰器。</li>
-<li>为依赖项注入 (DI)，国际化 (i18n) 以及各种测试和调试工具定义基础结构。</li>
-</ul>
-<p>常用模块</p>
-<ul>
-<li>NgModule： 模块定义装饰器</li>
-<li>Component： 组件定义装饰器</li>
-<li>Directive： 指令定义装饰器</li>
-<li>Pipe： 管道定义装饰器</li>
-<li>ElmentRef： 元素引用</li>
-<li>ViewChild： 获取子元素</li>
-<li>Render： 渲染</li>
-<li>Input： 接受参数传入</li>
-<li>Output： 事件输出</li>
-<li>EventEmitter： 出发自定义事件</li>
-<li>PipeTransform： 管道接口</li>
-<li>Injectable： 服务定义装饰器</li>
-</ul>
-<h4 id="angular-common"><a href="#angular-common" class="headerlink" title="@angular/common"></a>@angular/common</h4><p>实现基本的Angular指令和管道</p>
-<p>模块</p>
-<ul>
-<li>CommonModule：通用模块，包含内置指令ngIf，ngFor</li>
-</ul>
-<h4 id="angular-platform-browser"><a href="#angular-platform-browser" class="headerlink" title="@angular/platform-browser"></a>@angular/platform-browser</h4><p>支持在不同的浏览器上执行Angular应用。<br>BrowserModule包含在通过CLI创建的任何应用程序中，并且它会重新导出CommonModule和ApplicationModule导出，从而使基本的Angular功能可用于该应用程序。</p>
-<p>常用模块</p>
-<ul>
-<li>platformBrowser：AoT编译</li>
-<li>BrowserModule：浏览器支持，注意该模块导入了CommonModule，然后导出去，所以引用了这个模块也就引用了CommonModule</li>
-</ul>
-<h4 id="angular-platform-browser-dynamic"><a href="#angular-platform-browser-dynamic" class="headerlink" title="@angular/platform-browser-dynamic"></a>@angular/platform-browser-dynamic</h4><p>angular应用的入口模块</p>
-<p>模块</p>
-<ul>
-<li>platformBrowserDynamic：JIT编译</li>
-</ul>
-<h4 id="angular-compiler"><a href="#angular-compiler" class="headerlink" title="@angular/compiler"></a>@angular/compiler</h4><p>用于在运行时运行angular编译器以创建ComponentFactorys 的低级服务，以后可用于创建和呈现Component实例。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/Markdown语法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/19/Markdown语法/" itemprop="url">Markdown语法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T13:39:21+08:00">
-                2019-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>序言<br>Markdown是一种轻量级标记语言</p>
-<p>转义<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`` 特殊的文本 (例：&lt;!-- more --&gt;) ``</span><br></pre></td></tr></table></figure></div></p>
-<p>引用站内文章<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link Angular依赖包 依赖包详情 %&#125;</span><br></pre></td></tr></table></figure></div></p>
-<p><a href="https://maxiang.io/" target="_blank" rel="noopener">马克飞象</a><br><a href="https://hyxxsfwy.github.io/2016/01/15/Hexo-Markdown-%E7%AE%80%E6%98%8E%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C/" target="_blank" rel="noopener">Hexo语法</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/搭建Angular项目/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/19/搭建Angular项目/" itemprop="url">搭建Angular项目</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T13:27:02+08:00">
-                2019-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Angular/" itemprop="url" rel="index">
-                    <span itemprop="name">Angular</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir angular_website &amp;&amp; <span class="built_in">cd</span> angular_website</span><br><span class="line">$ yarn init</span><br></pre></td></tr></table></figure></div>
-<p>得到package.json 文件<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><figure class="iseeu highlight /json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"angulectron"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
-<h3 id="添加基础依赖"><a href="#添加基础依赖" class="headerlink" title="添加基础依赖"></a>添加基础依赖</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add @angular/core @angular/common @angular/platform-browser @angularplatform-browser-dynamic @angular/compiler</span><br></pre></td></tr></table></figure></div>
-<a href="/2019/10/21/Angular依赖包/" title="依赖包详情">依赖包详情</a>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add --dev @angular/cli</span><br></pre></td></tr></table></figure></div>
-<p>使用ng 指令(快速构建项目)；首次使用需要配置 angular.json 文件</p>
-<h3 id="添加基础文件"><a href="#添加基础文件" class="headerlink" title="添加基础文件"></a>添加基础文件</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir src/app</span><br><span class="line">$ ng g m app --flat &amp;&amp; ng g c app --flat</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>polyfills.ts文件 [浏览器支持]</li>
-</ul>
-<h3 id="css-to-scss"><a href="#css-to-scss" class="headerlink" title="css to scss"></a>css to scss</h3><h4 id="将默认样式扩展名更改为-scss"><a href="#将默认样式扩展名更改为-scss" class="headerlink" title="将默认样式扩展名更改为 scss"></a>将默认样式扩展名更改为 scss</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng config defaults.styleExt=scss</span><br></pre></td></tr></table></figure></div>
-<p>如果出现错误：请Value cannot be found.使用以下命令：<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng config diagrams。@ schematics / angular：component.styleext scss</span><br></pre></td></tr></table></figure></div></p>
-<p>或手动 添加到 angular.json<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><figure class="iseeu highlight /json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"schematics"</span>: &#123;</span><br><span class="line">    <span class="attr">"@schematics/angular:component"</span>: &#123;</span><br><span class="line">      <span class="attr">"styleext"</span>: <span class="string">"scss"</span>       </span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
-<h4 id="将-css-文件重命名-scss"><a href="#将-css-文件重命名-scss" class="headerlink" title="将 .css 文件重命名 .scss"></a>将 .css 文件重命名 .scss</h4><p>app  &amp;&amp; webpack</p>
-<h4 id="创建项目时设置"><a href="#创建项目时设置" class="headerlink" title="创建项目时设置"></a>创建项目时设置</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new your-project-name --style=scss</span><br></pre></td></tr></table></figure></div>
-<p>如果要为以后创建的所有项目设置默认值，执行<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng config --global defaults.styleExt=scss</span><br></pre></td></tr></table></figure></div></p>
-<h3 id="seven-webpack-打包-angular-安装的依赖包"><a href="#seven-webpack-打包-angular-安装的依赖包" class="headerlink" title="seven webpack 打包 angular 安装的依赖包"></a>seven webpack 打包 angular 安装的依赖包</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add webpack@^4.25.1 webpack-cli@^3.1.2 webpack-dev-server@^3.1.10 copy-webpack-plugin@^4.6.0 --dev</span><br></pre></td></tr></table></figure></div>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add @ngtools/webpack@^7.1.3 --dev</span><br></pre></td></tr></table></figure></div>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add awesome-typescript-loader@^5.2.1 angular2-template-loader@^0.6.2 --dev</span><br></pre></td></tr></table></figure></div>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add html-loader@^0.5.5 to-string-loader@^1.1.5 sass-loader@^7.1.0 --dev</span><br></pre></td></tr></table></figure></div>
-<h3 id="import-HeaderModule-not-resolve"><a href="#import-HeaderModule-not-resolve" class="headerlink" title="import HeaderModule not resolve"></a>import HeaderModule not resolve</h3><font color="#FF0000"> Module not found: Error: Can’t resolve ‘@common/header/header.module’ in ‘/Users/niekaifa/workspace/htyy/htyy_website/src/app/page/home’ </font>
-
-<p>原因：编译后 path 路径 不对，没有解析到<br>解决：<br>tsconfig.json 添加paths 配置<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"paths"</span>: &#123;</span><br><span class="line">  <span class="string">"@common/*"</span>: [</span><br><span class="line">    <span class="string">"src/app/common/*"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
-<p>home.component.ts 路径<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; HeaderModule &#125; <span class="keyword">from</span> <span class="string">'src/app/common/header/header.module'</span>;</span><br><span class="line">update</span><br><span class="line"><span class="keyword">import</span> &#123; HeaderModule &#125; <span class="keyword">from</span> <span class="string">'@common/header/header.module'</span>;</span><br></pre></td></tr></table></figure></div></p>
-<h3 id="remove-nghost-sfi-c0"><a href="#remove-nghost-sfi-c0" class="headerlink" title="remove _nghost-sfi-c0"></a>remove _nghost-sfi-c0</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.scss'</span>],</span><br><span class="line">  encapsulation: ViewEncapsulation.None</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
-<h3 id="资源的相对路径-与-绝对路径"><a href="#资源的相对路径-与-绝对路径" class="headerlink" title="资源的相对路径 与 绝对路径"></a>资源的相对路径 与 绝对路径</h3><p>tsconfig.js 设置<br><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"compileOnSave"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"baseUrl"</span>: <span class="string">"src"</span>,</span><br><span class="line">    <span class="string">"outDir"</span>: <span class="string">"./dist/out-tsc"</span>,</span><br><span class="line">    <span class="string">"sourceMap"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"declaration"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"module"</span>: <span class="string">"es2015"</span>,</span><br><span class="line">    <span class="string">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">    <span class="string">"emitDecoratorMetadata"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"importHelpers"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es5"</span>,</span><br><span class="line">    <span class="string">"typeRoots"</span>: [</span><br><span class="line">      <span class="string">"node_modules/@types"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"lib"</span>: [</span><br><span class="line">      <span class="string">"es2018"</span>,</span><br><span class="line">      <span class="string">"dom"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"paths"</span>: &#123;</span><br><span class="line">      <span class="string">"@common/*"</span>: [</span><br><span class="line">        <span class="string">"app/common/*"</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/Hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/18/Hexo/" itemprop="url">Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T17:13:21+08:00">
-                2019-10-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-11T12:23:49+08:00">
+                2020-03-11
               </time>
             
 
@@ -2028,18 +1269,447 @@
 
       
         
-          <p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>在去年和阿通就已经搭建好了，一直没正式用过。今天看到了iissnan博主的博客站，以及最近小莫说写些技术文章，现在觉得可以用起来，写一些高质量的技术文章和记录一下生活的点滴。</p>
-<h2 id="此博客站Hexo的主题"><a href="#此博客站Hexo的主题" class="headerlink" title="此博客站Hexo的主题"></a>此博客站Hexo的主题</h2><p>cd 项目目录路径</p>
-<p>自定义主题 git clone <a href="https://github.com/iissnan/hexo-theme-next.git" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next.git</a></p>
-<p>打开当前目录下的“_config.yml”配置文件，找到theme的配置选项，设置为：theme: next</p>
-<p>选择 Scheme主题改样式，themes &gt; next &gt; _config.yml 改为 scheme: Pisces</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/18/Hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>做项目，还是 cordova，如果只是学习以后备用，那就选 Flutter</p>
+<h2 id="Cordova"><a href="#Cordova" class="headerlink" title="Cordova"></a>Cordova</h2><p>cordova 配合 ionic，开发简单，且 angular8 运行速度很快（学还是有点难度）。一般的应用，用户也区分不出混合开发还是原生开发。<br>唯一的劣势是，cordova 应用是基于系统 webview 的，最新的 html/js/CSS 特性可能在低版本的 webview （ android5.0 以下、ios10 以下）上显示不正常，如果用 angular 开发就更有问题了。<br>但现在千元机都是 android9.0，所以看起来这个问题影响也不大。</p>
+<h2 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h2><p>Flutter，速度很快，但和 cordova 一样，特殊应用需要依赖插件，插件质量不敢保证。另外就是 web 支持，本来 flutter 就不是做 web 的，现在强上个 web 支持，肯定没有 angular 或其他框架成熟。<br>编程语言是Drat</p>
+<h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><p>项目庞大之后的维护困难，第三方库的良莠不齐，兼容上需要耗费更多的精力导致放弃。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/product/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/06/product/" itemprop="url">product</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T20:38:56+08:00">
+                2020-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Product/" itemprop="url" rel="index">
+                    <span itemprop="name">Product</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h2><p>MVP: 最简化可实行产品</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/06/CSS/" itemprop="url">css</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T19:53:06+08:00">
+                2020-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h1><h2 id="超出部分省略号"><a href="#超出部分省略号" class="headerlink" title="超出部分省略号"></a>超出部分省略号</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">overflow: hidden; // 超出的文本隐藏</span><br><span class="line">text-overflow: ellipsis; // 溢出用省略号显示</span><br><span class="line">white-space: nowrap; // 溢出不换行</span><br></pre></td></tr></table></figure>
+<h2 id="无序列表样式"><a href="#无序列表样式" class="headerlink" title="无序列表样式"></a>无序列表样式</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/list-style" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/list-style</a></p>
+<h1 id="适配"><a href="#适配" class="headerlink" title="适配"></a>适配</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">css</span>: &#123;</span><br><span class="line">  <span class="attribute">loaderOptions</span>: &#123;</span><br><span class="line">    postcss: &#123;</span><br><span class="line">      plugins: [</span><br><span class="line">        <span class="built_in">require</span>(<span class="string">'postcss-px-to-viewport'</span>)(&#123;</span><br><span class="line">          unitToConvert: <span class="string">'px'</span>,</span><br><span class="line">          viewportWidth: 750,</span><br><span class="line">          unitPrecision: 3,</span><br><span class="line">          propList: [<span class="string">'*'</span>],</span><br><span class="line">          viewportUnit: <span class="string">'vw'</span>,</span><br><span class="line">          fontViewportUnit: <span class="string">'vw'</span>,</span><br><span class="line">          selectorBlackList: [],</span><br><span class="line">          minPixelValue: 1,</span><br><span class="line">          mediaQuery: false,</span><br><span class="line">          replace: true,</span><br><span class="line">          exclude: /(\/|\\)(node_modules)(\/|\\)/</span><br><span class="line">        &#125;)</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/coding/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/02/coding/" itemprop="url">coding</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-02T13:02:23+08:00">
+                2020-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h1><h2 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h2><p>文件（目录）名全部使用小写字母和连词线（all-lowercase-with-dashes）<br>单个.js 文件可以用驼峰<br>首字母一定要小写*<br><a href="https://www.ruanyifeng.com/blog/2017/02/filename-should-be-lowercase.html" target="_blank" rel="noopener">阮一峰</a></p>
+<h3 id="可移植性"><a href="#可移植性" class="headerlink" title="可移植性"></a>可移植性</h3><ul>
+<li>Linux系统大小写敏感</li>
+<li>Windows系统和Mac系统，大小写不敏感</li>
+</ul>
+<h3 id="易读性"><a href="#易读性" class="headerlink" title="易读性"></a>易读性</h3><p>小写文件名通常比大写文件名更易读，比如<code>accessibility.txt</code>就比<code>ACCESSIBILITY.TXT</code>易读。</p>
+<h3 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h3><p>系统文件 大写<br>用户文件 小写</p>
+<h3 id="便捷性"><a href="#便捷性" class="headerlink" title="便捷性"></a>便捷性</h3><p>文件名全部小写，还有利于命令行操作。比如，某些命令可以不使用<code>-i</code>参数了</p>
+
+          
         
       
     </div>
@@ -2077,7 +1747,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2127,7 +1797,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2138,7 +1808,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2149,7 +1819,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

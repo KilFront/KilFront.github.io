@@ -1,3 +1,11 @@
+.custom_red {
+  background-color: #fff5f5;
+  color: #ff502c;
+  padding: 0.065em 0.4em;
+  border-radius: 2px;
+  word-break: break-word;
+  overflow-x: auto;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -514,14 +522,11 @@ pre code {
 }
 .highlight {
   border-radius: 1px;
-  margin: 0;
 }
 .highlight pre {
   border: none;
   margin: 0;
   padding: 10px 0;
-  padding-top: 40px;
-  background-color: #2d2d2d;
 }
 .highlight table {
   margin: 0;
@@ -558,6 +563,7 @@ pre code {
   padding-right: 10px;
   color: #999;
   text-align: right;
+  background-color: #1b1b1b;
 }
 .highlight .code pre {
   width: 100%;
@@ -1825,7 +1831,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #574d79;
+  background: #08ff45;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3044,55 +3050,4 @@ span.ib_yellow {
   vertical-align: baseline;
   border-radius: 0;
   background-color: #f0ad4e;
-}
-.highlight-wrap[data-rel] {
-  position: relative;
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px 0px rgba(0,0,0,0.4);
-  margin: 35px 0;
-}
-.highlight-wrap[data-rel] ::-webkit-scrollbar {
-  height: 10px;
-}
-.highlight-wrap[data-rel] ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  border-radius: 10px;
-}
-.highlight-wrap[data-rel] ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-.highlight-wrap[data-rel]::before {
-  color: #fff;
-  content: attr(data-rel);
-  height: 38px;
-  line-height: 38px;
-  background: #21252b;
-  color: #fff;
-  font-size: 16px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
-  padding: 0px 80px;
-  text-indent: 15px;
-  float: left;
-}
-.highlight-wrap[data-rel]::after {
-  content: ' ';
-  position: absolute;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  background: #fc625d;
-  width: 12px;
-  height: 12px;
-  top: 0;
-  left: 20px;
-  margin-top: 13px;
-  -webkit-box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
-  box-shadow: 20px 0px #fdbc40, 40px 0px #35cd4b;
-  z-index: 3;
 }

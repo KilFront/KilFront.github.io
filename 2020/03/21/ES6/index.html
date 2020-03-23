@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ES6," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="介绍历史ECMAScript 和 JavaScript 关系 ECMA是标准，JS是实现 类似于HTML5是标准，IE10、Chrome、FF都是实现 换句话说，将来也能有其他XXXScript来实现ECMA   ECMAScript简称ECMA或ES 目前版本 低级浏览器主要支持ES 3.1 高级浏览器正在从ES 5过渡到ES 6    历史版本   时间 ECMA 解释     2015.06">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6">
+<meta property="og:url" content="http://yoursite.com/2020/03/21/ES6/index.html">
+<meta property="og:site_name" content="Kil Notes">
+<meta property="og:description" content="介绍历史ECMAScript 和 JavaScript 关系 ECMA是标准，JS是实现 类似于HTML5是标准，IE10、Chrome、FF都是实现 换句话说，将来也能有其他XXXScript来实现ECMA   ECMAScript简称ECMA或ES 目前版本 低级浏览器主要支持ES 3.1 高级浏览器正在从ES 5过渡到ES 6    历史版本   时间 ECMA 解释     2015.06">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-23T01:31:48.671Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6">
+<meta name="twitter:description" content="介绍历史ECMAScript 和 JavaScript 关系 ECMA是标准，JS是实现 类似于HTML5是标准，IE10、Chrome、FF都是实现 换句话说，将来也能有其他XXXScript来实现ECMA   ECMAScript简称ECMA或ES 目前版本 低级浏览器主要支持ES 3.1 高级浏览器正在从ES 5过渡到ES 6    历史版本   时间 ECMA 解释     2015.06">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/21/ES6/"/>
+
+
+
+
+
+  <title>ES6 | Kil Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kil Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/21/ES6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-21T12:30:39+08:00">
+                2020-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ECMAScript/" itemprop="url" rel="index">
+                    <span itemprop="name">ECMAScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><h3 id="ECMAScript-和-JavaScript-关系"><a href="#ECMAScript-和-JavaScript-关系" class="headerlink" title="ECMAScript 和 JavaScript 关系"></a>ECMAScript 和 JavaScript 关系</h3><ul>
+<li>ECMA是标准，JS是实现<ul>
+<li>类似于HTML5是标准，IE10、Chrome、FF都是实现</li>
+<li>换句话说，将来也能有其他XXXScript来实现ECMA</li>
+</ul>
+</li>
+<li>ECMAScript简称<strong>ECMA或ES</strong></li>
+<li>目前版本<ul>
+<li>低级浏览器主要支持ES 3.1</li>
+<li>高级浏览器正在从ES 5过渡到ES 6</li>
+</ul>
+</li>
+</ul>
+<h3 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h3><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>ECMA</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015.06</td>
+<td>ES 6.0</td>
+<td>ES 6.0预计发布正式版；JavaScript.next开始指向ES 7.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="JS历史"><a href="#JS历史" class="headerlink" title="JS历史"></a>JS历史</h3><p>JS是艾奇仅仅10天时间设计出的原型<br>语音必有迭代的过程，它总有一些自己的问题</p>
+<p>Java是世界上最流行的语言，没有之一。原因是：非常严谨、死板<br>开心的语言，不严谨，无法开发大型项目</p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>ES6 推出来的时候，各路浏览器已经出来了，没法兼容所有的浏览器<br><a href="http://kangax.github.io/compat-table/es6/" target="_blank" rel="noopener"><strong>ES6兼容性查看表</strong></a></p>
+<p>ES6(ES2015)兼容情况<br>IE10+、Chrome、FireFox、</p>
+<p>编译、转换（bable）</p>
+<ul>
+<li>在线转换</li>
+<li>提前编译</li>
+</ul>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="generator"><a href="#generator" class="headerlink" title="generator"></a>generator</h2><h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h1 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h1><h2 id="ES5-变量问题"><a href="#ES5-变量问题" class="headerlink" title="ES5 变量问题"></a>ES5 变量问题</h2><p>1、可以重复声明：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2、无法限制修改</span></span><br><span class="line"><span class="string">PI = 3.1415926</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3、没有块级作用域</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 新增变量声明</span></span><br><span class="line"><span class="string">let   不能重复声明，变量-可以修改，块级作用域</span></span><br><span class="line"><span class="string">const  不能重复声明，常量-不能修改，块级作用域</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 块级作用域有什么</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> js</span><br><span class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮1"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮2"</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮3"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> aBtn = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i&lt;aBtn.length; i++) &#123;</span><br><span class="line">    aBtn[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(i); <span class="comment">// 点击三个按钮都是 3</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 以前解决这个问题，创建一个封闭空间，封在里面; 利用函数作为作用域,垫一层</span></span><br><span class="line">  <span class="comment">// <span class="doctag">TODO:</span> 不理解去看原生JS教程</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">    aBtn[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(i); <span class="comment">// 点击三个按钮 0 , 1 , 2</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(i);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 现在用ES6</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i&lt;aBtn.length; i++) &#123;</span><br><span class="line">    aBtn[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(i); <span class="comment">// 点击三个按钮 0 , 1 , 2</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h1><h2 id="新增箭头函数"><a href="#新增箭头函数" class="headerlink" title="新增箭头函数"></a>新增箭头函数</h2><p>借鉴python lambda<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 名字(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">() =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>1、如果只有一个参数，（）可以省<br>2、如果只有一个return，{} 可以省</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> show = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> show = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="圆括号可以省略"><a href="#圆括号可以省略" class="headerlink" title="圆括号可以省略"></a>圆括号可以省略</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> show = <span class="function"><span class="params">a</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a*<span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="花括号可以省略"><a href="#花括号可以省略" class="headerlink" title="花括号可以省略"></a>花括号可以省略</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> show = <span class="function"><span class="params">a</span>=&gt;</span> a*<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><h3 id="参数扩展-数组展开"><a href="#参数扩展-数组展开" class="headerlink" title="参数扩展/数组展开"></a>参数扩展/数组展开</h3><p>1、收集剩余的参数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">a, b, ...args</span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">show(<span class="number">3</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>*Rest Parameter必须是最后一个</li>
+</ul>
+<p>2、展开数组<br>   展开后的效果，跟直接把数组的内容写在这儿一样<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">let</span> arr = [...a, ...b] <span class="comment">// [1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">a, b=<span class="number">1</span>, c=<span class="number">3</span></span>)</span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>1、左右两边结构必须一样<br>2、右边必须是个东西<br>3、声明和赋值不能分开（必须在一句话里完成）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> a = arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">let</span> b = arr[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解构赋值</span></span><br><span class="line"><span class="comment">// 数组</span></span><br><span class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象</span></span><br><span class="line"><span class="keyword">let</span> &#123;a, b, c&#125; = &#123;<span class="attr">a</span>: <span class="number">2</span>, <span class="attr">b</span>: <span class="number">3</span>, <span class="attr">c</span>:<span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="数组-1"><a href="#数组-1" class="headerlink" title="数组"></a>数组</h1><h2 id="map-映射"><a href="#map-映射" class="headerlink" title="map 映射"></a>map 映射</h2><p>一个对一个<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = arr.map(<span class="function"><span class="params">item</span> =&gt;</span> item*<span class="number">2</span>);</span><br><span class="line">result <span class="comment">// [6, 8, 12]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 成绩</span></span><br><span class="line"><span class="keyword">let</span> score = [<span class="number">23</span>, <span class="number">34</span>, <span class="number">99</span>, <span class="number">22</span>, <span class="number">44</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = score.map(<span class="function"><span class="params">item</span> =&gt;</span> item&gt;=<span class="number">60</span>?<span class="string">'及格'</span>:<span class="string">'不及格'</span>);</span><br><span class="line">score <span class="comment">//[23, 34, 99, 22, 44]</span></span><br><span class="line">result <span class="comment">//[不及格，不及格，及格，不及格，不及格]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="reduce-汇总"><a href="#reduce-汇总" class="headerlink" title="reduce 汇总"></a>reduce 汇总</h2><p>一堆出来一个<br>求和，求平均数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">12</span>, <span class="number">68</span>, <span class="number">190</span>, <span class="number">390</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">tmp, item, index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (index!=arr.length<span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> tmp + item;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (tmp + item)/arr.length;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="filter-过滤器"><a href="#filter-过滤器" class="headerlink" title="filter 过滤器"></a>filter 过滤器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">99</span>, <span class="number">36</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (item%<span class="number">3</span> == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">result <span class="comment">// 12, 99, 36</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line"><span class="keyword">let</span> result = arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> item%<span class="number">3</span> == <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="forEach-迭代"><a href="#forEach-迭代" class="headerlink" title="forEach 迭代"></a>forEach 迭代</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</span><br><span class="line"></span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index + <span class="string">':'</span> + item);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h1><h2 id="多了两个新方法"><a href="#多了两个新方法" class="headerlink" title="多了两个新方法"></a>多了两个新方法</h2><p><code>startsWith</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'htts://www.google.com'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (str.startsWith(<span class="string">'http://'</span>)) &#123;</span><br><span class="line">  alert(<span class="string">'普通网址'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(str.startsWith(<span class="string">'htts://'</span>)) &#123;</span><br><span class="line">  alert(<span class="string">'加密网址'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">'其他'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>endsWith</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'1.txt'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (str.endsWith(<span class="string">'.txt'</span>)) &#123;</span><br><span class="line">  alert(<span class="string">'文本文件'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (str.endsWith(<span class="string">'.jpg'</span>)) &#123;</span><br><span class="line">  alert(<span class="string">'JPG图片'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">'其他'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h2><p>` 反单引号<br>1、直接把变量塞到字符串里面  ${变量}<br>2、可以折行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> srt = <span class="string">'&lt;div&gt;\</span></span><br><span class="line"><span class="string">  &lt;h1&gt;'</span> + title + <span class="string">'&lt;/h1&gt;\</span></span><br><span class="line"><span class="string">  &lt;/div&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str2 = <span class="string">`&lt;div&gt;</span></span><br><span class="line"><span class="string">  &lt;h1&gt;<span class="subst">$&#123;titel&#125;</span>&lt;/h1&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;`</span>;  </span><br><span class="line"><span class="string">``</span><span class="string">`        </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 面向对象</span></span><br><span class="line"><span class="string">## ES4, ES5 写法</span></span><br><span class="line"><span class="string">1、类 和 构造函数 不分的...</span></span><br><span class="line"><span class="string">2、类 散开了</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> js</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">name, pass</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.pass = pass;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">User.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">User.prototype.showPass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.pass);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> u1 = <span class="keyword">new</span> User(<span class="string">'kil'</span>, <span class="number">123456</span>);</span><br><span class="line">u1.showName();</span><br><span class="line">u2.showPass();</span><br></pre></td></tr></table></figure></p>
+<h2 id="ES6-写法"><a href="#ES6-写法" class="headerlink" title="ES6 写法"></a>ES6 写法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, pass) &#123; <span class="comment">// 构造函数 或着 构造器</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.pass = pass;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showName() &#123;  <span class="comment">// 注意：此处写的是class，不是json 。json的话，showName： function()&#123;&#125;</span></span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">  showPass() &#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.pass);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1、<code>class</code>关键字，专门的构造器<br>2、class里面直接加方法</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>归根到底，最有价值的<br>面向对象：我可以不断完善我的东西，增加功能<br>站在前人的肩膀上，才能走得越来越远。人类社会就是这么发展的。<br>继承一个已有的类，来扩展它的功能。</p>
+<h3 id="ES4-ES5写法"><a href="#ES4-ES5写法" class="headerlink" title="ES4, ES5写法"></a>ES4, ES5写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">VipUser</span>(<span class="params">name, pass, level</span>) </span>&#123;</span><br><span class="line">  User.call(<span class="keyword">this</span>, name, pass);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.level = level;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">VipUser.prototype = <span class="keyword">new</span> User();</span><br><span class="line">VipUser.prototype.constructor = VipUser;</span><br><span class="line"></span><br><span class="line">VipUser.prototype.showLevel = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.level);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> v1 = <span class="keyword">new</span> VipUser(<span class="string">'kil'</span>, <span class="string">'123456'</span>, <span class="number">3</span>);</span><br><span class="line">v1.showName();</span><br><span class="line">v1.showPass();</span><br><span class="line">V1.showLevel();</span><br></pre></td></tr></table></figure>
+<h3 id="ES6写法"><a href="#ES6写法" class="headerlink" title="ES6写法"></a>ES6写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VipUser</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, pass, level) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name, pass);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.level = level;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showLevel() &#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.level);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/18/名词/" rel="next" title="名词">
+                <i class="fa fa-chevron-left"></i> 名词
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/22/JavaScript/" rel="prev" title="JavaScript">
+                JavaScript <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/avatar/pazu.jpg"
+                alt="kil" />
+            
+              <p class="site-author-name" itemprop="name">kil</p>
+              <p class="site-description motion-element" itemprop="description">潜心修行，任重道远</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kilfront" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaifaweb@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-number">1.1.</span> <span class="nav-text">历史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript-和-JavaScript-关系"><span class="nav-number">1.1.1.</span> <span class="nav-text">ECMAScript 和 JavaScript 关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史版本"><span class="nav-number">1.1.2.</span> <span class="nav-text">历史版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS历史"><span class="nav-number">1.1.3.</span> <span class="nav-text">JS历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容性"><span class="nav-number">1.2.</span> <span class="nav-text">兼容性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">2.2.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">2.3.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">2.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">2.5.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">2.6.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generator"><span class="nav-number">2.7.</span> <span class="nav-text">generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">2.8.</span> <span class="nav-text">模块化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量-1"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES5-变量问题"><span class="nav-number">3.1.</span> <span class="nav-text">ES5 变量问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数-1"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新增箭头函数"><span class="nav-number">4.1.</span> <span class="nav-text">新增箭头函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#圆括号可以省略"><span class="nav-number">4.1.1.</span> <span class="nav-text">圆括号可以省略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#花括号可以省略"><span class="nav-number">4.1.2.</span> <span class="nav-text">花括号可以省略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数参数"><span class="nav-number">4.2.</span> <span class="nav-text">函数参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数扩展-数组展开"><span class="nav-number">4.2.1.</span> <span class="nav-text">参数扩展/数组展开</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认参数"><span class="nav-number">4.3.</span> <span class="nav-text">默认参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解构赋值"><span class="nav-number">5.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组-1"><span class="nav-number">6.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#map-映射"><span class="nav-number">6.1.</span> <span class="nav-text">map 映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduce-汇总"><span class="nav-number">6.2.</span> <span class="nav-text">reduce 汇总</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter-过滤器"><span class="nav-number">6.3.</span> <span class="nav-text">filter 过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEach-迭代"><span class="nav-number">6.4.</span> <span class="nav-text">forEach 迭代</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串-1"><span class="nav-number">7.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多了两个新方法"><span class="nav-number">7.1.</span> <span class="nav-text">多了两个新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串模板"><span class="nav-number">7.2.</span> <span class="nav-text">字符串模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-写法"><span class="nav-number">7.3.</span> <span class="nav-text">ES6 写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">7.4.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES4-ES5写法"><span class="nav-number">7.4.1.</span> <span class="nav-text">ES4, ES5写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6写法"><span class="nav-number">7.4.2.</span> <span class="nav-text">ES6写法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kil</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
