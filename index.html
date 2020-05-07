@@ -252,6 +252,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/20/HTML/" itemprop="url">HTML</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-20T14:33:13+08:00">
+                2020-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h1><p>相对路径：<br>..\windows\system32\cmd.exe</p>
+<p>绝对路径：<br>C:\windows\system32\cmd.exe</p>
+<p>./ 当前目录<br>../ 父级目录<br>/ 根目录</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/15/vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -353,7 +497,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-dialog</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:visible</span>=<span class="string">"dialogVisible"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">update:visible</span>=<span class="string">"newVisible =&gt; dialogVisible = newVisible"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://juejin.im/post/5aaa9eabf265da237b21d36a" target="_blank" rel="noopener">第三第四种双向绑定</a></p>
 <h1 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h1><p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
-<p>Vuex 可以帮助我们管理共享状态，并附带了更多的概念和框架。这需要对短期和长期效益进行权衡。<br>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store 模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</p>
+<p>Vuex 可以帮助我们管理共享状态，并附带了更多的概念和框架。这需要对短期和长期效益进行权衡。<br>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store （仓库）模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</p>
 <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>在<code>main.js</code>中加入<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(vuex);</span><br><span class="line"><span class="keyword">var</span> store = <span class="keyword">new</span> vuex.Store(&#123;<span class="comment">//store对象</span></span><br><span class="line">    state:&#123;</span><br><span class="line">        show:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store, <span class="comment">//添加 使用store</span></span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>使用<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; $store.state.show &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h2><p>前面为了方便 , 我们把 store 对象写在了 main.js 里面 , 但实际上为了便于日后的维护 , 我们分开写更好 , 我们在 src 目录下 , 新建一个 store 文件夹 , 然后在里面新建一个 index.js :<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(vuex);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> vuex.Store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        show:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
@@ -525,6 +669,7 @@
           
             <h1 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h1><p><code><img src="/2020/04/10/Error/get_parame.png"></code></p>
 <p>原因：方法上面没有属性 getUserToken().parame</p>
+<h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><h2 id="sass-loader"><a href="#sass-loader" class="headerlink" title="sass-loader"></a>sass-loader</h2><p>Module build failed: TypeError: this.getResolve is not a function<br>sass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1</p>
 
           
         
@@ -1662,163 +1807,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/H5是什么？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/11/H5是什么？/" itemprop="url">H5是什么？</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-11T13:45:47+08:00">
-                2020-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>先科普一下，HTML5并不是一项技术，而是一个标准。<br>标准的意思就是：学生准则手册。你可以按照准则做，甚至可以超出准则更加严格的要求自己，也可以不按照准则来，但是会被老师训斥小伙伴讨厌，别人都不找你玩，就像IE6一样。</p>
-<p>那HTML5这些标准浏览器厂商到底姿持不姿持呢？这要看他们各自的尿性了。像chrome这种不仅在很多标准上支持的非常好，还积极上进很多地方超出了标准，支持一些标准中还是草案的部分。</p>
-<p>所以其实要么我们是作为理论派讨论HTML5标准，要么是作为实践派讨论HTML5标准在某浏览器的应用。但是实际上我们在说到H5的时候，并不是指标准，也不是指标准的应用，而是一个硬生生造出来的奇怪概念合集，所以我是旗帜鲜明的反对这个称呼的。</p>
-<p>最近一年的时间，我主要靠这个东西养家（并没有家）糊口。所以我是懂得甲方打电话过来询问，“你是不是会做H5开发？”的时候，我知道他们要的是那种可以在朋友圈分享的，看起来很酷炫的小页面，他们实际要的东西拆开来看大概包括以下技术点;</p>
-<ol>
-<li>页面素材预加载技术，可以使用createJS之中的preloadJS。我没有看preloadJS的源码，不过预加载并不是HTML5标准中更新的方法。</li>
-<li>音乐加载播放技术，createJS中同样有soundJS可以实现，而且这部分说起来确实是HTML5标准支持的内容，在上个时代并没有audio这样的标签。<br>3.可以滑动的页面，大多数是用了swiper.js这个Jquery插件，也有一些是手写的swipe，比较拙劣的手写版页面是不会跟手滑动的，其中touchstart等四个touch系列的事件是HTML5标准中的事件<br>4.可以涂抹擦除，多半是canvas叠加层，canvas是HTML5标准里面的标签，是代表了先进生产力的标签。<br>5.有动态的文字和图片，常见的是使用了css3或者直接使用js动画。很多时候提到HTML5多半还会带上CSS3，而CSS的分级又是另外的一个问题了，在不同的项目标准上，CSS会独立定级，以后应该不会有CSS4这个东西，所以大家也不用担心在H5以后又冒出来了C4（不过真是想用C4炸死那些每天把H5挂在嘴上的人）<br>6.可以填表报名，这是最基本的表单，是有网页以来就有的东西。<br>7.可以支持分享自定义的文案和图片，这个是用到了微信的jssdk，和HTML标准半毛钱关系都没有。<br>8.还有其他我想起来再补充的。</li>
-</ol>
-<p>所以我们在谈论H5的时候，实际上是一个解决方案，一个看起来酷炫的移动端onepage网站的解决方案。而这个解决方案不仅包含了HTML5新增的audio标签，canvas，拖拽特性，本地存储，websocket通信，同时也包括了盒模型，包括绝对定位，包括一切前端的基本知识。</p>
-<p>有学弟来问我说，学长我想学H5，应该从哪里开始？<br>我说HTML5新增特性在W3C上都可以查得到的。<br>学弟说，不，我想学的是H5，想做H5的页面。<br>于是我猜测他所指的就是上面论述的这种酷炫小页面，我就说，那你要先学习HTML，包括HTML5的新标准和之前的全部标准，然后学CSS以及CSS3，了解它们在浏览器的实现情况，原生JS了解一点就可以，大多的操作可以用Jquery，了解常用的几个Jquery插件的用法，应该就差不多了。如果想要做更酷炫的的，学一下egret或者cocos2d更好。如果要优化加载速度，还要学一下grunt一类的自动化工具。微信的sdk有很多坑，至少nodejs或者php一类的后端语言要会一点。</p>
-<p>学弟说，那这不就是前端了么？我只是想学H5啊。</p>
-<p>所以你看，当我们对一个概念的内涵无法统一的时候，我们根本不知道彼此之间在谈论的是什么。</p>
-<p>”H5“本应是一个技术合集，却被意会成了一项技术，变成可以在质上而不是量上描述的概念。</p>
-<p>对于营销来说，我们只要讲我们可以做H5或者不能做，这种定性的描述就够了。但是对于技术上，这是定量的事情，只能在具体某个技术项上是否，无法对这个本不存在的概念说是否。</p>
-<p>就比如我遇到过有甲方说，我们之前找了一个人做H5，做的还不错，但是这个case他又说做不了，我也搞不懂H5和H5之间也有那么大差别吗？我只能笑笑和他说，世界这么大，各种各样的H5都是有的。</p>
-<p>这就是为什么我反对H5，因为这个名词和它表示的内涵是严重不符的，这让我们难以沟通，让营销人和技术人之间产生误解，让浑水摸鱼的培训师们赚的盆满钵满，让技术新人不踏踏实实的学习技术。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1873,7 +1861,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1884,7 +1872,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1895,7 +1883,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

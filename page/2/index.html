@@ -252,6 +252,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/H5是什么？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/11/H5是什么？/" itemprop="url">H5是什么？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-11T13:45:47+08:00">
+                2020-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>先科普一下，HTML5并不是一项技术，而是一个标准。<br>标准的意思就是：学生准则手册。你可以按照准则做，甚至可以超出准则更加严格的要求自己，也可以不按照准则来，但是会被老师训斥小伙伴讨厌，别人都不找你玩，就像IE6一样。</p>
+<p>那HTML5这些标准浏览器厂商到底姿持不姿持呢？这要看他们各自的尿性了。像chrome这种不仅在很多标准上支持的非常好，还积极上进很多地方超出了标准，支持一些标准中还是草案的部分。</p>
+<p>所以其实要么我们是作为理论派讨论HTML5标准，要么是作为实践派讨论HTML5标准在某浏览器的应用。但是实际上我们在说到H5的时候，并不是指标准，也不是指标准的应用，而是一个硬生生造出来的奇怪概念合集，所以我是旗帜鲜明的反对这个称呼的。</p>
+<p>最近一年的时间，我主要靠这个东西养家（并没有家）糊口。所以我是懂得甲方打电话过来询问，“你是不是会做H5开发？”的时候，我知道他们要的是那种可以在朋友圈分享的，看起来很酷炫的小页面，他们实际要的东西拆开来看大概包括以下技术点;</p>
+<ol>
+<li>页面素材预加载技术，可以使用createJS之中的preloadJS。我没有看preloadJS的源码，不过预加载并不是HTML5标准中更新的方法。</li>
+<li>音乐加载播放技术，createJS中同样有soundJS可以实现，而且这部分说起来确实是HTML5标准支持的内容，在上个时代并没有audio这样的标签。<br>3.可以滑动的页面，大多数是用了swiper.js这个Jquery插件，也有一些是手写的swipe，比较拙劣的手写版页面是不会跟手滑动的，其中touchstart等四个touch系列的事件是HTML5标准中的事件<br>4.可以涂抹擦除，多半是canvas叠加层，canvas是HTML5标准里面的标签，是代表了先进生产力的标签。<br>5.有动态的文字和图片，常见的是使用了css3或者直接使用js动画。很多时候提到HTML5多半还会带上CSS3，而CSS的分级又是另外的一个问题了，在不同的项目标准上，CSS会独立定级，以后应该不会有CSS4这个东西，所以大家也不用担心在H5以后又冒出来了C4（不过真是想用C4炸死那些每天把H5挂在嘴上的人）<br>6.可以填表报名，这是最基本的表单，是有网页以来就有的东西。<br>7.可以支持分享自定义的文案和图片，这个是用到了微信的jssdk，和HTML标准半毛钱关系都没有。<br>8.还有其他我想起来再补充的。</li>
+</ol>
+<p>所以我们在谈论H5的时候，实际上是一个解决方案，一个看起来酷炫的移动端onepage网站的解决方案。而这个解决方案不仅包含了HTML5新增的audio标签，canvas，拖拽特性，本地存储，websocket通信，同时也包括了盒模型，包括绝对定位，包括一切前端的基本知识。</p>
+<p>有学弟来问我说，学长我想学H5，应该从哪里开始？<br>我说HTML5新增特性在W3C上都可以查得到的。<br>学弟说，不，我想学的是H5，想做H5的页面。<br>于是我猜测他所指的就是上面论述的这种酷炫小页面，我就说，那你要先学习HTML，包括HTML5的新标准和之前的全部标准，然后学CSS以及CSS3，了解它们在浏览器的实现情况，原生JS了解一点就可以，大多的操作可以用Jquery，了解常用的几个Jquery插件的用法，应该就差不多了。如果想要做更酷炫的的，学一下egret或者cocos2d更好。如果要优化加载速度，还要学一下grunt一类的自动化工具。微信的sdk有很多坑，至少nodejs或者php一类的后端语言要会一点。</p>
+<p>学弟说，那这不就是前端了么？我只是想学H5啊。</p>
+<p>所以你看，当我们对一个概念的内涵无法统一的时候，我们根本不知道彼此之间在谈论的是什么。</p>
+<p>”H5“本应是一个技术合集，却被意会成了一项技术，变成可以在质上而不是量上描述的概念。</p>
+<p>对于营销来说，我们只要讲我们可以做H5或者不能做，这种定性的描述就够了。但是对于技术上，这是定量的事情，只能在具体某个技术项上是否，无法对这个本不存在的概念说是否。</p>
+<p>就比如我遇到过有甲方说，我们之前找了一个人做H5，做的还不错，但是这个case他又说做不了，我也搞不懂H5和H5之间也有那么大差别吗？我只能笑笑和他说，世界这么大，各种各样的H5都是有的。</p>
+<p>这就是为什么我反对H5，因为这个名词和它表示的内涵是严重不符的，这让我们难以沟通，让营销人和技术人之间产生误解，让浑水摸鱼的培训师们赚的盆满钵满，让技术新人不踏踏实实的学习技术。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/跨平台框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -637,9 +794,13 @@
 <h2 id="无序列表样式"><a href="#无序列表样式" class="headerlink" title="无序列表样式"></a>无序列表样式</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/list-style" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/list-style</a></p>
 <h2 id="placeholder-颜色"><a href="#placeholder-颜色" class="headerlink" title="placeholder 颜色"></a>placeholder 颜色</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line">  &amp;::-webkit-input-placeholder &#123;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">red</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;<span class="selector-pseudo">::-moz-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;<span class="selector-pseudo">::-ms-input-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="背景色透明"><a href="#背景色透明" class="headerlink" title="背景色透明"></a>背景色透明</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-color</span>: <span class="selector-tag">transparent</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="背景色渐变"><a href="#背景色渐变" class="headerlink" title="背景色渐变"></a>背景色渐变</h2><p>linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片</p>
+<p><gradient> 是一种<image>CSS数据类型的子类型，用于表现两种或多种颜色的过渡转变。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-id">#e66465</span>, <span class="selector-id">#9198e5</span>);</span><br></pre></td></tr></table></figure></image></gradient></p>
 <h2 id="移动端input-内阴影"><a href="#移动端input-内阴影" class="headerlink" title="移动端input 内阴影"></a>移动端input 内阴影</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span>,</span><br><span class="line"><span class="selector-tag">textarea</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">0</span>; <span class="comment">/* 方法1 */</span></span><br><span class="line">  <span class="attribute">-webkit-appearance</span>: none; <span class="comment">/* 方法2 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size</a></p>
 <h2 id="列表最后一项去除margin-right"><a href="#列表最后一项去除margin-right" class="headerlink" title="列表最后一项去除margin-right"></a>列表最后一项去除margin-right</h2><p>不用给item再加类名，item-right, 再加样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;<span class="selector-pseudo">:nth-child(4n)</span> &#123;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="css-盒子模型"><a href="#css-盒子模型" class="headerlink" title="css 盒子模型"></a>css 盒子模型</h2><p>border-box<br>width = border + padding + 内容的宽度</p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>transition: all .3s linear</p>
 <h1 id="适配"><a href="#适配" class="headerlink" title="适配"></a>适配</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">css</span>: &#123;</span><br><span class="line">  <span class="attribute">loaderOptions</span>: &#123;</span><br><span class="line">    postcss: &#123;</span><br><span class="line">      plugins: [</span><br><span class="line">        <span class="built_in">require</span>(<span class="string">'postcss-px-to-viewport'</span>)(&#123;</span><br><span class="line">          unitToConvert: <span class="string">'px'</span>,</span><br><span class="line">          viewportWidth: 750,</span><br><span class="line">          unitPrecision: 3,</span><br><span class="line">          propList: [<span class="string">'*'</span>],</span><br><span class="line">          viewportUnit: <span class="string">'vw'</span>,</span><br><span class="line">          fontViewportUnit: <span class="string">'vw'</span>,</span><br><span class="line">          selectorBlackList: [],</span><br><span class="line">          minPixelValue: 1,</span><br><span class="line">          mediaQuery: false,</span><br><span class="line">          replace: true,</span><br><span class="line">          exclude: /(\/|\\)(node_modules)(\/|\\)/</span><br><span class="line">        &#125;)</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="input-问题"><a href="#input-问题" class="headerlink" title="input 问题"></a>input 问题</h2><p>ios 光标变大<br>原因：</p>
 <ul>
@@ -648,6 +809,76 @@
 </ul>
 <p>方法：<br>设置字体大小和行高一致，然后通过 padding 撑开大小</p>
 <p>ios placeholder 位置偏上<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="css3-动画"><a href="#css3-动画" class="headerlink" title="css3 动画"></a>css3 动画</h1><h2 id="transition-过渡"><a href="#transition-过渡" class="headerlink" title="transition 过渡"></a>transition 过渡</h2><p>石器时代<br>在 CSS3 出现之前，网页上的动画都是靠 JavaScript 来实现的，在这个时代，你可能会经常看见这样的代码片段：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> timeout = setTimeout(test, <span class="number">2000</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>).style.opacity += <span class="number">0.1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>css3时代<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">1s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>过渡是css3中颠覆性特征之一，可以不用Flash动画或JavaScript，当元素从一种样式变换为另一种样式时为元素添加效果</p>
+<p>过渡动画：是从一个状态 渐渐的过渡到另一个状态</p>
+<ul>
+<li>经常与<code>:hover</code>一起 搭配使用</li>
+<li>如果要过渡多个属性，用逗号分割</li>
+</ul>
+<p>四个属性 （后两个可以省略）</p>
+<h3 id="transition-property-过渡属性"><a href="#transition-property-过渡属性" class="headerlink" title="transition-property 过渡属性"></a>transition-property 过渡属性</h3><p>需要过度的 数字量化的 css属性</p>
+<p>颜色系，如color，background-color，border-color，outline-color等</p>
+<p>数字系，实在太多了，如width，height，top，right，bottom，left，zoom，opacity，line-height，background-position，word-spacing，font-weight，vertical-align，outline-outset，z-index等。</p>
+<p>01系，如visibility（0表示隐藏，1表示显示）</p>
+<p>如果要所有的属性都过渡，写：all</p>
+<p>使用过渡口诀：谁做过渡给谁加</p>
+<h3 id="transition-duration-延时时间，花费时间"><a href="#transition-duration-延时时间，花费时间" class="headerlink" title="transition-duration 延时时间，花费时间"></a>transition-duration 延时时间，花费时间</h3><p>过渡需要的时间，单位可指定s秒。默认是0, 表示立刻变化</p>
+<h3 id="transition-timing-function-过渡方法，运动曲线"><a href="#transition-timing-function-过渡方法，运动曲线" class="headerlink" title="transition-timing-function 过渡方法，运动曲线"></a>transition-timing-function 过渡方法，运动曲线</h3><p><code><img src="/2020/03/06/css/timing-function.png"></code><br>看贝赛尔曲线就知道了，linear是匀速过渡，ease是先快再慢的节奏，ease-in是加速冲刺的节奏，ease-out是减速到停止的节奏，ease-in-out是先加速后减速的节奏。</p>
+<h3 id="transition-delay-过渡延迟，何时开始"><a href="#transition-delay-过渡延迟，何时开始" class="headerlink" title="transition-delay 过渡延迟，何时开始"></a>transition-delay 过渡延迟，何时开始</h3><p>延迟开始过渡的时间，默认值是0，表示不延迟，立即开始过渡动作。单位是s秒或ms毫秒。</p>
+<h3 id="eg"><a href="#eg" class="headerlink" title="eg"></a>eg</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background</span>: blue;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">1s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="transform-转型，变形"><a href="#transform-转型，变形" class="headerlink" title="transform 转型，变形"></a>transform 转型，变形</h2><p>transform本质上是一系列变形函数，分别是translate位移，scale缩放，rotate旋转，skew扭曲，matrix矩阵。</p>
+<p>我们应该都知道二八法则(巴莱多定律)，即任何一组东西中，最重要的只占其中一小部分，约20%，其余80%的尽管是多数，却是次要的。如果你有上述的感觉，那你就属于那80%, 一抓一大把，没有特色的页面仔。</p>
+<h3 id="translate-平移"><a href="#translate-平移" class="headerlink" title="translate 平移"></a>translate 平移</h3><p>设置元素在 X轴或者 Y轴上的平移变换</p>
+<h3 id="scale-缩放"><a href="#scale-缩放" class="headerlink" title="scale 缩放"></a>scale 缩放</h3><p>/<em> 等同于变换: scaleX(2) scaleY(2);</em>/<br>transform: scale(2);</p>
+<h3 id="rotate-旋转"><a href="#rotate-旋转" class="headerlink" title="rotate 旋转"></a>rotate 旋转</h3><p>transform: rotate(45deg); 顺时针旋转 45度</p>
+<h3 id="skew-倾斜"><a href="#skew-倾斜" class="headerlink" title="skew 倾斜"></a>skew 倾斜</h3><p> skew() 函数指定一个或两个参数，它们表示在每个方向上应用的倾斜量。<br>transform: skew(10deg, 10deg);</p>
+<h3 id="matrix-矩阵"><a href="#matrix-矩阵" class="headerlink" title="matrix 矩阵"></a>matrix 矩阵</h3><p>matrix(1, 2, 3, 4, 5, 6);</p>
+<h2 id="animation-动画"><a href="#animation-动画" class="headerlink" title="animation 动画"></a>animation 动画</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">用来调用@keyframes定义好的动画，与@keyframes定义的动画名称一致</td>
+</tr>
+<tr>
+<td style="text-align:left">duration</td>
+<td style="text-align:left">指定元素播放动画所持续的时间，默认 0</td>
+</tr>
+<tr>
+<td style="text-align:left">timing-function</td>
+<td style="text-align:left">规定速度效果的速度曲线，默认 ease ；是针对每一个小动画所在时间范围的变换速率</td>
+</tr>
+<tr>
+<td style="text-align:left">delay</td>
+<td style="text-align:left">延迟时间, 默认0；定义在浏览器开始执行动画之前等待的时间，值整个animation执行之前等待的时间</td>
+</tr>
+<tr>
+<td style="text-align:left">iteration-count</td>
+<td style="text-align:left">定义动画的播放次数，默认 1 ; 可选具体次数或者无限(infinite)</td>
+</tr>
+<tr>
+<td style="text-align:left">direction</td>
+<td style="text-align:left">默认 normal ；设置动画播放方向：normal(按时间轴顺序),reverse(时间轴反方向运行),alternate(轮流，即来回往复进行),alternate-reverse(动画先反运行再正方向运行，并持续交替运行)</td>
+</tr>
+<tr>
+<td style="text-align:left">play-state</td>
+<td style="text-align:left">默认 running ；控制元素动画的播放状态，通过此来控制动画的暂停和继续，两个值：running(继续)，paused(暂停)</td>
+</tr>
+<tr>
+<td style="text-align:left">fill-mode</td>
+<td style="text-align:left">默认 none ；控制动画结束后，元素的样式，有四个值：none(回到动画没开始时的状态)，forwards(动画结束后动画停留在结束状态)，backwords(动画回到第一帧的状态)，both(根据animation-direction轮流应用forwards和backwards规则)，注意与iteration-count不要冲突(动画执行无限次) </td>
+</tr>
+</tbody>
+</table>
+<h3 id="animation-direction"><a href="#animation-direction" class="headerlink" title="animation-direction"></a>animation-direction</h3><p>normal<br>每个循环内动画向前循环，换言之，每个动画循环结束，动画重置到起点重新开始，这是默认属性。<br>alternate<br>动画交替反向运行，反向运行时，动画按步后退，同时，带时间功能的函数也反向，比如，ease-in 在反向时成为ease-out。计数取决于开始时是奇数迭代还是偶数迭代<br>reverse<br>反向运行动画，每周期结束动画由尾到头运行。<br>alternate-reverse<br>反向交替， 反向开始交替<br>动画第一次运行时是反向的，然后下一次是正向，后面依次循环。决定奇数次或偶数次的计数从1开始。</p>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><h2 id="进度条-transition"><a href="#进度条-transition" class="headerlink" title="进度条 transition"></a>进度条 transition</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.line-c</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f00</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">transition</span>: width <span class="number">1s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.line-c</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -797,6 +1028,7 @@
 <h3 id="易读性"><a href="#易读性" class="headerlink" title="易读性"></a>易读性</h3><p>小写文件名通常比大写文件名更易读，比如<code>accessibility.txt</code>就比<code>ACCESSIBILITY.TXT</code>易读。</p>
 <h3 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h3><p>系统文件 大写<br>用户文件 小写</p>
 <h3 id="便捷性"><a href="#便捷性" class="headerlink" title="便捷性"></a>便捷性</h3><p>文件名全部小写，还有利于命令行操作。比如，某些命令可以不使用<code>-i</code>参数了</p>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p>w400 =&gt; width: 400px;</p>
 
           
         
@@ -1787,165 +2019,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/23/WSL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/23/WSL/" itemprop="url">WSL</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-23T22:26:23+08:00">
-                2020-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><img src="/2020/02/23/WSL/seven_pc.png">
-<h2 id="安装失败"><a href="#安装失败" class="headerlink" title="安装失败"></a>安装失败</h2><p>设置子系统失败<br><img src="/2020/02/23/WSL/wsl_error1.png"><br></p>
-<p>也没有商店</p>
-<img src="/2020/02/23/WSL/wsl_win_old.png">
-<p>猜测windows企业版本问题, 重装专业版</p>
-<h2 id="安装成功"><a href="#安装成功" class="headerlink" title="安装成功"></a>安装成功</h2><h3 id="开启子系统"><a href="#开启子系统" class="headerlink" title="开启子系统"></a>开启子系统</h3><p>Windows设置主页 搜索：启用或关闭Windows功能<br>勾选</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> 适用于 Linux 的 Windows 子系统</li>
-</ul>
-<h3 id="设置开发者权限"><a href="#设置开发者权限" class="headerlink" title="设置开发者权限"></a>设置开发者权限</h3><p>Windows设置主页 搜索：开发者选项<br>勾选</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> 开发人员模式</li>
-</ul>
-<h3 id="商店下载"><a href="#商店下载" class="headerlink" title="商店下载"></a>商店下载</h3><p>商店搜索：ubuntu<br>安装第一个</p>
-<h3 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h3><p>安装插件：Remote - WSL</p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><h3 id="node环境变量配置-（安装的包-无法使用）"><a href="#node环境变量配置-（安装的包-无法使用）" class="headerlink" title="node环境变量配置 （安装的包 无法使用）"></a>node环境变量配置 （安装的包 无法使用）</h3><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ tsc</span><br><span class="line">zsh: <span class="built_in">command</span> not found: tsc</span><br></pre></td></tr></table></figure>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi ~/.zshrc</span><br><span class="line">// 添加</span><br><span class="line"><span class="built_in">export</span> NODE_HOME=/home/kil/.npm-global</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$NODE_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line">$ <span class="built_in">source</span> ~/.zshrc</span><br><span class="line">$ tsc -v</span><br><span class="line">Version 3.8.2</span><br></pre></td></tr></table></figure>
-<p>seven:<br>那你要把home目录的 node_module 加到path里<br>node_module 里应该有个bin目录<br>把那个目录加到你path里<br>你看看global的模块目录在哪<br>You can run npm list -g to see which global libraries are installed and where they’re located.<br>那你应该在 .zshrc里export<br><a href="https://askubuntu.com/questions/476246/when-i-use-zsh-how-do-i-set-path-in-etc-profile-d" target="_blank" rel="noopener">When I use ZSH, how do I set PATH in /etc/profile.d?</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2000,7 +2073,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2011,7 +2084,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2022,7 +2095,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

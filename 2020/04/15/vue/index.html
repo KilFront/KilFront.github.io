@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kil Notes">
 <meta property="og:description" content="双向绑定v-model 指令1&amp;lt;input v-model=&quot;text&quot; /&amp;gt; 上例不过是一个语法糖，展开来是： 1234&amp;lt;input  :value=&quot;text&quot;  @input=&quot;e =&amp;gt; text = e.target.value&quot;/&amp;gt; .sync 修饰符1&amp;lt;my-dialog :visible.sync=&quot;dialogVisible&quot; /&amp;gt; 这也是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-16T06:00:44.684Z">
+<meta property="og:updated_time" content="2020-04-29T02:50:33.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue">
 <meta name="twitter:description" content="双向绑定v-model 指令1&amp;lt;input v-model=&quot;text&quot; /&amp;gt; 上例不过是一个语法糖，展开来是： 1234&amp;lt;input  :value=&quot;text&quot;  @input=&quot;e =&amp;gt; text = e.target.value&quot;/&amp;gt; .sync 修饰符1&amp;lt;my-dialog :visible.sync=&quot;dialogVisible&quot; /&amp;gt; 这也是">
@@ -350,7 +350,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-dialog</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:visible</span>=<span class="string">"dialogVisible"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">update:visible</span>=<span class="string">"newVisible =&gt; dialogVisible = newVisible"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://juejin.im/post/5aaa9eabf265da237b21d36a" target="_blank" rel="noopener">第三第四种双向绑定</a></p>
 <h1 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h1><p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
-<p>Vuex 可以帮助我们管理共享状态，并附带了更多的概念和框架。这需要对短期和长期效益进行权衡。<br>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store 模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</p>
+<p>Vuex 可以帮助我们管理共享状态，并附带了更多的概念和框架。这需要对短期和长期效益进行权衡。<br>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store （仓库）模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</p>
 <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>在<code>main.js</code>中加入<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(vuex);</span><br><span class="line"><span class="keyword">var</span> store = <span class="keyword">new</span> vuex.Store(&#123;<span class="comment">//store对象</span></span><br><span class="line">    state:&#123;</span><br><span class="line">        show:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store, <span class="comment">//添加 使用store</span></span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>使用<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; $store.state.show &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h2><p>前面为了方便 , 我们把 store 对象写在了 main.js 里面 , 但实际上为了便于日后的维护 , 我们分开写更好 , 我们在 src 目录下 , 新建一个 store 文件夹 , 然后在里面新建一个 index.js :<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(vuex);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> vuex.Store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        show:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
@@ -420,6 +420,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/20/HTML/" rel="prev" title="HTML">
+                HTML <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -500,7 +504,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -511,7 +515,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -522,7 +526,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
