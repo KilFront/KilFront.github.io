@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="指令1ng version 12345678$ ng g c appCREATE src/app/app/app.component.ts (257 bytes)已有app文件，使用此指令依然创建app文件正确方法：ng g c app --flatCREATE src/app/app.component.ts (257 bytes)默认不创建文件夹，在已有app文件下 本地版本升级 6 -&amp;gt">
+<meta name="description" content="把所有零散的Node工具都集成起来cli 背景在很早的时候，前端是没有好的工具，开发，测试，打包，部署，压缩2009年，出现nodejs，前端Big Bang；以前都是刀耕火种 集成工具 webpack typeScript编译器单元测试 karma jasmine Protractor 自动测试所有路由 material.angular.io ui  最后集成一个angular.json 指令1">
 <meta name="keywords" content="Angular-CLI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular-CLI">
 <meta property="og:url" content="http://yoursite.com/2019/10/21/Angular-CLI/index.html">
 <meta property="og:site_name" content="Kil Notes">
-<meta property="og:description" content="指令1ng version 12345678$ ng g c appCREATE src/app/app/app.component.ts (257 bytes)已有app文件，使用此指令依然创建app文件正确方法：ng g c app --flatCREATE src/app/app.component.ts (257 bytes)默认不创建文件夹，在已有app文件下 本地版本升级 6 -&amp;gt">
+<meta property="og:description" content="把所有零散的Node工具都集成起来cli 背景在很早的时候，前端是没有好的工具，开发，测试，打包，部署，压缩2009年，出现nodejs，前端Big Bang；以前都是刀耕火种 集成工具 webpack typeScript编译器单元测试 karma jasmine Protractor 自动测试所有路由 material.angular.io ui  最后集成一个angular.json 指令1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-23T01:31:48.670Z">
+<meta property="og:updated_time" content="2020-05-12T09:49:58.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular-CLI">
-<meta name="twitter:description" content="指令1ng version 12345678$ ng g c appCREATE src/app/app/app.component.ts (257 bytes)已有app文件，使用此指令依然创建app文件正确方法：ng g c app --flatCREATE src/app/app.component.ts (257 bytes)默认不创建文件夹，在已有app文件下 本地版本升级 6 -&amp;gt">
+<meta name="twitter:description" content="把所有零散的Node工具都集成起来cli 背景在很早的时候，前端是没有好的工具，开发，测试，打包，部署，压缩2009年，出现nodejs，前端Big Bang；以前都是刀耕火种 集成工具 webpack typeScript编译器单元测试 karma jasmine Protractor 自动测试所有路由 material.angular.io ui  最后集成一个angular.json 指令1">
 
 
 
@@ -342,7 +342,17 @@
       
 
       
-        <h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng version</span><br></pre></td></tr></table></figure>
+        <h1 id="把所有零散的Node工具都集成起来"><a href="#把所有零散的Node工具都集成起来" class="headerlink" title="把所有零散的Node工具都集成起来"></a>把所有零散的Node工具都集成起来</h1><h2 id="cli-背景"><a href="#cli-背景" class="headerlink" title="cli 背景"></a>cli 背景</h2><p>在很早的时候，前端是没有好的工具，开发，测试，打包，部署，压缩<br>2009年，出现nodejs，前端Big Bang；以前都是刀耕火种</p>
+<h2 id="集成工具"><a href="#集成工具" class="headerlink" title="集成工具"></a>集成工具</h2><ul>
+<li>webpack</li>
+<li>typeScript编译器<br>单元测试</li>
+<li>karma</li>
+<li>jasmine</li>
+<li>Protractor 自动测试所有路由</li>
+<li>material.angular.io ui</li>
+</ul>
+<p>最后集成一个angular.json</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng version</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ng g c app</span><br><span class="line">CREATE src/app/app/app.component.ts (257 bytes)</span><br><span class="line">已有app文件，使用此指令依然创建app文件</span><br><span class="line"></span><br><span class="line">正确方法：</span><br><span class="line">ng g c app --flat</span><br><span class="line">CREATE src/app/app.component.ts (257 bytes)</span><br><span class="line">默认不创建文件夹，在已有app文件下</span><br></pre></td></tr></table></figure>
 <h3 id="本地版本升级-6-gt-7"><a href="#本地版本升级-6-gt-7" class="headerlink" title="本地版本升级 6 -&gt; 7"></a>本地版本升级 6 -&gt; 7</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall -g @angular/cli</span><br><span class="line">$ npm install -g @angular/cli@7.x.x</span><br><span class="line">$ ng -v</span><br></pre></td></tr></table></figure>
 
@@ -539,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地版本升级-6-gt-7"><span class="nav-number">1.0.1.</span> <span class="nav-text">本地版本升级 6 -&gt; 7</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#把所有零散的Node工具都集成起来"><span class="nav-number">1.</span> <span class="nav-text">把所有零散的Node工具都集成起来</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cli-背景"><span class="nav-number">1.1.</span> <span class="nav-text">cli 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成工具"><span class="nav-number">1.2.</span> <span class="nav-text">集成工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">2.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地版本升级-6-gt-7"><span class="nav-number">2.0.1.</span> <span class="nav-text">本地版本升级 6 -&gt; 7</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

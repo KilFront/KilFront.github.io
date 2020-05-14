@@ -711,7 +711,7 @@ fi
   use: [<span class="string">'to-string-loader'</span>, <span class="string">'css-loader'</span>, <span class="string">'sass-loader'</span>]
 }
 </code></pre>
-
+<h1 id="模块热替换-hot-module-replacement-或-HMR"><a href="#模块热替换-hot-module-replacement-或-HMR" class="headerlink" title="模块热替换(hot module replacement 或 HMR)"></a>模块热替换(hot module replacement 或 HMR)</h1>
           
         
       
@@ -852,7 +852,17 @@ fi
       
         
           
-            <h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng version</span><br></pre></td></tr></table></figure>
+            <h1 id="把所有零散的Node工具都集成起来"><a href="#把所有零散的Node工具都集成起来" class="headerlink" title="把所有零散的Node工具都集成起来"></a>把所有零散的Node工具都集成起来</h1><h2 id="cli-背景"><a href="#cli-背景" class="headerlink" title="cli 背景"></a>cli 背景</h2><p>在很早的时候，前端是没有好的工具，开发，测试，打包，部署，压缩<br>2009年，出现nodejs，前端Big Bang；以前都是刀耕火种</p>
+<h2 id="集成工具"><a href="#集成工具" class="headerlink" title="集成工具"></a>集成工具</h2><ul>
+<li>webpack</li>
+<li>typeScript编译器<br>单元测试</li>
+<li>karma</li>
+<li>jasmine</li>
+<li>Protractor 自动测试所有路由</li>
+<li>material.angular.io ui</li>
+</ul>
+<p>最后集成一个angular.json</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng version</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ng g c app</span><br><span class="line">CREATE src/app/app/app.component.ts (257 bytes)</span><br><span class="line">已有app文件，使用此指令依然创建app文件</span><br><span class="line"></span><br><span class="line">正确方法：</span><br><span class="line">ng g c app --flat</span><br><span class="line">CREATE src/app/app.component.ts (257 bytes)</span><br><span class="line">默认不创建文件夹，在已有app文件下</span><br></pre></td></tr></table></figure>
 <h3 id="本地版本升级-6-gt-7"><a href="#本地版本升级-6-gt-7" class="headerlink" title="本地版本升级 6 -&gt; 7"></a>本地版本升级 6 -&gt; 7</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall -g @angular/cli</span><br><span class="line">$ npm install -g @angular/cli@7.x.x</span><br><span class="line">$ ng -v</span><br></pre></td></tr></table></figure>
 
@@ -1227,7 +1237,7 @@ fi
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/搭建Angular项目/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/Angular-搭建项目/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kil">
@@ -1246,7 +1256,7 @@ fi
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/19/搭建Angular项目/" itemprop="url">搭建Angular项目</a></h1>
+                <a class="post-title-link" href="/2019/10/19/Angular-搭建项目/" itemprop="url">搭建Angular项目</a></h1>
         
 
         <div class="post-meta">
@@ -1330,12 +1340,6 @@ fi
 <ul>
 <li>polyfills.ts文件 [浏览器支持]</li>
 </ul>
-<h3 id="css-to-scss"><a href="#css-to-scss" class="headerlink" title="css to scss"></a>css to scss</h3><h4 id="将默认样式扩展名更改为-scss"><a href="#将默认样式扩展名更改为-scss" class="headerlink" title="将默认样式扩展名更改为 scss"></a>将默认样式扩展名更改为 scss</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng config defaults.styleExt=scss</span><br></pre></td></tr></table></figure>
-<p>如果出现错误：请Value cannot be found.使用以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng config diagrams。@ schematics / angular：component.styleext scss</span><br></pre></td></tr></table></figure></p>
-<p>或手动 添加到 angular.json<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"schematics"</span>: &#123;</span><br><span class="line">    <span class="attr">"@schematics/angular:component"</span>: &#123;</span><br><span class="line">      <span class="attr">"styleext"</span>: <span class="string">"scss"</span>       </span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="将-css-文件重命名-scss"><a href="#将-css-文件重命名-scss" class="headerlink" title="将 .css 文件重命名 .scss"></a>将 .css 文件重命名 .scss</h4><p>app  &amp;&amp; webpack</p>
-<h4 id="创建项目时设置"><a href="#创建项目时设置" class="headerlink" title="创建项目时设置"></a>创建项目时设置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new your-project-name --style=scss</span><br></pre></td></tr></table></figure>
-<p>如果要为以后创建的所有项目设置默认值，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng config --global defaults.styleExt=scss</span><br></pre></td></tr></table></figure></p>
 <h3 id="seven-webpack-打包-angular-安装的依赖包"><a href="#seven-webpack-打包-angular-安装的依赖包" class="headerlink" title="seven webpack 打包 angular 安装的依赖包"></a>seven webpack 打包 angular 安装的依赖包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add webpack@^4.25.1 webpack-cli@^3.1.2 webpack-dev-server@^3.1.10 copy-webpack-plugin@^4.6.0 --dev</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add @ngtools/webpack@^7.1.3 --dev</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add awesome-typescript-loader@^5.2.1 angular2-template-loader@^0.6.2 --dev</span><br></pre></td></tr></table></figure>
@@ -1346,6 +1350,24 @@ fi
 <p>home.component.ts 路径<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; HeaderModule &#125; <span class="keyword">from</span> <span class="string">'src/app/common/header/header.module'</span>;</span><br><span class="line">update</span><br><span class="line"><span class="keyword">import</span> &#123; HeaderModule &#125; <span class="keyword">from</span> <span class="string">'@common/header/header.module'</span>;</span><br></pre></td></tr></table></figure></p>
 <h3 id="remove-nghost-sfi-c0"><a href="#remove-nghost-sfi-c0" class="headerlink" title="remove _nghost-sfi-c0"></a>remove _nghost-sfi-c0</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.scss'</span>],</span><br><span class="line">  encapsulation: ViewEncapsulation.None</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h3 id="资源的相对路径-与-绝对路径"><a href="#资源的相对路径-与-绝对路径" class="headerlink" title="资源的相对路径 与 绝对路径"></a>资源的相对路径 与 绝对路径</h3><p>tsconfig.js 设置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"compileOnSave"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"baseUrl"</span>: <span class="string">"src"</span>,</span><br><span class="line">    <span class="string">"outDir"</span>: <span class="string">"./dist/out-tsc"</span>,</span><br><span class="line">    <span class="string">"sourceMap"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"declaration"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"module"</span>: <span class="string">"es2015"</span>,</span><br><span class="line">    <span class="string">"moduleResolution"</span>: <span class="string">"node"</span>,</span><br><span class="line">    <span class="string">"emitDecoratorMetadata"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"importHelpers"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es5"</span>,</span><br><span class="line">    <span class="string">"typeRoots"</span>: [</span><br><span class="line">      <span class="string">"node_modules/@types"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"lib"</span>: [</span><br><span class="line">      <span class="string">"es2018"</span>,</span><br><span class="line">      <span class="string">"dom"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"paths"</span>: &#123;</span><br><span class="line">      <span class="string">"@common/*"</span>: [</span><br><span class="line">        <span class="string">"app/common/*"</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="优化点"><a href="#优化点" class="headerlink" title="优化点"></a>优化点</h1><ul>
+<li><app-game> to <game>   angular.json: “prefix”: “app”,</game></app-game></li>
+</ul>
+<h1 id="css-to-scss"><a href="#css-to-scss" class="headerlink" title="css to scss"></a>css to scss</h1><h3 id="组件-把CSS预编译改成SASS"><a href="#组件-把CSS预编译改成SASS" class="headerlink" title="[组件]把CSS预编译改成SASS"></a>[组件]把CSS预编译改成SASS</h3><p>方式一<br>创建项目时指定 scss</p>
+<p>方式二</p>
+<ul>
+<li>angular-cli.json 里面的 styleExt 改成 scss</li>
+<li>angular-cli.json 里面的 styles.css 后缀改成 .scss</li>
+<li>src 下面 style.css 改成 style.scss</li>
+<li>app.component.scss</li>
+<li>app.component.ts 里面对应修改</li>
+</ul>
+<h3 id="第二中方法"><a href="#第二中方法" class="headerlink" title="第二中方法"></a>第二中方法</h3><h4 id="将默认样式扩展名更改为-scss"><a href="#将默认样式扩展名更改为-scss" class="headerlink" title="将默认样式扩展名更改为 scss"></a>将默认样式扩展名更改为 scss</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng config defaults.styleExt=scss</span><br></pre></td></tr></table></figure>
+<p>如果出现错误：请Value cannot be found.使用以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng config schematics.@schematics/angular:component.styleext scss</span><br></pre></td></tr></table></figure></p>
+<p>或手动 添加到 angular.json<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"schematics"</span>: &#123;</span><br><span class="line">    <span class="attr">"@schematics/angular:component"</span>: &#123;</span><br><span class="line">      <span class="attr">"styleext"</span>: <span class="string">"scss"</span>       </span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="将-css-文件重命名-scss"><a href="#将-css-文件重命名-scss" class="headerlink" title="将 .css 文件重命名 .scss"></a>将 .css 文件重命名 .scss</h4><p>app  &amp;&amp; webpack</p>
+<h4 id="创建项目时设置"><a href="#创建项目时设置" class="headerlink" title="创建项目时设置"></a>创建项目时设置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new your-project-name --style=scss</span><br></pre></td></tr></table></figure>
+<p>如果要为以后创建的所有项目设置默认值，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng config --global defaults.styleExt=scss</span><br></pre></td></tr></table></figure></p>
 
           
         
