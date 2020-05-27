@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kil Notes">
 <meta property="og:description" content="第一步update1$ sudo apt update 如果比较慢，换国内源 123456789101112131415161718192021222324252627$ sudo ls /etc/apt/sources.list  /etc/apt/sources.list$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak$ sud">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-23T01:31:48.674Z">
+<meta property="og:updated_time" content="2020-05-18T12:49:24.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
 <meta name="twitter:description" content="第一步update1$ sudo apt update 如果比较慢，换国内源 123456789101112131415161718192021222324252627$ sudo ls /etc/apt/sources.list  /etc/apt/sources.list$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak$ sud">
@@ -354,8 +354,12 @@
 <p>查看文件安装路径<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis oracle</span><br></pre></td></tr></table></figure></p>
 <p>查看运行文件所在路径<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> oracle</span><br></pre></td></tr></table></figure></p>
 <p>PS E:\software\genymotion\Genymotion\tools&gt; netstat -aon|findstr “5037”<br>  TCP    127.0.0.1:5037         0.0.0.0:0              LISTENING       19856<br>  TCP    127.0.0.1:5037         127.0.0.1:56022        ESTABLISHED     19856<br>  TCP    127.0.0.1:5037         127.0.0.1:56032        ESTABLISHED     19856<br>  TCP    127.0.0.1:56022        127.0.0.1:5037         ESTABLISHED     13504<br>  TCP    127.0.0.1:56032        127.0.0.1:5037         ESTABLISHED     20616<br>PS E:\software\genymotion\Genymotion\tools&gt; taskkill /pid 19856 /f<br>成功: 已终止 PID 为 19856 的进程。</p>
+<p>显示磁盘空间统计信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure></p>
+<p>查询可用内存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></figure></p>
+<p>显示终端下所有用户的程序<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps axu|grep nginx</span><br></pre></td></tr></table></figure></p>
 <h3 id="域名操作"><a href="#域名操作" class="headerlink" title="域名操作"></a>域名操作</h3><h4 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h4><p>curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就是客户端（client）的 URL 工具的意思。<br>它的功能非常强大，命令行参数多达几十种。如果熟练的话，完全可以取代 Postman 这一类的图形界面工具。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">curl</span><br><span class="line">返回</span><br><span class="line">* Connected to kaifa.in (209.141.38.71) port 80 (#0)</span><br><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line">&gt; Host: kaifa.in</span><br><span class="line">&gt; User-Agent: curl/7.54.0</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 301 Moved Permanently</span><br><span class="line">&lt; Server: nginx</span><br><span class="line">&lt; Date: Mon, 30 Dec 2019 09:27:00 GMT</span><br><span class="line">&lt; Content-Type: text/html</span><br><span class="line">&lt; Content-Length: 178</span><br><span class="line">&lt; Connection: keep-alive</span><br><span class="line">&lt; Location: http://www.kaifa.in/</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://gitlab.kaifa.in:9999 -v</span><br></pre></td></tr></table></figure>
 <h4 id="dig"><a href="#dig" class="headerlink" title="dig"></a>dig</h4><p>dig命令是常用的域名查询工具，可以用来测试域名系统工作是否正常。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dig kaifa.in</span><br><span class="line">返回</span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">kaifa.in.		16478	IN	A	209.141.38.71</span><br></pre></td></tr></table></figure></p>
 <h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><p>查看是否有key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh &amp;&amp; ls</span><br><span class="line">id_rsa  id_rsa.pub  known_hosts</span><br></pre></td></tr></table></figure></p>
 <p>生成key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure></p>
@@ -496,7 +500,7 @@ fi
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -507,7 +511,7 @@ fi
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -518,7 +522,7 @@ fi
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
