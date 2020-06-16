@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kil Notes">
 <meta property="og:description" content="Observable单播，对于每个订阅者，都只有一个独立的 Observable execution 与之对应123456789101112131415import * as Rx from &quot;rxjs&quot;;const observable = Rx.Observable.create((observer) =&amp;gt; &amp;#123;  observer.next(Math.random());&amp;#1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-20T07:17:39.973Z">
+<meta property="og:updated_time" content="2020-06-16T04:04:43.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rxjs">
 <meta name="twitter:description" content="Observable单播，对于每个订阅者，都只有一个独立的 Observable execution 与之对应123456789101112131415import * as Rx from &quot;rxjs&quot;;const observable = Rx.Observable.create((observer) =&amp;gt; &amp;#123;  observer.next(Math.random());&amp;#1">
@@ -348,6 +348,11 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Rx <span class="keyword">from</span> <span class="string">"rxjs"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> Rx.BehaviorSubject(<span class="built_in">Math</span>.random());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 订阅者 A</span></span><br><span class="line">subject.subscribe(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Subscriber A:'</span>, data);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="built_in">Math</span>.random());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 订阅者 B</span></span><br><span class="line">subject.subscribe(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Subscriber B:'</span>, data);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="built_in">Math</span>.random());</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(subject.value)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="comment">// Subscriber A: 0.24957144215097515</span></span><br><span class="line"><span class="comment">// Subscriber A: 0.8751123892486292</span></span><br><span class="line"><span class="comment">// Subscriber B: 0.8751123892486292</span></span><br><span class="line"><span class="comment">// Subscriber A: 0.1901322109907977</span></span><br><span class="line"><span class="comment">// Subscriber B: 0.1901322109907977</span></span><br><span class="line"><span class="comment">// 0.1901322109907977</span></span><br></pre></td></tr></table></figure>
 <p>链接：<a href="https://juejin.im/post/5cb89bb551882533017e7eed" target="_blank" rel="noopener">https://juejin.im/post/5cb89bb551882533017e7eed</a></p>
 <p>应用参考例子：<a href="https://www.it-swarm.dev/zh/rxjs/subject%E5%92%8Cbehaviorsubject%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/831140095/" target="_blank" rel="noopener">https://www.it-swarm.dev/zh/rxjs/subject%E5%92%8Cbehaviorsubject%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/831140095/</a></p>
+<h1 id="取消订阅"><a href="#取消订阅" class="headerlink" title="取消订阅"></a>取消订阅</h1><p>从此用RxJS订阅的时候，时刻都不忘调用unsubscribe()以防内存泄漏。对于结束Observable，释放内存的方式有三种方式：</p>
+<p>第一种，Observable完成值的发送，执行Observable.onComplete()</p>
+<p>第二种，Observable发生错误，执行Observable.OnError()</p>
+<p>第三种，订阅者主动取消订阅，执行subscription.unsubscribe()</p>
+<p>对于Observable.onComplete()和Observable.OnError()，RxJS自身会处理这两种情况，所以不需要在代码里再手动取消订阅释放内存。对于第三种方式，Observable还在源源不断的发送值，订阅者想主动取消订阅，那就需要在代码里调用unsubscribe()取消订阅释放内存。</p>
 
       
     </div>
@@ -471,7 +476,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -482,7 +487,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -493,7 +498,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -542,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Observable"><span class="nav-number">1.</span> <span class="nav-text">Observable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Subject"><span class="nav-number">2.</span> <span class="nav-text">Subject</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BehaviorSubject"><span class="nav-number">3.</span> <span class="nav-text">BehaviorSubject</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Observable"><span class="nav-number">1.</span> <span class="nav-text">Observable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Subject"><span class="nav-number">2.</span> <span class="nav-text">Subject</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BehaviorSubject"><span class="nav-number">3.</span> <span class="nav-text">BehaviorSubject</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取消订阅"><span class="nav-number">4.</span> <span class="nav-text">取消订阅</span></a></li></ol></div>
             
 
           </div>

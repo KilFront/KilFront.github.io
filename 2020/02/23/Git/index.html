@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kil Notes">
 <meta property="og:description" content="配置ssh 密钥1ssh-keygen 全局配置用户名1$ git config --global user.name &quot;name&quot; 邮箱1$ git config --global user.email &quot;email@gmail.com&quot; 验证连接12ssh -T git@github.comHi KilFront! You&apos;ve successfully authenticated, but">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-18T06:47:09.136Z">
+<meta property="og:updated_time" content="2020-06-05T06:29:16.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git">
 <meta name="twitter:description" content="配置ssh 密钥1ssh-keygen 全局配置用户名1$ git config --global user.name &quot;name&quot; 邮箱1$ git config --global user.email &quot;email@gmail.com&quot; 验证连接12ssh -T git@github.comHi KilFront! You&apos;ve successfully authenticated, but">
@@ -342,29 +342,36 @@
       
 
       
-        <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="ssh-密钥"><a href="#ssh-密钥" class="headerlink" title="ssh 密钥"></a>ssh 密钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+        <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h3 id="ssh-密钥"><a href="#ssh-密钥" class="headerlink" title="ssh 密钥"></a>ssh 密钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
 <h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><p>用户名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"name"</span></span><br></pre></td></tr></table></figure></p>
 <p>邮箱<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email <span class="string">"email@gmail.com"</span></span><br></pre></td></tr></table></figure></p>
 <p>验证连接<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">Hi KilFront! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:1080</span><br><span class="line"></span><br><span class="line"><span class="comment">#取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.https://github.com.proxy)</span><br></pre></td></tr></table></figure>
-<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>git配置<br>git config –list</p>
-<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><h3 id="index-lock"><a href="#index-lock" class="headerlink" title="index.lock"></a>index.lock</h3><p>error:<br>Another git process seems to be running in this repository, e.g.<br>an editor opened by ‘git commit’. Please make sure all processes<br>are terminated then try again. If it still fails, a git process<br>may have crashed in this repository earlier:<br>remove the file manually to continue.</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><p>git配置<br>git config –list</p>
+<h2 id="版本回滚"><a href="#版本回滚" class="headerlink" title="版本回滚"></a>版本回滚</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard ff19b5644e7470728d5a10f57f244f9754fb4d58</span><br><span class="line">git add .</span><br><span class="line">git commit -m update</span><br><span class="line">git push origin dev -f</span><br></pre></td></tr></table></figure>
+<p>-f : force 暴力</p>
+<p>Pushing to <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:519ebayproject/519ebayproject.git<br>To <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:519ebayproject/519ebayproject.git<br> ! [rejected]        master -&gt; master (non-fast-forward)<br>error: failed to push some refs to <a href="mailto:&#39;git@github.com" target="_blank" rel="noopener">&#39;git@github.com</a>:519ebayproject/519ebayproject.git’<br>hint: Updates were rejected because the tip of your current branch is behind<br>hint: its remote counterpart. Merge the remote changes (e.g. ‘git pull’)<br>hint: before pushing again.<br>hint: See the ‘Note about fast-forwards’ in ‘git push –help’ for details.<br>我遇到造成这个问题的原因，一般是因为执行了git reset命令，版本回退后没有恢复，造成本地仓库的提交版本号落后于远端仓库的提交版本号。<br>可以执行 git push -f命令去强制提交</p>
+<h3 id="回滚之后的操作"><a href="#回滚之后的操作" class="headerlink" title="回滚之后的操作"></a>回滚之后的操作</h3><p>git log  找到想退回的版本</p>
+<h3 id="未暂存文件"><a href="#未暂存文件" class="headerlink" title="未暂存文件"></a>未暂存文件</h3><p>git reset 3e5236a</p>
+<h3 id="暂存文件"><a href="#暂存文件" class="headerlink" title="暂存文件"></a>暂存文件</h3><p>git reset –hard 3e5236a</p>
+<h2 id="历史提交记录"><a href="#历史提交记录" class="headerlink" title="历史提交记录"></a>历史提交记录</h2><p>git log</p>
+<h1 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h1><h3 id="index-lock"><a href="#index-lock" class="headerlink" title="index.lock"></a>index.lock</h3><p>error:<br>Another git process seems to be running in this repository, e.g.<br>an editor opened by ‘git commit’. Please make sure all processes<br>are terminated then try again. If it still fails, a git process<br>may have crashed in this repository earlier:<br>remove the file manually to continue.</p>
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .git</span><br><span class="line">rm index.lock</span><br></pre></td></tr></table></figure>
 <p>应该是windows对进程的管理有个上锁机制，正常情况下，会上锁，进程结束，然后解锁进程。但是由于我强制关闭了运行中的git,导致git崩溃，已经上锁的index.lock没有来得及解锁而仍然存在。当我再用git add的时候，git发现已经存在了index.lock这个文件，导致报错。</p>
 <h3 id="vscode-使用git"><a href="#vscode-使用git" class="headerlink" title="vscode 使用git"></a>vscode 使用git</h3><p>error：<br>git push –set-upstream origin master<br>执行一下就行</p>
 <p>error：<br>Host key verification failed.<br>fatal: Could not read from remote repository.</p>
 <p>Please make sure you have the correct access rights<br>and the repository exists.</p>
 <p>wsl 和 windows 的混淆<br>我不是在wsl code . 启动的vscode<br>wsl 中的密钥 无法在windows中使用<br>在windows 生成密钥；命令行提交验证一次，就可以了</p>
-<h2 id="vscoed-中应用"><a href="#vscoed-中应用" class="headerlink" title="vscoed 中应用"></a>vscoed 中应用</h2><h3 id="push"><a href="#push" class="headerlink" title="push"></a>push</h3><h4 id="暂存所有更改"><a href="#暂存所有更改" class="headerlink" title="暂存所有更改"></a>暂存所有更改</h4><p>更改处 ‘+’ </p>
+<h1 id="vscoed-中应用"><a href="#vscoed-中应用" class="headerlink" title="vscoed 中应用"></a>vscoed 中应用</h1><h3 id="push"><a href="#push" class="headerlink" title="push"></a>push</h3><h4 id="暂存所有更改"><a href="#暂存所有更改" class="headerlink" title="暂存所有更改"></a>暂存所有更改</h4><p>更改处 ‘+’ </p>
 <h4 id="提交已暂存文件"><a href="#提交已暂存文件" class="headerlink" title="提交已暂存文件"></a>提交已暂存文件</h4><p>更多操作… &gt; 提交已暂存文件<br>输入本次提交内容 描述文字</p>
 <h4 id="推送-push"><a href="#推送-push" class="headerlink" title="推送 push"></a>推送 push</h4><p>更多操作… &gt; 推送</p>
 <h3 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h3><p>更多操作… &gt; 拉取</p>
-<h2 id="gitignore"><a href="#gitignore" class="headerlink" title="gitignore"></a>gitignore</h2><p>忽略所有 .a 结尾的文件<br>*.a</p>
+<h1 id="gitignore"><a href="#gitignore" class="headerlink" title="gitignore"></a>gitignore</h1><p>忽略所有 .a 结尾的文件<br>*.a</p>
 <p>但 lib.a 除外<br>!lib.a</p>
 <p>仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO<br>/TODO</p>
 <p>忽略 build/ 目录下的所有文件<br>build/</p>
 <p>会忽略 doc/notes.txt 但不包括 doc/server/notes.txt<br>doc/notes.txt</p>
-
+<h1 id="依赖git上的库"><a href="#依赖git上的库" class="headerlink" title="依赖git上的库"></a>依赖git上的库</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add git+ssh://git@code.apowo.com:PixelPai/game-core.git<span class="comment">#dev</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -487,7 +494,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -498,7 +505,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -509,7 +516,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -558,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-密钥"><span class="nav-number">1.1.</span> <span class="nav-text">ssh 密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置"><span class="nav-number">1.2.</span> <span class="nav-text">全局配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代理"><span class="nav-number">1.3.</span> <span class="nav-text">代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">2.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">3.</span> <span class="nav-text">错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#index-lock"><span class="nav-number">3.1.</span> <span class="nav-text">index.lock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-使用git"><span class="nav-number">3.2.</span> <span class="nav-text">vscode 使用git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscoed-中应用"><span class="nav-number">4.</span> <span class="nav-text">vscoed 中应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#push"><span class="nav-number">4.1.</span> <span class="nav-text">push</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暂存所有更改"><span class="nav-number">4.1.1.</span> <span class="nav-text">暂存所有更改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交已暂存文件"><span class="nav-number">4.1.2.</span> <span class="nav-text">提交已暂存文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送-push"><span class="nav-number">4.1.3.</span> <span class="nav-text">推送 push</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pull"><span class="nav-number">4.2.</span> <span class="nav-text">pull</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore"><span class="nav-number">5.</span> <span class="nav-text">gitignore</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh-密钥"><span class="nav-number">1.0.1.</span> <span class="nav-text">ssh 密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置"><span class="nav-number">1.0.2.</span> <span class="nav-text">全局配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代理"><span class="nav-number">1.0.3.</span> <span class="nav-text">代理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">2.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回滚"><span class="nav-number">2.1.</span> <span class="nav-text">版本回滚</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回滚之后的操作"><span class="nav-number">2.1.1.</span> <span class="nav-text">回滚之后的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未暂存文件"><span class="nav-number">2.1.2.</span> <span class="nav-text">未暂存文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存文件"><span class="nav-number">2.1.3.</span> <span class="nav-text">暂存文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史提交记录"><span class="nav-number">2.2.</span> <span class="nav-text">历史提交记录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误"><span class="nav-number">3.</span> <span class="nav-text">错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#index-lock"><span class="nav-number">3.0.1.</span> <span class="nav-text">index.lock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-使用git"><span class="nav-number">3.0.2.</span> <span class="nav-text">vscode 使用git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vscoed-中应用"><span class="nav-number">4.</span> <span class="nav-text">vscoed 中应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#push"><span class="nav-number">4.0.1.</span> <span class="nav-text">push</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暂存所有更改"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">暂存所有更改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交已暂存文件"><span class="nav-number">4.0.1.2.</span> <span class="nav-text">提交已暂存文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送-push"><span class="nav-number">4.0.1.3.</span> <span class="nav-text">推送 push</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pull"><span class="nav-number">4.0.2.</span> <span class="nav-text">pull</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitignore"><span class="nav-number">5.</span> <span class="nav-text">gitignore</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#依赖git上的库"><span class="nav-number">6.</span> <span class="nav-text">依赖git上的库</span></a></li></ol></div>
             
 
           </div>

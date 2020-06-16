@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,CSS,Front-End,Html," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="重学前端-winter 前言发展史2006 目标 带你摸索出适合自己的前端学习方法； 帮助你建立起前端技术的知识架构； 让你理解前端技术背后的核心思想。  图谱 JavaScript三个角度  运行时 文法 执行过程  用一定的词法和语法，表达一定语义，从而操作运行时。 JavaScript 的类型系统就是它的 7 种基本类型和 7 种语言类型，实例就是它的内置对象部分 执行过程我们则需要按照从大">
+<meta name="keywords" content="JavaScript,CSS,Front-End,Html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重学前端">
+<meta property="og:url" content="http://yoursite.com/2020/06/04/重学前端/index.html">
+<meta property="og:site_name" content="Kil Notes">
+<meta property="og:description" content="重学前端-winter 前言发展史2006 目标 带你摸索出适合自己的前端学习方法； 帮助你建立起前端技术的知识架构； 让你理解前端技术背后的核心思想。  图谱 JavaScript三个角度  运行时 文法 执行过程  用一定的词法和语法，表达一定语义，从而操作运行时。 JavaScript 的类型系统就是它的 7 种基本类型和 7 种语言类型，实例就是它的内置对象部分 执行过程我们则需要按照从大">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/06/04/重学前端/relearn.jpg">
+<meta property="og:updated_time" content="2020-06-15T05:32:34.621Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重学前端">
+<meta name="twitter:description" content="重学前端-winter 前言发展史2006 目标 带你摸索出适合自己的前端学习方法； 帮助你建立起前端技术的知识架构； 让你理解前端技术背后的核心思想。  图谱 JavaScript三个角度  运行时 文法 执行过程  用一定的词法和语法，表达一定语义，从而操作运行时。 JavaScript 的类型系统就是它的 7 种基本类型和 7 种语言类型，实例就是它的内置对象部分 执行过程我们则需要按照从大">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/04/重学前端/relearn.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/06/04/重学前端/"/>
+
+
+
+
+
+  <title>重学前端 | Kil Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kil Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/重学前端/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">重学前端</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T17:29:54+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Front-End/" itemprop="url" rel="index">
+                    <span itemprop="name">Front-End</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://time.geekbang.org/column/article/77345" target="_blank" rel="noopener">重学前端-winter</a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="发展史"><a href="#发展史" class="headerlink" title="发展史"></a>发展史</h2><p>2006</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>带你摸索出适合自己的前端<strong>学习方法</strong>；</li>
+<li>帮助你建立起前端技术的<strong>知识架构</strong>；</li>
+<li>让你理解前端技术背后的<strong>核心思想</strong>。</li>
+</ul>
+<h2 id="图谱"><a href="#图谱" class="headerlink" title="图谱"></a>图谱</h2><p><code><img src="/2020/06/04/重学前端/relearn.jpg"></code></p>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><p>三个角度</p>
+<ul>
+<li>运行时</li>
+<li>文法</li>
+<li>执行过程</li>
+</ul>
+<p>用一定的词法和语法，表达一定语义，从而操作运行时。</p>
+<p>JavaScript 的类型系统就是它的 7 种基本类型和 7 种语言类型，实例就是它的内置对象部分</p>
+<p>执行过程我们则需要按照从大结构到小结构的角度讲解，从最顶层的程序与模块、事件循环和微任务，到函数、再到语句级的执行。我们从粗到细地了解执行过程。</p>
+<p>实例部分，对 JavaScript 来说类似基础库，JavaScipt 的内置对象多达 150 以上，考虑到我们即使逐次讲解也必定不如 MDN 更加细致全面，所以我们会从应用和机制的角度，挑选其中几个体系来讲解。</p>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>null 是 JavaScript 关键字</p>
+<ul>
+<li><p>为什么有的编程规范要求用 void 0 代替 undefined？<br>JavaScript 的代码 undefined 是一个变量（变量可以被赋值改变），而并非是一个关键字，这是 JavaScript 语言公认的设计失误之一，所以，我们为了避免无意中被篡改，我建议使用 void 0 来获取 undefined 值。</p>
+</li>
+<li><p>字符串有最大长度吗？<br>String 有最大长度是 2^53 - 1</p>
+</li>
+</ul>
+<h3 id="7种语言类型"><a href="#7种语言类型" class="headerlink" title="7种语言类型"></a>7种语言类型</h3><p>Undefined；Null；Boolean；String；Number；Symbol；Object。</p>
+<h3 id="规范类型"><a href="#规范类型" class="headerlink" title="规范类型"></a>规范类型</h3><p>List 和 Record： 用于描述函数传参过程。<br>Set：主要用于解释字符集等。<br>Completion Record：用于描述异常、跳出等语句执行过程。<br>Reference：用于描述对象属性访问、delete 等。<br>Property Descriptor：用于描述对象的属性。<br>Lexical Environment 和 Environment Record：用于描述变量和作用域。<br>Data Block：用于描述二进制数据。</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ul>
+<li>转义字符<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String</a></li>
+<li>字符串操作方法<br><a href="https://segmentfault.com/a/1190000016603159#item-1" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016603159#item-1</a></li>
+</ul>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><ul>
+<li><p>NaN not a number</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'20a'</span>* <span class="number">5</span> ; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>isNaN</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>(<span class="string">'123'</span>)   <span class="comment">// false 能转换</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>防止除以0出错 ，引入无穷大小</p>
+<ul>
+<li>Infinity，无穷大；</li>
+<li>-Infinity，负无穷大。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'prototype'</span>, <span class="number">5</span> / <span class="number">0</span>); <span class="comment">// infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'prototype'</span>, <span class="number">5</span> / <span class="number">-0</span>); <span class="comment">// -infinity</span></span><br></pre></td></tr></table></figure>
+<p>比较浮点数的方法<br>检查等式左右两边差的绝对值是否小于最小精度<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Math</span>.abs(<span class="number">0.1</span> + <span class="number">0.2</span> - <span class="number">0.3</span>) &lt;= <span class="built_in">Number</span>.EPSILON);</span><br></pre></td></tr></table></figure></p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>用 === 比较</p>
+<h4 id="StringToNumber"><a href="#StringToNumber" class="headerlink" title="StringToNumber"></a>StringToNumber</h4><ul>
+<li>Number</li>
+<li>parseInt </li>
+<li>parseFloat</li>
+</ul>
+<h4 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h4><p>所谓装箱转换，正是把基本类型转换为对应的对象，它是类型转换中一种相当重要的种类。<br>所谓的装箱，是指将基本数据类型转换为对应的引用类型的操作。而装箱又分为隐式装箱和显式装箱。</p>
+<h5 id="隐式装箱"><a href="#隐式装箱" class="headerlink" title="隐式装箱"></a>隐式装箱</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="string">'call_me_R'</span>; <span class="comment">// 隐式装箱</span></span><br><span class="line"><span class="keyword">var</span> s2 = s1.substring(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 1</span><br><span class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'call_me_R'</span>);</span><br><span class="line"># 2</span><br><span class="line"><span class="keyword">var</span> s2 = s1.substring(<span class="number">2</span>);</span><br><span class="line"># 3</span><br><span class="line">s1 = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="显示装箱"><a href="#显示装箱" class="headerlink" title="显示装箱"></a>显示装箱</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'call_me_R'</span>);</span><br></pre></td></tr></table></figure>
+<h5 id="拆箱"><a href="#拆箱" class="headerlink" title="拆箱"></a>拆箱</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> objNum = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">64</span>);</span><br><span class="line"><span class="keyword">var</span> objStr = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'64'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> objNum); <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> objStr); <span class="comment">// object</span></span><br><span class="line"># 拆箱</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> objNum.valueOf()); <span class="comment">// number 基本的数字类型，想要的</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> objStr.toString()); <span class="comment">// string 基本的数据类型，想要的</span></span><br></pre></td></tr></table></figure>
+<h3 id="7种规范类型"><a href="#7种规范类型" class="headerlink" title="7种规范类型"></a>7种规范类型</h3><ul>
+<li>List 和 Record： 用于描述函数传参过程。</li>
+<li>Set：主要用于解释字符集等。</li>
+<li>Completion Record：用于描述异常、跳出等语句执行过程。</li>
+<li>Reference：用于描述对象属性访问、delete 等。</li>
+<li>Property Descriptor：用于描述对象的属性。</li>
+<li>Lexical Environment 和 Environment Record：用于描述变量和作用域。</li>
+<li>Data Block：用于描述二进制数据。</li>
+</ul>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>在 JavaScript 中，对象的定义是“属性的集合”。</p>
+<p>英文中：Object（对象）是一切事物的总称；这和面向对象编程的抽象思维有互通之处<br>中文中：当作一个专业名词</p>
+<p>面向对象编程也被认为是：更接近人类思维模式的一种编程范式</p>
+<p>早点方式：原型<br>后来模仿Java：加入了new 、this</p>
+<p>描述对象</p>
+<ul>
+<li>使用类的方式，Java，C++</li>
+<li>基于原型，JavaScript</li>
+</ul>
+<p>原型系统就更多与高动态性语言配合，并且多数基于原型的语言提倡运行时的原型修改</p>
+<p>对象的特征</p>
+<ul>
+<li>对象具有唯一标识性：即使完全相同的两个对象，也并非同一个对象。（内存地址）</li>
+<li>对象有状态：对象具有状态，同一对象可能处于不同状态之下。</li>
+<li>对象具有行为：即对象的状态，可能因为它的行为产生变迁。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o1 == o2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript 中的行为和状态都能用属性来抽象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; </span><br><span class="line">  d: <span class="number">1</span>, <span class="comment">// 属性</span></span><br><span class="line">  f() &#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.d); &#125; <span class="comment">// 属性</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>在实现了对象基本特征的基础上, 我认为，JavaScript 中对象独有的特色是：对象具有高度的动态性，这是因为 JavaScript 赋予了使用者在运行时为对象添改状态和行为的能力。</strong><br>JavaScript 允许运行时向对象添加属性，这就跟绝大多数基于类的、静态的对象设计完全不同。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;; </span><br><span class="line">o.b = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(o.a, o.b); <span class="comment">//1 2</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; get a() &#123; <span class="keyword">return</span> <span class="number">1</span> &#125; &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o.a); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>但是 JavaScript 这样的半吊子模拟，缺少了继承等关键特性，导致大家试图对它进行修补，进而产生了种种互不相容的解决方案。庆幸的是，从 ES6 开始，JavaScript 提供了 class 关键字来定义类，尽管，这样的方案仍然是基于原型运行时系统的模拟，但是它修正了之前的一些常见的“坑”，统一了社区的方案，这对语言的发展有着非常大的好处。实际上，我认为“基于类”并非面向对象的唯一形态，如果我们把视线从“类”移开，Brendan 当年选择的原型系统，就是一个非常优秀的抽象对象的形式。</p>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>一个 JavaScript 引擎会常驻于内存中，它等待着我们（宿主）把 JavaScript 代码或者函数传递给它执行。</p>
+<p>在 ES3 和更早的版本中，JavaScript 本身还没有异步执行代码的能力，这也就意味着，宿主环境传递给 JavaScript 引擎一段代码，引擎就把代码直接顺次执行了，这个任务也就是宿主发起的任务。</p>
+<p>但是，在 ES5 之后，JavaScript 引入了 Promise，这样，不需要浏览器的安排，JavaScript 引擎本身也可以发起任务了。</p>
+<p>由于我们这里主要讲 JavaScript 语言，那么采纳 JSC 引擎的术语，我们把宿主发起的任务称为宏观任务，把 JavaScript 引擎发起的任务称为微观任务。</p>
+<h1 id="一些不熟悉的概念"><a href="#一些不熟悉的概念" class="headerlink" title="一些不熟悉的概念"></a>一些不熟悉的概念</h1><h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">make, model, year</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.make = make;</span><br><span class="line">  <span class="keyword">this</span>.model = model;</span><br><span class="line">  <span class="keyword">this</span>.year = year;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> auto = <span class="keyword">new</span> Car(<span class="string">'Honda'</span>, <span class="string">'Accord'</span>, <span class="number">1998</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(auto <span class="keyword">instanceof</span> Car);</span><br><span class="line"><span class="comment">// expected output: true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(auto <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</span><br><span class="line"><span class="comment">// expected output: true</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/Front-End/" rel="tag"># Front-End</a>
+          
+            <a href="/tags/Html/" rel="tag"># Html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/04/RESTful/" rel="next" title="RESTful">
+                <i class="fa fa-chevron-left"></i> RESTful
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/15/Prettier/" rel="prev" title="Prettier">
+                Prettier <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/avatar/pazu.jpg"
+                alt="kil" />
+            
+              <p class="site-author-name" itemprop="name">kil</p>
+              <p class="site-description motion-element" itemprop="description">潜心修行，任重道远</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kilfront" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaifaweb@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发展史"><span class="nav-number">1.1.</span> <span class="nav-text">发展史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.2.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图谱"><span class="nav-number">1.3.</span> <span class="nav-text">图谱</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript"><span class="nav-number">2.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型"><span class="nav-number">2.1.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7种语言类型"><span class="nav-number">2.1.1.</span> <span class="nav-text">7种语言类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规范类型"><span class="nav-number">2.1.2.</span> <span class="nav-text">规范类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">2.1.3.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">2.1.4.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">2.1.5.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#StringToNumber"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">StringToNumber</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#装箱和拆箱"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">装箱和拆箱</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐式装箱"><span class="nav-number">2.1.5.2.1.</span> <span class="nav-text">隐式装箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#显示装箱"><span class="nav-number">2.1.5.2.2.</span> <span class="nav-text">显示装箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拆箱"><span class="nav-number">2.1.5.2.3.</span> <span class="nav-text">拆箱</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7种规范类型"><span class="nav-number">2.1.6.</span> <span class="nav-text">7种规范类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">2.2.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行"><span class="nav-number">2.3.</span> <span class="nav-text">执行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些不熟悉的概念"><span class="nav-number">3.</span> <span class="nav-text">一些不熟悉的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">3.1.</span> <span class="nav-text">instanceof</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kil</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
