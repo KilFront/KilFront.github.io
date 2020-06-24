@@ -252,6 +252,495 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/Observable/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/05/Observable/" itemprop="url">Observable(可观察对象)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-05T10:41:15+08:00">
+                2019-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Rxjs/" itemprop="url" rel="index">
+                    <span itemprop="name">Rxjs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>获取前后路由变化 地址<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.router.events</span><br><span class="line">  .pipe(filter(<span class="function">(<span class="params">evt: any</span>) =&gt;</span> evt <span class="keyword">instanceof</span> RoutesRecognized), pairwise())</span><br><span class="line">  .subscribe(<span class="function">(<span class="params">events: RoutesRecognized[]</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'previous url'</span>, events[<span class="number">0</span>].urlAfterRedirects);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'current url'</span>, events[<span class="number">1</span>].urlAfterRedirects);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="router-events-路由事件"><a href="#router-events-路由事件" class="headerlink" title="router.events(路由事件)"></a>router.events(路由事件)</h2><p>在每次导航中，Router都会通过 Router.events 属性发布一些导航事件。这些事件的范围涵盖了从开始导航到结束导航之间的很多时间点。</p>
+<p>返回 Observable</p>
+<h2 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h2><h3 id="what"><a href="#what" class="headerlink" title="what"></a>what</h3><p>可观察对象支持在应用中的发布者和订阅者之间传递消息。 在需要进行事件处理、异步编程和处理多个值的时候，可观察对象相对其它技术有着显著的优点。</p>
+<p>可观察对象是声明式的 —— 也就是说，虽然你定义了一个用于发布值的函数，但是在有消费者订阅它之前，这个函数并不会实际执行。 订阅之后，当这个函数执行完或取消订阅时，订阅者就会收到通知。</p>
+<h3 id="why"><a href="#why" class="headerlink" title="why"></a>why</h3><p>可观察对象可以发送多个任意类型的值 —— 字面量、消息、事件。无论这些值是同步发送的还是异步发送的，接收这些值的 API 都是一样的。 由于准备（setup）和清场（teardown）的逻辑都是由可观察对象自己处理的，因此你的应用代码只管订阅并消费这些值就可以了，做完之后，取消订阅。无论这个流是击键流、HTTP 响应流还是定时器，对这些值进行监听和停止监听的接口都是一样的。</p>
+<p>由于这些优点，可观察对象在 Angular 中得到广泛使用，也同样建议应用开发者好好使用它。</p>
+<h3 id="how"><a href="#how" class="headerlink" title="how"></a>how</h3><p>作为发布者，你创建一个 Observable 的实例，其中定义了一个订阅者（subscriber）函数。 当有消费者调用 subscribe() 方法时，这个函数就会执行。 订阅者函数用于定义“如何获取或生成那些要发布的值或消息”。</p>
+<p>要执行所创建的可观察对象，并开始从中接收通知，你就要调用它的 subscribe() 方法，并传入一个观察者（observer）。 这是一个 JavaScript 对象，它定义了你收到的这些消息的处理器（handler）。 subscribe() 调用会返回一个 Subscription 对象，该对象具有一个 unsubscribe() 方法。 当调用该方法时，你就会停止接收通知。</p>
+<h2 id="pipe-Operators-操作符"><a href="#pipe-Operators-操作符" class="headerlink" title="pipe (Operators 操作符)"></a>pipe (Operators 操作符)</h2><h3 id="what-1"><a href="#what-1" class="headerlink" title="what"></a>what</h3><p>简而言之，就是可以与当前的 let 操作符一起使用的函数。无论名称起的是否合适，这就是它的由来。基本上来说，pipeable 操作符可以是任何函数，但是它需要返回签名为 &lt;T, R&gt;(source: Observable<t>) =&gt; Observable<r> 的函数。</r></t></p>
+<p>现在 Observable 中有一个内置的 pipe 方法 (Observable.prototype.pipe)，它可以用类似于之前的链式调用的方式来组合操作符 (如下所示)。</p>
+<p>There is also a pipe utility function at rxjs/util/pipe that can be used to build reusable pipeable operators from other pipeable operators.</p>
+<p>在 rxjs/util/pipe 中还有一个名为 pipe 的工具函数，它可用于构建基于其他 pipeable 操作符的可复用的 pipeable 操作符。</p>
+<h3 id="why-1"><a href="#why-1" class="headerlink" title="why"></a>why</h3><p>打补丁的操作符主要是为了链式调用，但它存在如下问题:</p>
+<ul>
+<li><p>任何导入了补丁操作符的库都会导致该库的所有消费者的 Observable.prototype 增大，这会创建一种依赖上的盲区。如果此库移除了某个操作符的导入，这会在无形之中破坏其他所有人的使用。使用 pipeable 操作符的话，你必须在每个用到它们的页面中都导入你所需要用到的操作符。</p>
+</li>
+<li><p>通过打补丁的方式将操作符挂在原型上是无法通过像 rollup 或 webpack 这样的工具进行“摇树优化” ( tree-shakeable ) 。而 pipeable 操作符只是直接从模块中提取的函数而已。</p>
+</li>
+<li><p>对于在应用中导入的未使用过的操作符，任何类型的构建工具或 lint 规则都无法可靠地检测出它们。例如，比如你导入了 scan，但后来不再使用了，但它仍会被添加到打包后的文件中。使用 pipeable 操作符的话，如果你不再使用它的简化，lint 规则可以帮你检测到。</p>
+</li>
+<li><p>函数组合 ( functional composition )很棒。创建自定义操作符也变得非常简单，它们就像 rxjs 中的其他所有操作符一样。你不再需要扩展 Observable 或重写 lift 。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; range &#125; <span class="keyword">from</span> <span class="string">'rxjs/observable/range'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; map, filter, scan &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> source$ = range(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">source$.pipe(</span><br><span class="line">  filter(<span class="function"><span class="params">x</span> =&gt;</span> x % <span class="number">2</span> === <span class="number">0</span>),</span><br><span class="line">  map(<span class="function"><span class="params">x</span> =&gt;</span> x + x),</span><br><span class="line">  scan(<span class="function">(<span class="params">acc, x</span>) =&gt;</span> acc + x, <span class="number">0</span>)</span><br><span class="line">)</span><br><span class="line">.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x))</span><br></pre></td></tr></table></figure>
+<h2 id="filter-Operators-操作符"><a href="#filter-Operators-操作符" class="headerlink" title="filter (Operators 操作符)"></a>filter (Operators 操作符)</h2><p>发出符合给定条件的值</p>
+<p><img src="/img/js/rxjs_filter.png" alt=""></p>
+<ul>
+<li><p>示例 1: 过滤出偶数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RxJS v6+</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">from</span> &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; filter &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发出 (1,2,3,4,5)</span></span><br><span class="line"><span class="keyword">const</span> source = <span class="keyword">from</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);</span><br><span class="line"><span class="comment">// 过滤掉奇数</span></span><br><span class="line"><span class="keyword">const</span> example = source.pipe(filter(<span class="function"><span class="params">num</span> =&gt;</span> num % <span class="number">2</span> === <span class="number">0</span>));</span><br><span class="line"><span class="comment">// 输出: "Even number: 2", "Even number: 4"</span></span><br><span class="line"><span class="keyword">const</span> subscribe = example.subscribe(<span class="function"><span class="params">val</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Even number: <span class="subst">$&#123;val&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例 2: 基于属性过滤对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RxJS v6+</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">from</span> &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; filter &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发出 (&#123;name: 'Joe', age: 31&#125;, &#123;name: 'Bob', age:25&#125;)</span></span><br><span class="line"><span class="keyword">const</span> source = <span class="keyword">from</span>([&#123; <span class="attr">name</span>: <span class="string">'Joe'</span>, <span class="attr">age</span>: <span class="number">31</span> &#125;, &#123; <span class="attr">name</span>: <span class="string">'Bob'</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;]);</span><br><span class="line"><span class="comment">// 过滤掉年龄小于30岁的人</span></span><br><span class="line"><span class="keyword">const</span> example = source.pipe(filter(<span class="function"><span class="params">person</span> =&gt;</span> person.age &gt;= <span class="number">30</span>));</span><br><span class="line"><span class="comment">// 输出: "Over 30: Joe"</span></span><br><span class="line"><span class="keyword">const</span> subscribe = example.subscribe(<span class="function"><span class="params">val</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Over 30: <span class="subst">$&#123;val.name&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof 左操作数是一个类，右操作数是标识对象的类。如果左侧的对象是右侧类的实例，则返回true.而js中对象的类是通过初始化它们的构造函数来定义的。即instanceof的右操作数应当是一个函数。所有的对象都是object的实例。如果左操作数不是对象，则返回false,如果右操作数不是函数，则抛出typeError。</p>
+<p>instanceof 运算符是用来测试一个对象是否在其原型链原型构造函数的属性。其语法是object instanceof constructor</p>
+<p>instanceof 操作符用来比较两个操作数的构造函数。只有在比较自定义的对象时才有意义。 如果用来比较内置类型，将会和 typeof 操作符 一样用处不大。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bar</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Bar.prototype = <span class="keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Bar() <span class="keyword">instanceof</span> Bar; <span class="comment">// true</span></span><br><span class="line"><span class="keyword">new</span> Bar() <span class="keyword">instanceof</span> Foo; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果仅仅设置 Bar.prototype 为函数 Foo 本身，而不是 Foo 构造函数的一个实例</span></span><br><span class="line">Bar.prototype = Foo;</span><br><span class="line"><span class="keyword">new</span> Bar() <span class="keyword">instanceof</span> Foo; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://segmentfault.com/a/1190000000730982" target="_blank" rel="noopener">typeof 和 instanceOf的区别</a></p>
+<h2 id="pairwise-Operators-操作符"><a href="#pairwise-Operators-操作符" class="headerlink" title="pairwise (Operators 操作符)"></a>pairwise (Operators 操作符)</h2><p>pairwise<t>(): OperatorFunction&lt;T, [T, T]&gt;</t></p>
+<p>将连续发射对成组在一起，并以两个值的数组形式发射它们。</p>
+<p><img src="./img/js/rxjs_pairwise.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/Webpack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/01/Webpack/" itemprop="url">Webpack</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-01T12:00:14+08:00">
+                2019-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">Webpack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="seven-搭建angular-webpack配置"><a href="#seven-搭建angular-webpack配置" class="headerlink" title="seven 搭建angular webpack配置"></a>seven 搭建angular webpack配置</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> CopyWebpackPlugin = <span class="built_in">require</span>(<span class="string">'copy-webpack-plugin'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;AngularCompilerPlugin&#125; = <span class="built_in">require</span>(<span class="string">"@ngtools/webpack"</span>);</span><br><span class="line"><span class="keyword">const</span> rxPaths = <span class="built_in">require</span>(<span class="string">"rxjs/_esm5/path-mapping"</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;IndexHtmlWebpackPlugin&#125; = <span class="built_in">require</span>(<span class="string">"@angular-devkit/build-angular/src/angular-cli-files/plugins/index-html-webpack-plugin"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'development'</span>,</span><br><span class="line"></span><br><span class="line">  devtool: <span class="string">'source-map'</span>,</span><br><span class="line"></span><br><span class="line">  target: <span class="string">"web"</span>,</span><br><span class="line"></span><br><span class="line">  entry: &#123;</span><br><span class="line">    polyfills: <span class="string">'./src/polyfills.ts'</span>,</span><br><span class="line">    vendor: <span class="string">'./src/vendor.ts'</span>,</span><br><span class="line">    main: <span class="string">'./src/main.ts'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(<span class="string">"./dist"</span>),</span><br><span class="line">    filename: <span class="string">"[name].js"</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  resolve: &#123;</span><br><span class="line">    extensions: [<span class="string">'.ts'</span>, <span class="string">'.js'</span>],</span><br><span class="line">    alias: <span class="built_in">Object</span>.assign(rxPaths(), &#123;</span><br><span class="line">      pixi: path.join(__dirname, <span class="string">'node_modules/pixi.js/dist/pixi.js'</span>),</span><br><span class="line">      dragonBones: path.join(__dirname, <span class="string">'src/libs/dragonBones/dragonBones.js'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  performance: &#123;</span><br><span class="line">    hints: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|dbbin|ico)$/</span>,</span><br><span class="line">        loader: <span class="string">'file-loader?name=assets/[name].[hash].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.ts$/</span>,</span><br><span class="line">        use: [<span class="string">'awesome-typescript-loader'</span>, <span class="string">'angular2-template-loader'</span>],</span><br><span class="line">        exclude: <span class="string">'/node_modules/'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">        use: <span class="string">'html-loader'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.scss$/</span>,</span><br><span class="line">        exclude: [<span class="regexp">/\.global\.scss$/</span>],</span><br><span class="line">        use: [<span class="string">'to-string-loader'</span>, <span class="string">'sass-loader'</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.global\.scss$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="string">'style-loader'</span>,</span><br><span class="line">          <span class="string">'sass-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        type: <span class="string">'javascript/auto'</span>,</span><br><span class="line">        test: <span class="regexp">/\.json$/</span>,</span><br><span class="line">        loader: <span class="string">'file-loader?name=assets/[name].[hash].[ext]'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// This hides some deprecation warnings that Webpack throws</span></span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/[\/\\]@angular[\/\\]core[\/\\].+\.js$/</span>,</span><br><span class="line">        parser: &#123;<span class="attr">system</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/pixi\.js$/</span>, <span class="attr">loader</span>: <span class="string">'expose-loader?PIXI'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/dragonBones\.js$/</span>, <span class="attr">loader</span>: <span class="string">'expose-loader?dragonBones'</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> IndexHtmlWebpackPlugin(&#123;</span><br><span class="line">      input: <span class="string">"./index.html"</span>,</span><br><span class="line">      output: <span class="string">"index.html"</span>,</span><br><span class="line">      entrypoints: [</span><br><span class="line">        <span class="string">"vendor"</span>,</span><br><span class="line">        <span class="string">"polyfills"</span>,</span><br><span class="line">        <span class="string">"main"</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> AngularCompilerPlugin(&#123;</span><br><span class="line">      mainPath: path.resolve(<span class="string">"./src/main.ts"</span>),</span><br><span class="line">      sourceMap: <span class="literal">true</span>,</span><br><span class="line">      nameLazyFiles: <span class="literal">true</span>,</span><br><span class="line">      tsConfigPath: path.resolve(<span class="string">"./src/tsconfig.app.json"</span>),</span><br><span class="line">      skipCodeGeneration: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> CopyWebpackPlugin([</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">from</span>: <span class="string">'src/assets'</span>,</span><br><span class="line">        to: <span class="string">'assets'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">from</span>: <span class="string">'src/favicon.ico'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]),</span><br><span class="line">  ],</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    historyApiFallback: &#123;</span><br><span class="line">      disableDotRule: <span class="literal">true</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="scss-问题"><a href="#scss-问题" class="headerlink" title="scss 问题"></a>scss 问题</h2><font color="#FF0000"><br>ERROR in ./src/app/page/home/home.component.scss<br>You may need an additional loader to handle the result of these loaders.<br>&gt; p {<br>|   color: #f00; }<br></font>
+
+<p>解决：添加 css-loader</p>
+<pre><code class="js">{
+  test: <span class="regexp">/\.scss$/</span>,
+  exclude: [<span class="regexp">/\.global\.scss$/</span>],
+  use: [<span class="string">'to-string-loader'</span>, <span class="string">'css-loader'</span>, <span class="string">'sass-loader'</span>]
+}
+</code></pre>
+<h1 id="模块热替换-hot-module-replacement-或-HMR"><a href="#模块热替换-hot-module-replacement-或-HMR" class="headerlink" title="模块热替换(hot module replacement 或 HMR)"></a>模块热替换(hot module replacement 或 HMR)</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/Angular-CLI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/21/Angular-CLI/" itemprop="url">Angular-CLI</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T21:33:49+08:00">
+                2019-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="把所有零散的Node工具都集成起来"><a href="#把所有零散的Node工具都集成起来" class="headerlink" title="把所有零散的Node工具都集成起来"></a>把所有零散的Node工具都集成起来</h1><h2 id="cli-背景"><a href="#cli-背景" class="headerlink" title="cli 背景"></a>cli 背景</h2><p>在很早的时候，前端是没有好的工具，开发，测试，打包，部署，压缩<br>2009年，出现nodejs，前端Big Bang；以前都是刀耕火种</p>
+<h2 id="集成工具"><a href="#集成工具" class="headerlink" title="集成工具"></a>集成工具</h2><ul>
+<li>webpack</li>
+<li>typeScript编译器<br>单元测试</li>
+<li>karma</li>
+<li>jasmine</li>
+<li>Protractor 自动测试所有路由</li>
+<li>material.angular.io ui</li>
+</ul>
+<p>最后集成一个angular.json</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng version</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ng g c app</span><br><span class="line">CREATE src/app/app/app.component.ts (257 bytes)</span><br><span class="line">已有app文件，使用此指令依然创建app文件</span><br><span class="line"></span><br><span class="line">正确方法：</span><br><span class="line">ng g c app --flat</span><br><span class="line">CREATE src/app/app.component.ts (257 bytes)</span><br><span class="line">默认不创建文件夹，在已有app文件下</span><br></pre></td></tr></table></figure>
+<h3 id="本地版本升级-6-gt-7"><a href="#本地版本升级-6-gt-7" class="headerlink" title="本地版本升级 6 -&gt; 7"></a>本地版本升级 6 -&gt; 7</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall -g @angular/cli</span><br><span class="line">$ npm install -g @angular/cli@7.x.x</span><br><span class="line">$ ng -v</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/Angular依赖包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -948,7 +1437,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -959,7 +1448,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -970,7 +1459,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

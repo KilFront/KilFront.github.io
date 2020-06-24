@@ -252,6 +252,505 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/vue-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/01/vue-error/" itemprop="url">vue-error</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-01T13:30:49+08:00">
+                2020-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Frame/" itemprop="url" rel="index">
+                    <span itemprop="name">Frame</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="操作DOM"><a href="#操作DOM" class="headerlink" title="操作DOM"></a>操作DOM</h1><h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><p>vue是虚拟DOM，不应该使用操作原生DOM的方式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'pixi'</span>).appendChild(app.view);</span><br></pre></td></tr></table></figure></p>
+<h2 id="right"><a href="#right" class="headerlink" title="right"></a>right</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">"pixi"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">this</span>.$refs[<span class="string">'pixi'</span>] <span class="keyword">as</span> HTMLElement).appendChild(app.view);</span><br></pre></td></tr></table></figure>
+<p><code>ref</code> 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 <code>$refs</code> 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例</p>
+<p><code>as</code> 类型断言<br>语法：</p>
+<ul>
+<li>值 as 类型</li>
+<li>&lt;类型&gt;值</li>
+</ul>
+<p><code>&lt;&gt;</code> 语法在 ts 中也表示范型；建议在使用类型断言时，统一使用 <code>值 as 类型</code></p>
+<p>延伸：<br>语法：CAST (expression AS data_type)</p>
+<p>expression：任何有效的SQServer表达式。<br>AS：用于分隔两个参数，在AS之前的是要处理的数据，在AS之后是要转换的数据类型。<br>data_type：目标系统所提供的数据类型，包括bigint和sql_variant，不能使用用户定义的数据类型。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/31/book/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/31/book/" itemprop="url">book</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-31T23:42:17+08:00">
+                2020-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/book/" itemprop="url" rel="index">
+                    <span itemprop="name">book</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h1><h3 id="Program"><a href="#Program" class="headerlink" title="Program"></a>Program</h3><ul>
+<li style="list-style: none"><input type="checkbox"> 程序员的自我修养</li>
+<li style="list-style: none"><input type="checkbox"> 刻意练习 （从新手到大师）</li>
+<li style="list-style: none"><input type="checkbox"> 数学之美</li>
+</ul>
+<h3 id="Society"><a href="#Society" class="headerlink" title="Society"></a>Society</h3><ul>
+<li style="list-style: none"><input type="checkbox"> 梵高先生</li>
+<li style="list-style: none"><input type="checkbox"> 与神对话</li>
+<li style="list-style: none"><input type="checkbox"> 极简美国史</li>
+<li style="list-style: none"><input type="checkbox"> 文明之光</li>
+<li style="list-style: none"><input type="checkbox"> 具体生活</li>
+<li style="list-style: none"><input type="checkbox"> 软技能<h1 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h1><h2 id="Program-1"><a href="#Program-1" class="headerlink" title="Program"></a>Program</h2><h2 id="Society-1"><a href="#Society-1" class="headerlink" title="Society"></a>Society</h2></li>
+<li style="list-style: none"><input type="checkbox" checked> 活着</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/pixijs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/29/pixijs/" itemprop="url">pixijs</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-29T10:18:32+08:00">
+                2020-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Frame/" itemprop="url" rel="index">
+                    <span itemprop="name">Frame</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>why<br>图轻avatar 渲染使用了 pixijs<br>移动端我的装扮页和商场页使用了同一个组件，两个页面切换时，pixijs渲染异常</p>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a href="https://github.com/Zainking/learningPixi" target="_blank" rel="noopener">官方教程</a></p>
+<h3 id="创建Pixi应用-和-舞台"><a href="#创建Pixi应用-和-舞台" class="headerlink" title="创建Pixi应用 和 舞台"></a>创建Pixi应用 和 舞台</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Create a Pixi Application</span></span><br><span class="line"><span class="keyword">let</span> app = <span class="keyword">new</span> PIXI.Application(&#123;<span class="attr">width</span>: <span class="number">256</span>, <span class="attr">height</span>: <span class="number">256</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Add the canvas that Pixi automatically created for you to the HTML document</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(app.view);</span><br></pre></td></tr></table></figure>
+<p>使用Canvas引擎绘制<br>forceCanvas: true,</p>
+<p>改变背景色<br>设置 app.renderer对象的backgroundColor属性为一个任何的十六进制颜色<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.renderer.backgroundColor = <span class="number">0x061639</span>;</span><br></pre></td></tr></table></figure></p>
+<p>改变画布大小<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.renderer.autoResize = <span class="literal">true</span>;</span><br><span class="line">app.renderer.resize(<span class="number">512</span>, <span class="number">512</span>);</span><br></pre></td></tr></table></figure></p>
+<p>全屏<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.renderer.view.style.position = <span class="string">"absolute"</span>;</span><br><span class="line">app.renderer.view.style.display = <span class="string">"block"</span>;</span><br><span class="line">app.renderer.autoResize = <span class="literal">true</span>;</span><br><span class="line">app.renderer.resize(<span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* &#123;<span class="attribute">padding</span>: <span class="number">0</span>; <span class="attribute">margin</span>: <span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Pixi精灵"><a href="#Pixi精灵" class="headerlink" title="Pixi精灵"></a>Pixi精灵</h3><p>创建了画布，可以放图像了<br>如果想在画布上显示东西，必须被加进一个<code>stage 舞台</code> 的Pixi对象中。使用舞台对象<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.stage</span><br></pre></td></tr></table></figure></p>
+<p>所以你可以放些什么到舞台上呢？那就是被称作 精灵 的特殊图像对象。精灵是你能用代码控制图像的基础。你能够控制他们的位置，大小，和许多其他有用的属性来产生交互和动画。学习怎样创建和控制精灵是学习Pixi最重要的部分。如果你知道怎么创建精灵和把他们添加进舞台，离做出一个游戏就仅仅剩下一步之遥！</p>
+<h3 id="将图片加载到纹理缓存中"><a href="#将图片加载到纹理缓存中" class="headerlink" title="将图片加载到纹理缓存中"></a>将图片加载到纹理缓存中</h3><p>可以被GPU处理的图像被称作 纹理<br>在你让精灵显示图片之前，需要将普通的图片转化成WebGL纹理。<br>为了让所有工作执行的快速有效率，Pixi使用 纹理缓存 来存储和引用所有你的精灵需要的纹理。</p>
+<p>纹理被以WEBGL兼容的格式存储起来，它可以使Pixi的渲染有效率的进行。你现在可以使用Pixi的<code>Sprite</code>类来创建一个新的精灵，让它使用纹理。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> texture = PIXI.utils.TextureCache[<span class="string">"images/anySpriteImage.png"</span>];</span><br><span class="line"><span class="keyword">let</span> sprite = <span class="keyword">new</span> PIXI.Sprite(texture);</span><br></pre></td></tr></table></figure></p>
+<p>怎么加载图像并将它转化成纹理？答案是用Pixi已经构建好的loader对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Create a Pixi Application</span></span><br><span class="line"><span class="keyword">let</span> app = <span class="keyword">new</span> PIXI.Application(&#123;</span><br><span class="line">    width: <span class="number">256</span>,</span><br><span class="line">    height: <span class="number">256</span>,                       </span><br><span class="line">    antialias: <span class="literal">true</span>,</span><br><span class="line">    transparent: <span class="literal">false</span>,</span><br><span class="line">    resolution: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Add the canvas that Pixi automatically created for you to the HTML document</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(app.view);</span><br><span class="line"></span><br><span class="line"><span class="comment">//load an image and run the `setup` function when it's done</span></span><br><span class="line">PIXI.loader</span><br><span class="line">  .add(<span class="string">"images/cat.png"</span>)</span><br><span class="line">  .load(setup);</span><br><span class="line"></span><br><span class="line"><span class="comment">//This `setup` function will run when the image has loaded</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Create the cat sprite</span></span><br><span class="line">  <span class="keyword">let</span> cat = <span class="keyword">new</span> PIXI.Sprite(PIXI.loader.resources[<span class="string">"images/cat.png"</span>].texture);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Add the cat to the stage</span></span><br><span class="line">  app.stage.addChild(cat);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>把一个精灵从舞台上挪走，就可以使用removeChild方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.stage.removeChild(anySprite)</span><br></pre></td></tr></table></figure></p>
+<p>通常，我们都把精灵的visible属性设置成false来让精灵简单的隐藏。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anySprite.visible = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="关于加载的其他知识"><a href="#关于加载的其他知识" class="headerlink" title="关于加载的其他知识"></a>关于加载的其他知识</h3><h5 id="使用普通的javaScript-Img对象或canvas创建一个精灵"><a href="#使用普通的javaScript-Img对象或canvas创建一个精灵" class="headerlink" title="使用普通的javaScript Img对象或canvas创建一个精灵"></a>使用普通的javaScript Img对象或canvas创建一个精灵</h5><p>需要从JavaScript的Image对象之中创建，你可以使用Pixi的BaseTexture和Texture类：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> base = <span class="keyword">new</span> PIXI.BaseTexture(anyImageObject),</span><br><span class="line">    texture = <span class="keyword">new</span> PIXI.Texture(base),</span><br><span class="line">    sprite = <span class="keyword">new</span> PIXI.Sprite(texture);</span><br></pre></td></tr></table></figure></p>
+<h5 id="监视加载进程"><a href="#监视加载进程" class="headerlink" title="监视加载进程"></a>监视加载进程</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PIXI.loader</span><br><span class="line">  .add([</span><br><span class="line">    <span class="string">"images/one.png"</span>,</span><br><span class="line">    <span class="string">"images/two.png"</span>,</span><br><span class="line">    <span class="string">"images/three.png"</span></span><br><span class="line">  ])</span><br><span class="line">  .on(<span class="string">"progress"</span>, loadProgressHandler)</span><br><span class="line">  .load(setup);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadProgressHandler</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"loading"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>哪个文件被加载了以及有百分之多少的文件被加载了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LoadProgressHandler</span>(<span class="params">loader, resource</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'loading'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Display the file `url` currently being loaded</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"loading: "</span> + resource.url);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Display the percentage of files currently loaded</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"progress: "</span> + loader.progress + <span class="string">"%"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//If you gave your files names as the first argument</span></span><br><span class="line">  <span class="comment">//of the `add` method, you can access them like this</span></span><br><span class="line">  <span class="comment">//console.log("loading: " + resource.name);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loading: ./images/eyes.png</span><br><span class="line">pixi.html:<span class="number">57</span> progress: <span class="number">50</span>%</span><br><span class="line">pixi.html:<span class="number">51</span> loading</span><br><span class="line">pixi.html:<span class="number">54</span> loading: ./images/hair.png</span><br><span class="line">pixi.html:<span class="number">57</span> progress: <span class="number">100</span>%</span><br></pre></td></tr></table></figure></p>
+<h3 id="精灵位置"><a href="#精灵位置" class="headerlink" title="精灵位置"></a>精灵位置</h3><p>定位他们的位置和改变他们的大小<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> sprite = <span class="keyword">new</span> PIXI.Sprite(</span><br><span class="line">    PIXI.loader.resources[<span class="string">"./images/eyes.png"</span>].texture</span><br><span class="line">  );</span><br><span class="line">  <span class="comment">// spriteCopy = sprite;</span></span><br><span class="line">  sprite.x = <span class="number">96</span>;</span><br><span class="line">  sprite.y = <span class="number">96</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 一句话设置</span></span><br><span class="line">  sprite.position.set(<span class="number">96</span>, <span class="number">96</span>);</span><br><span class="line">  app.stage.addChild(sprite);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="大小和比例"><a href="#大小和比例" class="headerlink" title="大小和比例"></a>大小和比例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Create the `cat` sprite</span></span><br><span class="line">  <span class="keyword">let</span> cat = <span class="keyword">new</span> Sprite(resources[<span class="string">"images/cat.png"</span>].texture);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Change the sprite's size</span></span><br><span class="line">  cat.width = <span class="number">80</span>;</span><br><span class="line">  cat.height = <span class="number">120</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Add the cat to the stage so you can see it</span></span><br><span class="line">  app.stage.addChild(cat);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>精灵都有scale.x 和 scale.y属性，他们可以成比例的改变精灵的宽高<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat.scale.x = <span class="number">0.5</span>;</span><br><span class="line">cat.scale.y = <span class="number">0.5</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat.rotation = <span class="number">0.5</span>;</span><br></pre></td></tr></table></figure>
+<p>设置中心点<br>anchor.x和anchor.y的值如果是从0到1，就会被认为是整个纹理的长度或宽度百分比。设置他们都为0.5，锚点就处在了图像中心。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat.anchor.x = <span class="number">0.5</span>;</span><br><span class="line">cat.anchor.y = <span class="number">0.5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在一行内设置</span></span><br><span class="line">cat.anchor.set(x, y)</span><br></pre></td></tr></table></figure></p>
+<h3 id="雪碧图"><a href="#雪碧图" class="headerlink" title="雪碧图"></a>雪碧图</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> texture = PIXI.utils.TextureCache[<span class="string">"./images/like_unlike.png"</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// let rectangle = new Rectangle(0, 0, 34, 34);</span></span><br><span class="line">  <span class="keyword">let</span> rectangle = <span class="keyword">new</span> PIXI.Rectangle(<span class="number">0</span>, <span class="number">0</span>, <span class="number">34</span>, <span class="number">34</span>);</span><br><span class="line">  texture.frame = rectangle;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> rocket = <span class="keyword">new</span> PIXI.Sprite(texture);</span><br><span class="line"></span><br><span class="line">  rocket.x = <span class="number">32</span>;</span><br><span class="line">  rocket.y = <span class="number">32</span>;</span><br><span class="line"></span><br><span class="line">  app.stage.addChild(rocket);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="移动精灵"><a href="#移动精灵" class="headerlink" title="移动精灵"></a>移动精灵</h3><p>使用Pixi的ticker。这被称为 游戏循环 。任何在游戏循环里的代码都会1秒更新60次。你可以用下面的代码让 cat 精灵以每帧1像素的速率移动。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Start the game loop by adding the `gameLoop` function to</span></span><br><span class="line">  <span class="comment">//Pixi's `ticker` and providing it with a `delta` argument.</span></span><br><span class="line">  app.ticker.add(<span class="function"><span class="params">delta</span> =&gt;</span> gameLoop(delta));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gameLoop</span>(<span class="params">delta</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Move the cat 1 pixel</span></span><br><span class="line">  cat.x += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="平台Avatar"><a href="#平台Avatar" class="headerlink" title="平台Avatar"></a>平台Avatar</h1><h2 id="autoDetectRenderer"><a href="#autoDetectRenderer" class="headerlink" title="autoDetectRenderer"></a>autoDetectRenderer</h2><p>自动检测渲染器</p>
+<ul>
+<li>WebGL （首选）</li>
+<li>canvas</li>
+</ul>
+<h3 id="rendererOptions"><a href="#rendererOptions" class="headerlink" title="rendererOptions"></a>rendererOptions</h3><p>{<br>  transparent: true // 画布透明<br>  antialias: false // 抗锯齿<br>  resolution: window.devicePixelRatio // 分辨率：设备像素比率；三星1，苹果2<br>}</p>
+<h2 id="第一步，创建画布"><a href="#第一步，创建画布" class="headerlink" title="第一步，创建画布"></a>第一步，创建画布</h2><pre><code class="ts"><span class="keyword">private</span> paintStage() {
+  <span class="keyword">const</span> rendererOptions = {
+    transparent: <span class="literal">true</span>,
+    resolution: <span class="built_in">window</span>.devicePixelRatio,
+  };
+  <span class="keyword">this</span>._renderer = PIXI.autoDetectRenderer(<span class="keyword">this</span>._width, <span class="keyword">this</span>._height, rendererOptions);
+
+  <span class="keyword">this</span>.scale.x = <span class="keyword">this</span>.scale.y = <span class="keyword">this</span>._ratio;
+
+  <span class="keyword">this</span>._renderer.resize(<span class="built_in">Math</span>.ceil(<span class="keyword">this</span>._width * <span class="keyword">this</span>._ratio), <span class="built_in">Math</span>.ceil(<span class="keyword">this</span>._height * <span class="keyword">this</span>._ratio));
+
+  <span class="comment">// Clean up container.</span>
+  <span class="keyword">const</span> domElement = <span class="keyword">this</span>.avatarEle.nativeElement;
+  <span class="keyword">while</span> (domElement.hasChildNodes()) {
+    domElement.removeChild(domElement.firstChild);
+  }
+  domElement.appendChild(<span class="keyword">this</span>._renderer.view);
+}
+</code></pre>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -771,8 +1270,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/code/" itemprop="url" rel="index">
-                    <span itemprop="name">code</span>
+                  <a href="/categories/interview/" itemprop="url" rel="index">
+                    <span itemprop="name">interview</span>
                   </a>
                 </span>
 
@@ -883,6 +1382,33 @@
 <li>测试通过上线</li>
 <li>线上回归 （PM QA ）</li>
 </ul>
+<h1 id="简历-1"><a href="#简历-1" class="headerlink" title="简历"></a>简历</h1><h2 id="自荐简历要署名"><a href="#自荐简历要署名" class="headerlink" title="自荐简历要署名"></a>自荐简历要署名</h2><p>要在邮件标题、简历附件文件名上写清楚，谁、应聘什么岗位、建议层级（初级、资深、专家），好歹hr下载完附件之后不用再重命名了。</p>
+<h2 id="word或pdf-简历文件"><a href="#word或pdf-简历文件" class="headerlink" title="word或pdf 简历文件"></a>word或pdf 简历文件</h2><h2 id="简历突出亮点，最好有作品"><a href="#简历突出亮点，最好有作品" class="headerlink" title="简历突出亮点，最好有作品"></a>简历突出亮点，最好有作品</h2><p>前端技术现在也分化的厉害，不严格划分的话，有 NodeJS、H5、Hybrid、架构和业务研发等方向，现在库和规范很多，但每个分支的难度、技术基线都类似（比如达到资深所消耗的时间都差不多），所以全栈通才固然好，每个方向都深入有点太难为人，但至少某一个方向要非常精钻非常深入。所以简历里要重点标出这个长处。实际上九成的简历里的“技能”部分几乎都是一样的，都差不多把前端用到的技术罗列一遍，毫无意义的占据简历中的黄金地段。所以，既然全栈不易，不如把自己最擅长的那个语言或技术高亮加粗出来，面试的时候我就直接绕过其他，专从这个“高亮加粗”部分来做一些技术探底了，以此来引导面试官来问你擅长的部分，更有利于你扬长避短。技术探底一般怎么做？看作品！如果擅长 Node，就看看 NPM 上提交的模块，install 下来演示下，讲讲核心代码。如果是一个组件，就直接看 Demo，讲设计封装思路。如果是一套脚手架工具，直接画架构图，讲原理和适用场景。如果是项目，那就 show 下你作为 PM 发的 Release 邮件！作品不仅仅是这些，也可以是技术专利、设计方案、成功的带人案例、成功的团建案例等，只要内容充实接地气，脉略（可以是代码、也可以是一件事）清晰，show 的过程中两眼放光唾沫星子乱飞，有这个感觉就对了。所以，简历里要适当带有这些储备好的作品，备着面试时狂秀一下。</p>
+<h2 id="突出重点，展示能力"><a href="#突出重点，展示能力" class="headerlink" title="突出重点，展示能力"></a>突出重点，展示能力</h2><p>现在招一个能干活的人不难，难的是招一个能解决问题的。特别是像阿里这种业务性的研发，既要从业务方那领需求，又要警惕需求陷阱，准确识别出刚性需求，出方案，推执行，Release 结果。所以，应对这每个环节所需的技能，最好在简历里有所表现。具体说就是描述每个项目时，不仅要有背景、过程，还要有你为这个项目带来的结果。比如这样描述项目：</p>
+<blockquote>
+<p>我做了 XX 项目重构，用了 XX 技术方案，克服了 XX 的困难，最终让 XX 这类需求变更可以短平快的被消化，极速研发、快速上线、且数据采集也做到了标准化，研发成本大大降低，数据积累增长迅速，比如 XX ，最后在 XX 产品线中开始推广。</p>
+</blockquote>
+<p>在面试时，这种描述很容易引出有针对性的话题来聊，也正因为简历里有这些铺垫，可以节省大量的面聊时间，更快做出判断。相比之下，这种描述就不好：</p>
+<blockquote>
+<p>XX 项目前端研发，用了 AngluarJS，整个项目独立完成，包括整个 Boss 系统的受理收费、商品零售、小灵通短信群发、有线电视代收费、营业员/营业点结账等模块。</p>
+</blockquote>
+<p>这段描述只传达出一个信息，就是你用过 AngularJS。至于当初面临多少种技术选型，如何做取舍选择了 AngluarJS，这些系统模块之间如何基于 AngularJS 进行耦合，有没有涉及前端架构，AngularJS 用的有多深，项目成员分工怎样，如何并行研发？遇到过哪些你认为有价值的问题，并针对此提出应对方案，是代码解决还是组织解决？这个过程要靠面试的时候问答大半天才能搞清楚，问不出来的，基本也就跳过了。要是简历里表达出来，脑子里很嘹喨，面聊也不会很拖沓，能力评价自然会很高。</p>
+<p>再补充一个，有好多人有写博客写总结的习惯，这个习惯非常好，如果某个总结能和简历里做的项目结合起来，就更好了。</p>
+<h2 id="全绿的-Github-提交记录"><a href="#全绿的-Github-提交记录" class="headerlink" title="全绿的 Github 提交记录"></a>全绿的 Github 提交记录</h2><p>简历里附上 Github，最好提交记录那里泛绿的厉害，如果进到 Github 首页就想点开项目列表，找项目去读，如果看到有那种长时间维护的、Readme 写的清楚的、一本正经的写上“转载注明出处的”，基本上抓起电话就开聊了，结果基本上不会差。</p>
+<h2 id="其他关注和不关注"><a href="#其他关注和不关注" class="headerlink" title="其他关注和不关注"></a>其他关注和不关注</h2><p>关注：每次换工作的离职原因，可量化的工作成果，能代表你最高水平的项目要写详细，标红加粗下划线，在简历中强调出来。</p>
+<p>不关注：证书、四六级、了解的编程语言（如果不精通就不要写）、你不擅长什么、个人简介。</p>
+<h2 id="典型问题"><a href="#典型问题" class="headerlink" title="典型问题"></a>典型问题</h2><p>技术探底的问题肯定会问一些，此外面试每个人多会问：</p>
+<ol>
+<li>哪个项目让你最满意、代表你的最高水平？如何做的？</li>
+<li>让你印象最深刻的一个（技术）难点，害的你搞了很久，最后怎么解的，有什么心得？</li>
+<li>你做的时间最久的一个项目（或产品），你看到这个项目有哪些问题，你能做什么？</li>
+<li>你能给我们团队或者产品带来什么？</li>
+</ol>
+<p>这些问题不是硬性的，主要看平时是不是除了技术还琢磨点别的，特别是在阿里好多 BU 产品基本形态成型的基础上，要做试错、创新、提效、求精、找方向，这种情况下，只具备（完成刚性需求的）技术能力已经远不够了，而更需要辩证的执行。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>当然，上面这些都是建议，不管你觉得有没有用，坚持一个原则，那就是“简历不仅仅是履历（你做过什么），它的重要作用是展示能力（你能做好什么）！！！”</p>
+<p>以上~</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>2008年我升任WAPCMS项目负责人，带领一个3人小组支持着每天超过2亿的PV（这就是Benefit。你能带给前雇主的价值，也就是你能带给新雇主的价值。）。</p>
+<p>同样一个知识点，如果你知道是什么：初级水平；如果能知道怎么用：中级水平；如果知道原理并能自己实现：高级水平；再进一步，如果知道背后牵扯到其他的哪些知识点并能对这个知识点有自己的见解：专家水平。</p>
 
           
         
@@ -1517,503 +2043,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/15/vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/15/vue/" itemprop="url">vue</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-15T15:14:21+08:00">
-                2020-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Frame/" itemprop="url" rel="index">
-                    <span itemprop="name">Frame</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="learn"><a href="#learn" class="headerlink" title="learn"></a>learn</h1><p>渐进式：主张最少<br>你可以使用vue核心：声明式渲染，组件系统<br>你也可以使用下面这个图的全部<br><code><img src="/2020/04/15/vue/core.png"></code></p>
-<h1 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h1><h2 id="v-model-指令"><a href="#v-model-指令" class="headerlink" title="v-model 指令"></a>v-model 指令</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"text"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上例不过是一个语法糖，展开来是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:value</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">input</span>=<span class="string">"e =&gt; text = e.target.value"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="sync-修饰符"><a href="#sync-修饰符" class="headerlink" title=".sync 修饰符"></a>.sync 修饰符</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-dialog</span> <span class="attr">:visible.sync</span>=<span class="string">"dialogVisible"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这也是一个语法糖，剥开来是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-dialog</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:visible</span>=<span class="string">"dialogVisible"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">update:visible</span>=<span class="string">"newVisible =&gt; dialogVisible = newVisible"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://juejin.im/post/5aaa9eabf265da237b21d36a" target="_blank" rel="noopener">第三第四种双向绑定</a></p>
-<h1 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h1><p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
-<p>Vuex 可以帮助我们管理共享状态，并附带了更多的概念和框架。这需要对短期和长期效益进行权衡。<br>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store （仓库）模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</p>
-<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>在<code>main.js</code>中加入<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(vuex);</span><br><span class="line"><span class="keyword">var</span> store = <span class="keyword">new</span> vuex.Store(&#123;<span class="comment">//store对象</span></span><br><span class="line">    state:&#123;</span><br><span class="line">        show:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store, <span class="comment">//添加 使用store</span></span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>使用<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; $store.state.show &#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h2><p>前面为了方便 , 我们把 store 对象写在了 main.js 里面 , 但实际上为了便于日后的维护 , 我们分开写更好 , 我们在 src 目录下 , 新建一个 store 文件夹 , 然后在里面新建一个 index.js :<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(vuex);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> vuex.Store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        show:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>那么相应的 , 在 main.js 里的代码应该改成 :<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//vuex</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store,<span class="comment">//使用store</span></span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>使用vuex 的<code>modules</code>, 把store文件夹下的index.js改成<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(vuex);</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> dialog_store <span class="keyword">from</span> <span class="string">'./dialog_store.js'</span>;<span class="comment">//引入某个store对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> vuex.Store(&#123;</span><br><span class="line">    modules: &#123;</span><br><span class="line">        dialog: dialog_store</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>dialog_store.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        show:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>做出这样的修改之后 , 我们将之前我们使用的 $store.state.show 统统改为 <code>$store.state.dialog.show</code> 即可。</p>
-<h2 id="mutations"><a href="#mutations" class="headerlink" title="mutations"></a>mutations</h2><p>前面我们提到的对话框例子 , 我们对vuex 的依赖仅仅只有一个 $store.state.dialog.show 一个状态 , 但是如果我们要进行一个操作 , 需要依赖很多很多个状态 , 那管理起来又麻烦了 !</p>
-<p><code>mutations</code> 登场 , 问题迎刃而解 :</p>
-<h3 id="使用常量替代-Mutation-事件类型"><a href="#使用常量替代-Mutation-事件类型" class="headerlink" title="使用常量替代 Mutation 事件类型"></a>使用常量替代 Mutation 事件类型</h3><p>在需要多人协作的大型项目中，这会很有帮助。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// mutation-types.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> SOME_MUTATION = <span class="string">'SOME_MUTATION'</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store.js</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">import</span> &#123; SOME_MUTATION &#125; <span class="keyword">from</span> <span class="string">'./mutation-types'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    <span class="comment">// 我们可以使用 ES2015 风格的计算属性命名功能来使用一个常量作为函数名</span></span><br><span class="line">    [SOME_MUTATION] (state) &#123;</span><br><span class="line">      <span class="comment">// mutate state</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><p>Action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，因此你可以调用 context.commit 提交一个 mutation，或者通过 context.state 和 context.getters 来获取 state 和 getters。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    increment (state) &#123;</span><br><span class="line">      state.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    increment (context) &#123;</span><br><span class="line">      context.commit(<span class="string">'increment'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>Action 通过 <code>store.dispatch</code> 方法触发：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.dispatch(<span class="string">'increment'</span>)</span><br></pre></td></tr></table></figure></p>
-<h2 id="项目结构示例"><a href="#项目结构示例" class="headerlink" title="项目结构示例"></a>项目结构示例</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">├── index.html</span><br><span class="line">├── main.js</span><br><span class="line">├── api</span><br><span class="line">│   └── ... <span class="comment"># 抽取出API请求</span></span><br><span class="line">├── components</span><br><span class="line">│   ├── App.vue</span><br><span class="line">│   └── ...</span><br><span class="line">└── store</span><br><span class="line">    ├── index.js          <span class="comment"># 我们组装模块并导出 store 的地方</span></span><br><span class="line">    ├── actions.js        <span class="comment"># 根级别的 action</span></span><br><span class="line">    ├── mutations.js      <span class="comment"># 根级别的 mutation</span></span><br><span class="line">    └── modules</span><br><span class="line">        ├── cart.js       <span class="comment"># 购物车模块</span></span><br><span class="line">        └── products.js   <span class="comment"># 产品模块</span></span><br><span class="line">```        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生命周期</span></span><br><span class="line"></span><br><span class="line">`&#123;% asset_img life_cycle.png %&#125;`</span><br><span class="line">created:在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图。</span><br><span class="line">mounted:在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作。</span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统的看 vue 官网 </span></span><br><span class="line">evan you：我想你会乐在其中</span><br><span class="line"><span class="comment">## fetch</span></span><br><span class="line">Fetch是基于promise设计的，它不是ajax的进一步封装，而是原生js API，没有使用XMLHttpRequest对象</span><br><span class="line"></span><br><span class="line"><span class="comment">## pop</span></span><br><span class="line">Vue</span><br><span class="line">变异方法</span><br><span class="line">push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。</span><br><span class="line">pop() 方法用于删除并返回数组的最后一个元素。</span><br><span class="line"><span class="built_in">shift</span>() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。</span><br><span class="line">unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。</span><br><span class="line">splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</span><br><span class="line">sort() 方法用于对数组的元素进行排序。</span><br><span class="line">reverse() 方法用于颠倒数组中元素的顺序。</span><br><span class="line">替换数组</span><br><span class="line">filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。</span><br><span class="line">concat() 方法用于连接两个或多个数组。</span><br><span class="line">slice() 方法可从已有的数组中返回选定的元素。</span><br><span class="line">其他</span><br><span class="line">split() 方法用于把一个字符串分割成字符串数组。</span><br><span class="line"></span><br><span class="line"><span class="comment">## 指令简写</span></span><br><span class="line">v-on: =&gt; @</span><br><span class="line">v-bind: =&gt; :</span><br><span class="line"></span><br><span class="line"><span class="comment">## 组件通信</span></span><br><span class="line">父传子</span><br><span class="line">props: [<span class="string">'todo'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始值</span></span><br><span class="line">``` js</span><br><span class="line">data: &#123;</span><br><span class="line">  newTodoText: <span class="string">''</span>,</span><br><span class="line">  visitCount: 0,</span><br><span class="line">  hideCompletedTodos: <span class="literal">false</span>,</span><br><span class="line">  todos: [],</span><br><span class="line">  error: null</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="router"><a href="#router" class="headerlink" title="router"></a>router</h1><p>两个模式：</p>
-<ul>
-<li>hash</li>
-<li>history</li>
-</ul>
-<h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。</p>
-<h1 id="自己的理解"><a href="#自己的理解" class="headerlink" title="自己的理解"></a>自己的理解</h1><p>Vue</p>
-<ul>
-<li>渐进式框架，像洋葱一样</li>
-<li>数据响应式，dom立即改变</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/Error/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/10/Error/" itemprop="url">Error</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-10T19:03:42+08:00">
-                2020-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Error/" itemprop="url" rel="index">
-                    <span itemprop="name">Error</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h1><p><code><img src="/2020/04/10/Error/get_parame.png"></code></p>
-<p>原因：方法上面没有属性 getUserToken().parame</p>
-<h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><h2 id="sass-loader"><a href="#sass-loader" class="headerlink" title="sass-loader"></a>sass-loader</h2><p>Module build failed: TypeError: this.getResolve is not a function<br>sass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/webpack-bundle-analyzer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/02/webpack-bundle-analyzer/" itemprop="url">webpack-bundle-analyzer</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-02T20:42:31+08:00">
-                2020-04-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="使用-Angular-CLI-和-Webpack-分析包尺寸"><a href="#使用-Angular-CLI-和-Webpack-分析包尺寸" class="headerlink" title="使用 Angular CLI 和 Webpack 分析包尺寸"></a>使用 Angular CLI 和 Webpack 分析包尺寸</h1><p>确保包尺寸足够小（250k 或更小），并在适当的时间加载</p>
-<h2 id="prod"><a href="#prod" class="headerlink" title="prod"></a>prod</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">Flag</th>
-<th style="text-align:left">–dev</th>
-<th style="text-align:left">–prod</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Environment</td>
-<td style="text-align:left">environment.ts</td>
-<td style="text-align:left">environment.prod.ts</td>
-</tr>
-<tr>
-<td style="text-align:left">sourcempas</td>
-<td style="text-align:left">true</td>
-<td style="text-align:left">false</td>
-</tr>
-</tbody>
-</table>
-<p>–prod 还设置了下列的设置:</p>
-<ul>
-<li>如果在 .angular-cli.json 中进行了配置，添加 service worker.</li>
-<li>在模块中，使用 production 替换 process.env.NODE_ENV 的值。</li>
-<li>对代码执行 UglifyJS .</li>
-</ul>
-<h2 id="–stats-json"><a href="#–stats-json" class="headerlink" title="–stats-json"></a>–stats-json</h2><p>该参数用于生成可以使用  webpack-bundle-analyzer 或者 <a href="https://webpack.github.io/analyse" target="_blank" rel="noopener">https://webpack.github.io/analyse</a>  分析包结构的 stats.json 文件。</p>
-<h2 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng build --prod --stats-json</span><br></pre></td></tr></table></figure>
-<h2 id="webpack-bundle-analyzer"><a href="#webpack-bundle-analyzer" class="headerlink" title="webpack-bundle-analyzer"></a>webpack-bundle-analyzer</h2><p>States.json 是 Webpack 的一个特殊文件，webpack 是 Angular CLI 内部所使用的打包工具。使用 Webpack 帮我们生成的这个文件，我们可以使用各种不同的工具来理解我们的应用。</p>
-<p>我们这里使用的工具是  Webpack bundle analyzer 。webpack 包分析器是一个 npm 包，可以在 webpack 的配置中或者命令行使用。对于我们来说，我们使用命令行工具。</p>
-<p>为了使用这个工具，我们需要如下步骤：<br>1、<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev webpack-bundle-analyzer</span><br></pre></td></tr></table></figure></p>
-<p>2、为方便使用，安装之后，在 package.json 中的 scripts 部分，添加下面的行来创建自定义的 npm 命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"bundle-report": "webpack-bundle-analyzer dist/angular-hello-world/stats-es2015.json"</span><br></pre></td></tr></table></figure></p>
-<p>3、执行命令<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run bundle-report</span><br></pre></td></tr></table></figure></p>
-<p>途中的每种颜色代表一个独立的包。在这个图中，可以看到我们有三个包，vendor 中包含所有的库代码，polyfill 包和 main 应用代码包。我们可以近一半查看未压缩和压缩之后的尺寸。这使得我们快速检查最大的包，并帮助我们决定何时使用 Lazy Loading 进一步拆分应用。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2068,7 +2097,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2079,7 +2108,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2090,7 +2119,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

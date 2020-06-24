@@ -88,7 +88,7 @@
 <meta property="og:description" content="浏览器兼容12345-webkit-transform:rotate(-3deg); /*为Chrome/Safari*/-moz-transform:rotate(-3deg); /*为Firefox*/-ms-transform:rotate(-3deg); /*为IE*/-o-transform:rotate(-3deg); /*为Opera*/transform:rotate(-3deg)">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/03/06/css/timing-function.png">
-<meta property="og:updated_time" content="2020-06-08T07:50:13.204Z">
+<meta property="og:updated_time" content="2020-06-19T12:22:19.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css">
 <meta name="twitter:description" content="浏览器兼容12345-webkit-transform:rotate(-3deg); /*为Chrome/Safari*/-moz-transform:rotate(-3deg); /*为Firefox*/-ms-transform:rotate(-3deg); /*为IE*/-o-transform:rotate(-3deg); /*为Opera*/transform:rotate(-3deg)">
@@ -354,7 +354,9 @@
 <h2 id="移动端input-内阴影"><a href="#移动端input-内阴影" class="headerlink" title="移动端input 内阴影"></a>移动端input 内阴影</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span>,</span><br><span class="line"><span class="selector-tag">textarea</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">0</span>; <span class="comment">/* 方法1 */</span></span><br><span class="line">  <span class="attribute">-webkit-appearance</span>: none; <span class="comment">/* 方法2 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size</a></p>
 <h2 id="列表最后一项去除margin-right"><a href="#列表最后一项去除margin-right" class="headerlink" title="列表最后一项去除margin-right"></a>列表最后一项去除margin-right</h2><p>不用给item再加类名，item-right, 再加样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;<span class="selector-pseudo">:nth-child(4n)</span> &#123;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="css-盒子模型"><a href="#css-盒子模型" class="headerlink" title="css 盒子模型"></a>css 盒子模型</h2><p>border-box<br>width = border + padding + 内容的宽度</p>
+<h2 id="css-盒子模型"><a href="#css-盒子模型" class="headerlink" title="css 盒子模型"></a>css 盒子模型</h2><p>IE怪异盒子  和 标准盒子<br>box-sizing：<br>border-box<br>width = border + padding + 内容的宽度</p>
+<p>content-box<br>width = width</p>
+<p>应用场景<br>希望子元素整个盒子撑满父元素的内容区域</p>
 <h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>transition: all .3s linear</p>
 <h2 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h2><p>visibility: visible</p>
 <h1 id="适配"><a href="#适配" class="headerlink" title="适配"></a>适配</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">css</span>: &#123;</span><br><span class="line">  <span class="attribute">loaderOptions</span>: &#123;</span><br><span class="line">    postcss: &#123;</span><br><span class="line">      plugins: [</span><br><span class="line">        <span class="built_in">require</span>(<span class="string">'postcss-px-to-viewport'</span>)(&#123;</span><br><span class="line">          unitToConvert: <span class="string">'px'</span>,</span><br><span class="line">          viewportWidth: 750,</span><br><span class="line">          unitPrecision: 3,</span><br><span class="line">          propList: [<span class="string">'*'</span>],</span><br><span class="line">          viewportUnit: <span class="string">'vw'</span>,</span><br><span class="line">          fontViewportUnit: <span class="string">'vw'</span>,</span><br><span class="line">          selectorBlackList: [],</span><br><span class="line">          minPixelValue: 1,</span><br><span class="line">          mediaQuery: false,</span><br><span class="line">          replace: true,</span><br><span class="line">          exclude: /(\/|\\)(node_modules)(\/|\\)/</span><br><span class="line">        &#125;)</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -429,7 +431,7 @@
 </tr>
 <tr>
 <td style="text-align:left">fill-mode</td>
-<td style="text-align:left">默认 none ；控制动画结束后，元素的样式，有四个值：none(回到动画没开始时的状态)，forwards(动画结束后动画停留在结束状态)，backwords(动画回到第一帧的状态)，both(根据animation-direction轮流应用forwards和backwards规则)，注意与iteration-count不要冲突(动画执行无限次) </td>
+<td style="text-align:left">默认 none ；控制动画结束后，元素的样式，有四个值：none(回到动画没开始时的状态)，forwards(动画结束后动画停留在结束状态)，backwords(动画回到第一帧的状态)，both(根据animation-direction轮流应用forwards和backwards规则)，注意与iteration-count不要冲突(动画执行无限次)</td>
 </tr>
 </tbody>
 </table>
@@ -558,7 +560,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -569,7 +571,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -580,7 +582,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
