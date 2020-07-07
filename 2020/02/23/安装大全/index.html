@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kil Notes">
 <meta property="og:description" content="nodejsNode.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。 win下载nodejs https://nodejs.org/zh-cn/ linux指定版本源1curl -sL https://deb.nodesour">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-02T04:57:41.125Z">
+<meta property="og:updated_time" content="2020-07-02T13:12:54.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安装大全">
 <meta name="twitter:description" content="nodejsNode.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。 win下载nodejs https://nodejs.org/zh-cn/ linux指定版本源1curl -sL https://deb.nodesour">
@@ -348,6 +348,7 @@
 <p>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install nodejs -y</span><br></pre></td></tr></table></figure></p>
 <p>如果安装比较慢，用代理<br>ubuntn 中测试是否开启代理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ telnet 127.0.0.1 1080 // 1080是ssr端口</span><br><span class="line"></span><br><span class="line">$ sudo vim /etc/apt/apt.conf.d/proxy.conf  <span class="comment">#这个文件正常不存在，会新建一个</span></span><br><span class="line">Acquire::http::Proxy <span class="string">"http://user:pwd@192.168.1.1:8080"</span>;</span><br><span class="line"></span><br><span class="line">// 最后再删除</span><br><span class="line">$ sudo rm /etc/apt/apt.conf.d/proxy.conf</span><br></pre></td></tr></table></figure></p>
 <h2 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h2><h3 id="linux-1"><a href="#linux-1" class="headerlink" title="linux"></a>linux</h3><p><a href="https://yarn.bootcss.com/docs/install/#debian-stable" target="_blank" rel="noopener">安装地址</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"deb https://dl.yarnpkg.com/debian/ stable main"</span> | sudo tee /etc/apt/sources.list.d/yarn.list</span><br><span class="line">// 此处要加 apt-get update; 不然安装的版本是0.33</span><br><span class="line">$ sudo apt-get update &amp;&amp; sudo apt-get install yarn -y</span><br><span class="line">$ yarn --version</span><br></pre></td></tr></table></figure></p>
+<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><p>默认初始化<br>yarn init -y </p>
 
       
     </div>
@@ -473,7 +474,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -484,7 +485,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -495,7 +496,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -544,7 +545,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs"><span class="nav-number">1.</span> <span class="nav-text">nodejs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#win"><span class="nav-number">1.1.</span> <span class="nav-text">win</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux"><span class="nav-number">1.2.</span> <span class="nav-text">linux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yarn"><span class="nav-number">2.</span> <span class="nav-text">Yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-1"><span class="nav-number">2.1.</span> <span class="nav-text">linux</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs"><span class="nav-number">1.</span> <span class="nav-text">nodejs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#win"><span class="nav-number">1.1.</span> <span class="nav-text">win</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux"><span class="nav-number">1.2.</span> <span class="nav-text">linux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yarn"><span class="nav-number">2.</span> <span class="nav-text">Yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-1"><span class="nav-number">2.1.</span> <span class="nav-text">linux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init"><span class="nav-number">2.2.</span> <span class="nav-text">init</span></a></li></ol></li></ol></div>
             
 
           </div>

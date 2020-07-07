@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="基础eslint: 代码检测工具 格式123rules: &amp;#123;  &quot;规则名&quot;: [规则值, 规则配置]&amp;#125; 规则值123&quot;off&quot;或者0    //关闭规则关闭&quot;warn&quot;或者1    //在打开的规则作为警告（不影响退出代码）&quot;error&quot;或者2    //把规则作为一个错误（退出代码触发时为1） 配置参数123456&quot;no-trailing-spaces&quot;: 1, //一行结束">
+<meta name="description" content="代码质量管理——eslint规范代码风格 基础eslint: 代码检测工具 格式123rules: &amp;#123;  &quot;规则名&quot;: [规则值, 规则配置]&amp;#125; 规则值123&quot;off&quot;或者0    //关闭规则关闭&quot;warn&quot;或者1    //在打开的规则作为警告（不影响退出代码）&quot;error&quot;或者2    //把规则作为一个错误（退出代码触发时为1） 配置参数123456&quot;no-traili">
 <meta name="keywords" content="ESLint">
 <meta property="og:type" content="article">
 <meta property="og:title" content="eslint">
 <meta property="og:url" content="http://yoursite.com/2020/06/16/eslint/index.html">
 <meta property="og:site_name" content="Kil Notes">
-<meta property="og:description" content="基础eslint: 代码检测工具 格式123rules: &amp;#123;  &quot;规则名&quot;: [规则值, 规则配置]&amp;#125; 规则值123&quot;off&quot;或者0    //关闭规则关闭&quot;warn&quot;或者1    //在打开的规则作为警告（不影响退出代码）&quot;error&quot;或者2    //把规则作为一个错误（退出代码触发时为1） 配置参数123456&quot;no-trailing-spaces&quot;: 1, //一行结束">
+<meta property="og:description" content="代码质量管理——eslint规范代码风格 基础eslint: 代码检测工具 格式123rules: &amp;#123;  &quot;规则名&quot;: [规则值, 规则配置]&amp;#125; 规则值123&quot;off&quot;或者0    //关闭规则关闭&quot;warn&quot;或者1    //在打开的规则作为警告（不影响退出代码）&quot;error&quot;或者2    //把规则作为一个错误（退出代码触发时为1） 配置参数123456&quot;no-traili">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-17T03:50:00.811Z">
+<meta property="og:updated_time" content="2020-07-03T12:04:07.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eslint">
-<meta name="twitter:description" content="基础eslint: 代码检测工具 格式123rules: &amp;#123;  &quot;规则名&quot;: [规则值, 规则配置]&amp;#125; 规则值123&quot;off&quot;或者0    //关闭规则关闭&quot;warn&quot;或者1    //在打开的规则作为警告（不影响退出代码）&quot;error&quot;或者2    //把规则作为一个错误（退出代码触发时为1） 配置参数123456&quot;no-trailing-spaces&quot;: 1, //一行结束">
+<meta name="twitter:description" content="代码质量管理——eslint规范代码风格 基础eslint: 代码检测工具 格式123rules: &amp;#123;  &quot;规则名&quot;: [规则值, 规则配置]&amp;#125; 规则值123&quot;off&quot;或者0    //关闭规则关闭&quot;warn&quot;或者1    //在打开的规则作为警告（不影响退出代码）&quot;error&quot;或者2    //把规则作为一个错误（退出代码触发时为1） 配置参数123456&quot;no-traili">
 
 
 
@@ -342,7 +342,8 @@
       
 
       
-        <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>eslint: 代码检测工具</p>
+        <p>代码质量管理——eslint<br>规范代码风格</p>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>eslint: 代码检测工具</p>
 <h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rules: &#123;</span><br><span class="line">  <span class="string">"规则名"</span>: [规则值, 规则配置]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="规则值"><a href="#规则值" class="headerlink" title="规则值"></a>规则值</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"off"或者0    //关闭规则关闭</span><br><span class="line">"warn"或者1    //在打开的规则作为警告（不影响退出代码）</span><br><span class="line">"error"或者2    //把规则作为一个错误（退出代码触发时为1）</span><br></pre></td></tr></table></figure>
 <h1 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">"no-trailing-spaces": 1, //一行结束后面不要有空格</span><br><span class="line">"semi": [1, "always"], //语句分号结尾</span><br><span class="line">"console":"off", //禁用 console</span><br><span class="line">"quotes": [1, "single"], // 字符串单引号</span><br><span class="line">"object-curly-spacing": [0, "always"], //大括号内允许不必要的空格</span><br><span class="line">"eqeqeq": 1, // 使用全等</span><br></pre></td></tr></table></figure>
@@ -356,6 +357,9 @@
 <h1 id="Prettier"><a href="#Prettier" class="headerlink" title="Prettier"></a>Prettier</h1><p><a href="https://prettier.io/docs/en/options.html#end-of-line" target="_blank" rel="noopener">Prettier</a>;</p>
 <h1 id="vue-cli-默认值"><a href="#vue-cli-默认值" class="headerlink" title="vue cli 默认值"></a>vue cli 默认值</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">"eslintConfig": &#123;</span><br><span class="line">  "root": true,////此项是用来告诉eslint找当前配置文件不能往父级查找</span><br><span class="line">  "env": &#123;</span><br><span class="line">    "node": true//此项指定环境的全局变量，下面的配置指定为node环境</span><br><span class="line">  &#125;,</span><br><span class="line">  "extends": [// 此项是用来配置vue.js风格，就是说写代码的时候要规范的写，如果你使用vs-code我觉得应该可以避免出错</span><br><span class="line">    "plugin:vue/essential",</span><br><span class="line">    <span class="string">"@vue/standard"</span></span><br><span class="line">  ],</span><br><span class="line">  "rules": &#123;//规则配置写在这里</span><br><span class="line">    "indent": [1, 4]</span><br><span class="line">  &#125;,</span><br><span class="line">  "parserOptions": &#123;</span><br><span class="line">    "parser": "babel-eslint"//此项是用来指定eslint解析器的，解析器必须符合规则，babel-eslint解析器是对babel解析器的包装使其与ESLint解析</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h3><h4 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h4><p>把 build/webpack.base.conf.js 配置文件中的eslint rules注释掉即可。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> createLintingRule = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">  <span class="comment">// test: /\.(js|vue)$/,</span></span><br><span class="line">  <span class="comment">// loader: 'eslint-loader',</span></span><br><span class="line">  <span class="comment">// enforce: 'pre',</span></span><br><span class="line">  <span class="comment">// include: [resolve('src'), resolve('test')],</span></span><br><span class="line">  <span class="comment">// options: &#123;</span></span><br><span class="line">  <span class="comment">//   formatter: require('eslint-friendly-formatter'),</span></span><br><span class="line">  <span class="comment">//   emitWarning: !config.dev.showEslintErrorsInOverlay</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h1 id="eslint-loader"><a href="#eslint-loader" class="headerlink" title="eslint-loader"></a>eslint-loader</h1><p>yarn add eslint eslint-loader</p>
+<p>生成.eslintrc.js 文件<br>第一种方法<br>node node_modules/eslint/bin/eslint.js –init</p>
+<p>第二张方法<br>package.json<br>eslint_init: eslint</p>
 
       
     </div>
@@ -479,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -490,7 +494,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -501,7 +505,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -550,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式"><span class="nav-number">1.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规则值"><span class="nav-number">1.2.</span> <span class="nav-text">规则值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置参数"><span class="nav-number">2.</span> <span class="nav-text">配置参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javaScript"><span class="nav-number">3.</span> <span class="nav-text">javaScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css"><span class="nav-number">4.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">5.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子目录"><span class="nav-number">5.0.1.</span> <span class="nav-text">子目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件命名"><span class="nav-number">5.0.2.</span> <span class="nav-text">文件命名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配合vs-code"><span class="nav-number">6.</span> <span class="nav-text">配合vs code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#保存文件后自动删除多余空格"><span class="nav-number">6.0.1.</span> <span class="nav-text">保存文件后自动删除多余空格</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Prettier"><span class="nav-number">7.</span> <span class="nav-text">Prettier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-cli-默认值"><span class="nav-number">8.</span> <span class="nav-text">vue cli 默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭"><span class="nav-number">8.0.1.</span> <span class="nav-text">关闭</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vue"><span class="nav-number">8.0.1.1.</span> <span class="nav-text">vue</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#格式"><span class="nav-number">1.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规则值"><span class="nav-number">1.2.</span> <span class="nav-text">规则值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置参数"><span class="nav-number">2.</span> <span class="nav-text">配置参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javaScript"><span class="nav-number">3.</span> <span class="nav-text">javaScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css"><span class="nav-number">4.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">5.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子目录"><span class="nav-number">5.0.1.</span> <span class="nav-text">子目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件命名"><span class="nav-number">5.0.2.</span> <span class="nav-text">文件命名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配合vs-code"><span class="nav-number">6.</span> <span class="nav-text">配合vs code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#保存文件后自动删除多余空格"><span class="nav-number">6.0.1.</span> <span class="nav-text">保存文件后自动删除多余空格</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Prettier"><span class="nav-number">7.</span> <span class="nav-text">Prettier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-cli-默认值"><span class="nav-number">8.</span> <span class="nav-text">vue cli 默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭"><span class="nav-number">8.0.1.</span> <span class="nav-text">关闭</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vue"><span class="nav-number">8.0.1.1.</span> <span class="nav-text">vue</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#eslint-loader"><span class="nav-number">9.</span> <span class="nav-text">eslint-loader</span></a></li></ol></div>
             
 
           </div>

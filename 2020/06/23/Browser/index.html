@@ -88,7 +88,7 @@
 <meta property="og:description" content="回流与重绘 渲染过程（1）解析HTML文件，构建 DOM Tree（2）解析CSS，构建 CSSOM Tree(CSS规则树)（3）将 DOM Tree 和 CSSOM Tree合并，构建Render tree(渲染树)（4）reflow(回流)：根据Render tree进行节点信息计算（Layout）（5）repaint(重绘)：根据计算好的信息绘制整个页面（Painting）理论上，每一次的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/06/23/Browser/dom-tree.png">
-<meta property="og:updated_time" content="2020-06-23T09:38:15.694Z">
+<meta property="og:updated_time" content="2020-06-24T06:53:41.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Browser">
 <meta name="twitter:description" content="回流与重绘 渲染过程（1）解析HTML文件，构建 DOM Tree（2）解析CSS，构建 CSSOM Tree(CSS规则树)（3）将 DOM Tree 和 CSSOM Tree合并，构建Render tree(渲染树)（4）reflow(回流)：根据Render tree进行节点信息计算（Layout）（5）repaint(重绘)：根据计算好的信息绘制整个页面（Painting）理论上，每一次的">
@@ -346,7 +346,8 @@
       
         <h1 id="回流与重绘"><a href="#回流与重绘" class="headerlink" title="回流与重绘"></a>回流与重绘</h1><p><code><img src="/2020/06/23/Browser/dom-tree.png"></code></p>
 <h2 id="渲染过程"><a href="#渲染过程" class="headerlink" title="渲染过程"></a>渲染过程</h2><p>（1）解析HTML文件，构建 DOM Tree<br>（2）解析CSS，构建 CSSOM Tree(CSS规则树)<br>（3）将 DOM Tree 和 CSSOM Tree合并，构建Render tree(渲染树)<br>（4）reflow(回流)：根据Render tree进行节点信息计算（Layout）<br>（5）repaint(重绘)：根据计算好的信息绘制整个页面（Painting）<br>理论上，每一次的dom更改或者css几何属性更改，都会引起一次浏览器的重排/重绘过程，而如果是css的非几何属性更改，则只会引起重绘过程。所以说<br>回流一定会引起重绘，而重绘不一定会引起回流。</p>
-<h2 id="回流-reflow"><a href="#回流-reflow" class="headerlink" title="回流 reflow"></a>回流 reflow</h2><ul>
+<h2 id="回流-reflow"><a href="#回流-reflow" class="headerlink" title="回流 reflow"></a>回流 reflow</h2><p>当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。<br>每个页面至少需要一次回流，就是在页面第一次加载的时候，这时候是一定会发生回流的，因为要构建render tree。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘。</p>
+<ul>
 <li>页面首次渲染</li>
 <li>浏览器窗口大小发生改变</li>
 <li>元素尺寸或位置发生改变</li>
@@ -366,7 +367,7 @@
 <li>getBoundingClientRect()</li>
 <li>scrollTo()</li>
 </ul>
-<h2 id="重绘-repaint"><a href="#重绘-repaint" class="headerlink" title="重绘 repaint"></a>重绘 repaint</h2><p>当页面中元素样式的改变并不影响它在文档流中的位置时（例如：color、background-color、visibility等），浏览器会将新样式赋予给元素并重新绘制它，这个过程称为重绘。</p>
+<h2 id="重绘-repaint"><a href="#重绘-repaint" class="headerlink" title="重绘 repaint"></a>重绘 repaint</h2><p>当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为重绘。</p>
 <h2 id="如何避免"><a href="#如何避免" class="headerlink" title="如何避免"></a>如何避免</h2><p>CSS</p>
 <p>避免使用table布局。<br>尽可能在DOM树的最末端改变class。<br>避免设置多层内联样式。<br>将动画效果应用到position属性为absolute或fixed的元素上。<br>避免使用CSS表达式（例如：calc()）。</p>
 <p>JavaScript</p>
@@ -410,6 +411,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/29/RegExp/" rel="prev" title="RegExp">
+                RegExp <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -490,7 +495,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -501,7 +506,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -512,7 +517,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
