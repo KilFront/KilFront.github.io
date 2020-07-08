@@ -252,6 +252,309 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/08/nginx/" itemprop="url">nginx</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-08T10:18:01+08:00">
+                2020-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="查看服务器是否安装nginx"><a href="#查看服务器是否安装nginx" class="headerlink" title="查看服务器是否安装nginx"></a>查看服务器是否安装nginx</h1><p>which nginx<br>没有安装会返回空<br>安装了会返回路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@quick-hat-1:~<span class="comment"># which nginx</span></span><br><span class="line">/usr/sbin/nginx</span><br><span class="line"></span><br><span class="line">root@quick-hat-1:~<span class="comment"># nginx -v</span></span><br><span class="line">nginx version: nginx/1.10.3 (Ubuntu)</span><br><span class="line"></span><br><span class="line">root@quick-hat-1:~<span class="comment"># whereis nginx</span></span><br><span class="line">nginx: /usr/sbin/nginx /etc/nginx /usr/share/nginx</span><br></pre></td></tr></table></figure></p>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><p>启动<br>systemctl start nginx<br>nginx -s start;</p>
+<p>启动成功后浏览器输入ip，显示相应信息<br><code><img src="/2020/07/08/nginx/nginx1.png"></code></p>
+<p>重启<br>systemctl restart nginx<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@quick-hat-1:/etc/nginx/sites-enabled<span class="comment"># nginx -s reload</span></span><br></pre></td></tr></table></figure></p>
+<p>停止<br>systemctl stop nginx<br>nginx -s stop;</p>
+<p>开机自启（保证可持续提供服务）<br>systemctl enable nginx</p>
+<p>卸载<br>apt-get –purge remove nginx</p>
+<p>检测语法<br>修改配置后，可以通过下面的命令测试是否有语法错误<br>nginx -t;</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>/ect是linux下专门用来放配置文件的一个目录</p>
+<h2 id="nginx-默认页面"><a href="#nginx-默认页面" class="headerlink" title="nginx 默认页面"></a>nginx 默认页面</h2><p>/etc/nginx/sites-enabled/default</p>
+<p>root /var/www/html;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@quick-hat-1:/var/www/html<span class="comment"># ls</span></span><br><span class="line">index.nginx-debian.html</span><br></pre></td></tr></table></figure></p>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>opt，optional，可选择目录<br>etc，et cetera，存放配bai置文件</p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h2 id="本地文件复制到服务器"><a href="#本地文件复制到服务器" class="headerlink" title="本地文件复制到服务器"></a>本地文件复制到服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ scp -r -P 29847 dist root@96.45.180.121:/opt </span><br><span class="line">root@96.45.180.121<span class="string">'s password: </span></span><br><span class="line"><span class="string">index.html                                                                                                100%  234     1.1KB/s   00:00    </span></span><br><span class="line"><span class="string">bundle.min.js                                                                                             100%   99KB  16.7KB/s   00:05</span></span><br></pre></td></tr></table></figure>
+<p>Linux scp 命令用于 Linux 之间复制文件和目录。<br>scp 是 secure copy 的缩写, scp 是 linux 系统下基于 ssh 登陆进行安全的远程文件拷贝命令。<br>scp 是加密的，rcp 是不加密的，scp 是 rcp 的加强版。</p>
+<h2 id="修改服务器nginx配置文件"><a href="#修改服务器nginx配置文件" class="headerlink" title="修改服务器nginx配置文件"></a>修改服务器nginx配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@quick-hat-1:/etc/nginx/sites-enabled<span class="comment"># vim default</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#root /var/www/html;</span></span><br><span class="line">root /opt/dist;</span><br></pre></td></tr></table></figure>
+<p>浏览器输入地址：<a href="http://96.45.180.121/" target="_blank" rel="noopener">http://96.45.180.121/</a><br><code><img src="/2020/07/08/nginx/nginx2.png"></code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/07/fitness/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/07/fitness/" itemprop="url">fitness</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-07T19:37:53+08:00">
+                2020-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/fitness/" itemprop="url" rel="index">
+                    <span itemprop="name">fitness</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="瘦肚子"><a href="#瘦肚子" class="headerlink" title="瘦肚子"></a>瘦肚子</h1><ul>
+<li>力量训练<br>高强度间歇训练 High Intensity Interval Training，简称HIIT<br>标准：一组下来，一直在喘气，而不是还能说出来一两个字</li>
+</ul>
+<h1 id="六种健康餐"><a href="#六种健康餐" class="headerlink" title="六种健康餐"></a>六种健康餐</h1><h2 id="鸡胸肉西兰花加米饭"><a href="#鸡胸肉西兰花加米饭" class="headerlink" title="鸡胸肉西兰花加米饭"></a>鸡胸肉西兰花加米饭</h2><p><code><img src="/2020/07/07/fitness/food1.png"></code><br>经典健康餐组合<br>鸡胸肉：优质蛋白，蛋白质含量非常高，脂肪很少<br>西兰花：营养丰富，卡路里低<br>米饭：营养丰富，准备简单</p>
+<p>做法：<br>鸡胸肉切片，放盐和胡椒。加热炒锅，喷一层零脂肪的喷油（目的不粘锅）。<br>喷油品牌：PAM<br>食用油的话，脂肪超标<br>鸡胸肉翻四次，变成金黄色</p>
+<p>外加：<br>零卡辣椒酱</p>
+<p>时长：8min<br>价格：15RMB</p>
+<p>营养成分:<br>蛋白质：68G，碳水：66G，脂肪：8G</p>
+<h2 id="罗非鱼加芦笋加红薯"><a href="#罗非鱼加芦笋加红薯" class="headerlink" title="罗非鱼加芦笋加红薯"></a>罗非鱼加芦笋加红薯</h2><p><code><img src="/2020/07/07/fitness/food2.png"></code><br>相比第一个更容易消化，红薯饱腹，续航时间更长</p>
+<p>做法：<br>红薯：<br>厨房用纸包上，微波炉热几分钟</p>
+<p>时长：8min<br>价格：20RMB</p>
+<p>营养成分:<br>蛋白质：60G，碳水：40G，脂肪：6G</p>
+<h2 id="肌肉沙拉三明治"><a href="#肌肉沙拉三明治" class="headerlink" title="肌肉沙拉三明治"></a>肌肉沙拉三明治</h2><p><code><img src="/2020/07/07/fitness/food3.png"></code><br>食材：<br>全麦面包（人工添加剂，糖分比较少的，避免胰岛素波动过大）<br>牛油果（增肌期的法宝）<br>火鸡肉片（或网购即食鸡胸肉）<br>蔬菜</p>
+<p>时长：3min<br>价格：10RMB</p>
+<p>营养成分:<br>蛋白质：36G，碳水：38G，脂肪：15G</p>
+<h2 id="蘑菇菠菜鸡蛋卷"><a href="#蘑菇菠菜鸡蛋卷" class="headerlink" title="蘑菇菠菜鸡蛋卷"></a>蘑菇菠菜鸡蛋卷</h2><p><code><img src="/2020/07/07/fitness/food4.png"></code><br>减脂期早餐</p>
+<p>蘑菇菠菜：微量元素很多，卡路里很低</p>
+<p>做法：<br>锅热，喷油，放蘑菇，放盐和胡椒。<br>快熟了把菠菜放进去，把鸡蛋打进去。<br>放点辣酱，完成。</p>
+<p>时长：5min<br>价格：5RMB</p>
+<p>营养成分:<br>蛋白质：18G，碳水：7G，脂肪：15G</p>
+<h2 id="吞拿鱼罐头沙拉"><a href="#吞拿鱼罐头沙拉" class="headerlink" title="吞拿鱼罐头沙拉"></a>吞拿鱼罐头沙拉</h2><p><code><img src="/2020/07/07/fitness/food5.png"></code><br>食材：<br>鱼罐头：沙丁鱼 和 吞拿鱼<br>罐头选择：水浸而不是油浸，避免额外脂肪</p>
+<p>做法：<br>混合在一起</p>
+<p>时长：2min<br>价格：8-15RMB</p>
+<p>营养成分:<br>蛋白质：17G，碳水：4G，脂肪：2G</p>
+<h2 id="蓝莓蛋白麦片"><a href="#蓝莓蛋白麦片" class="headerlink" title="蓝莓蛋白麦片"></a>蓝莓蛋白麦片</h2><p><code><img src="/2020/07/07/fitness/food6.png"></code><br>练前一个小时吃，充足的碳水，保证好的运动表现<br>蛋白棒</p>
+<p>时长：2min<br>价格：10RMB</p>
+<p>营养成分:<br>蛋白质：20G，碳水：71G，脂肪：7G</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/07/server/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -631,6 +934,9 @@
             <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>yarn add jest jest-webpack</p>
 <h1 id="大公司"><a href="#大公司" class="headerlink" title="大公司"></a>大公司</h1><p>git 提交前，跑一遍jest，出错打回</p>
 <h1 id="e2e"><a href="#e2e" class="headerlink" title="e2e"></a>e2e</h1><p>端到端测试，集成测试控件</p>
+<p>end-to-end<br>站在用户角度的测试<br>e2e测试是把我们的程序堪称是一个黑盒子，我不懂你内部是怎么实现的，我只负责打开浏览器，把测试内容在页面上输入一遍，看是不是我想要得到的结果。</p>
+<p>两者的存在都是很有意义的。<br>unit测试是程序员写好自己的逻辑后可以很容易的测试自己的逻辑返回的是不是都正确。<br>e2e代码是测试所有的需求是不是都可以正确的完成，而且最终要的是在代码重构，js改动很多之后，需要对需求进行测试的时候测试代码是不需要改变的，你也不用担心在重构后不能达到客户的需求。</p>
+<h1 id="unit"><a href="#unit" class="headerlink" title="unit"></a>unit</h1><p>单元测试<br>站在程序员的角度测试<br>unit测试是把代码看成是一个个的组件。从而实现每一个组件的单独测试，测试内容主要是组件内每一个函数的返回结果是不是和期望值一样。<br>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> compare = <span class="function">(<span class="params">a,b</span>) =&gt;</span> a&gt;b?a:b</span><br><span class="line">对这个函数进行测试</span><br><span class="line">expect(compare(<span class="number">1</span>,<span class="number">2</span>)).to.equal(<span class="number">2</span>) <span class="comment">//ok</span></span><br><span class="line">expect(compare(<span class="number">2</span>,<span class="number">1</span>)).to.equal(<span class="number">1</span>) <span class="comment">//ok</span></span><br><span class="line">测试完成</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -1372,297 +1678,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/Browser/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/23/Browser/" itemprop="url">Browser</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-23T17:23:24+08:00">
-                2020-06-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Browser/" itemprop="url" rel="index">
-                    <span itemprop="name">Browser</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="回流与重绘"><a href="#回流与重绘" class="headerlink" title="回流与重绘"></a>回流与重绘</h1><p><code><img src="/2020/06/23/Browser/dom-tree.png"></code></p>
-<h2 id="渲染过程"><a href="#渲染过程" class="headerlink" title="渲染过程"></a>渲染过程</h2><p>（1）解析HTML文件，构建 DOM Tree<br>（2）解析CSS，构建 CSSOM Tree(CSS规则树)<br>（3）将 DOM Tree 和 CSSOM Tree合并，构建Render tree(渲染树)<br>（4）reflow(回流)：根据Render tree进行节点信息计算（Layout）<br>（5）repaint(重绘)：根据计算好的信息绘制整个页面（Painting）<br>理论上，每一次的dom更改或者css几何属性更改，都会引起一次浏览器的重排/重绘过程，而如果是css的非几何属性更改，则只会引起重绘过程。所以说<br>回流一定会引起重绘，而重绘不一定会引起回流。</p>
-<h2 id="回流-reflow"><a href="#回流-reflow" class="headerlink" title="回流 reflow"></a>回流 reflow</h2><p>当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。<br>每个页面至少需要一次回流，就是在页面第一次加载的时候，这时候是一定会发生回流的，因为要构建render tree。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘。</p>
-<ul>
-<li>页面首次渲染</li>
-<li>浏览器窗口大小发生改变</li>
-<li>元素尺寸或位置发生改变</li>
-<li>元素内容变化（文字数量或图片大小等等）</li>
-<li>元素字体大小变化</li>
-<li>添加或者删除可见的DOM元素</li>
-<li>激活CSS伪类（例如：:hover）</li>
-<li>查询某些属性或调用某些方法</li>
-</ul>
-<p>一些常用且会导致回流的属性和方法：</p>
-<ul>
-<li>clientWidth、clientHeight、clientTop、clientLeft</li>
-<li>offsetWidth、offsetHeight、offsetTop、offsetLeft</li>
-<li>scrollWidth、scrollHeight、scrollTop、scrollLeft</li>
-<li>scrollIntoView()、scrollIntoViewIfNeeded()</li>
-<li>getComputedStyle()</li>
-<li>getBoundingClientRect()</li>
-<li>scrollTo()</li>
-</ul>
-<h2 id="重绘-repaint"><a href="#重绘-repaint" class="headerlink" title="重绘 repaint"></a>重绘 repaint</h2><p>当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为重绘。</p>
-<h2 id="如何避免"><a href="#如何避免" class="headerlink" title="如何避免"></a>如何避免</h2><p>CSS</p>
-<p>避免使用table布局。<br>尽可能在DOM树的最末端改变class。<br>避免设置多层内联样式。<br>将动画效果应用到position属性为absolute或fixed的元素上。<br>避免使用CSS表达式（例如：calc()）。</p>
-<p>JavaScript</p>
-<p>避免频繁操作样式，最好一次性重写style属性，或者将样式列表定义为class并一次性更改class属性。<br>避免频繁操作DOM，创建一个documentFragment，在它上面应用所有DOM操作，最后再把它添加到文档中。<br>也可以先为元素设置display: none，操作结束后再把它显示出来。因为在display属性为none的元素上进行的DOM操作不会引发回流和重绘。<br>避免频繁读取会引发回流/重绘的属性，如果确实需要多次使用，就用一个变量缓存起来。<br>对具有复杂动画的元素使用绝对定位，使它脱离文档流，否则会引起父元素及后续元素频繁回流。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/22/apowo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/22/apowo/" itemprop="url">apowo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-22T13:46:28+08:00">
-                2020-06-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="tooqing-webapp"><a href="#tooqing-webapp" class="headerlink" title="tooqing-webapp"></a>tooqing-webapp</h1><h2 id="用到的库"><a href="#用到的库" class="headerlink" title="用到的库"></a>用到的库</h2><ul>
-<li>vue-infinite-loading</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1717,7 +1732,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1728,7 +1743,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1739,7 +1754,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
