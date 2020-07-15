@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="系统更新">
+<meta name="description" content="系统更新 brewHomebrew是一款自由及开放源代码的软件包管理系统，用以简化macOS系统上的软件安装过程 版本1brew --version 更新1brew update 更新某个包时，查看更新信息1brew upgrade -d yarn 两种方式安装包12brew install yarn curl -o- -L https://yarnpkg.com/install.sh | bas">
 <meta name="keywords" content="MacOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OS">
 <meta property="og:url" content="http://yoursite.com/2020/03/23/MacOS/index.html">
 <meta property="og:site_name" content="Kil Notes">
-<meta property="og:description" content="系统更新">
+<meta property="og:description" content="系统更新 brewHomebrew是一款自由及开放源代码的软件包管理系统，用以简化macOS系统上的软件安装过程 版本1brew --version 更新1brew update 更新某个包时，查看更新信息1brew upgrade -d yarn 两种方式安装包12brew install yarn curl -o- -L https://yarnpkg.com/install.sh | bas">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/03/23/MacOS/mac_os.jpeg">
-<meta property="og:updated_time" content="2020-03-23T05:23:06.390Z">
+<meta property="og:updated_time" content="2020-07-09T05:32:45.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OS">
-<meta name="twitter:description" content="系统更新">
+<meta name="twitter:description" content="系统更新 brewHomebrew是一款自由及开放源代码的软件包管理系统，用以简化macOS系统上的软件安装过程 版本1brew --version 更新1brew update 更新某个包时，查看更新信息1brew upgrade -d yarn 两种方式安装包12brew install yarn curl -o- -L https://yarnpkg.com/install.sh | bas">
 <meta name="twitter:image" content="http://yoursite.com/2020/03/23/MacOS/mac_os.jpeg">
 
 
@@ -345,6 +345,22 @@
 
       
         <h1 id="系统更新"><a href="#系统更新" class="headerlink" title="系统更新"></a>系统更新</h1><p><code><img src="/2020/03/23/MacOS/mac_os.jpeg"></code></p>
+<h1 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h1><p><a href="https://github.com/Homebrew/brew" target="_blank" rel="noopener">Homebrew</a>是一款自由及开放源代码的软件包管理系统，用以简化macOS系统上的软件安装过程</p>
+<p>版本<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew --version</span><br></pre></td></tr></table></figure></p>
+<p>更新<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure></p>
+<p>更新某个包时，查看更新信息<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade -d yarn</span><br></pre></td></tr></table></figure></p>
+<p>两种方式安装包<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install yarn </span><br><span class="line">curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.13.0</span><br></pre></td></tr></table></figure></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="Updating-Homebrew…"><a href="#Updating-Homebrew…" class="headerlink" title="Updating Homebrew…"></a>Updating Homebrew…</h3><p>解决办法</p>
+<h4 id="关闭自动更新"><a href="#关闭自动更新" class="headerlink" title="关闭自动更新"></a>关闭自动更新</h4><p>在.zshrc文件中加入下方命令：<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HOMEBREW_NO_AUTO_UPDATE=<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="替换镜像源加速"><a href="#替换镜像源加速" class="headerlink" title="替换镜像源加速"></a>替换镜像源加速</h4><p>我们平时执行brew命令安装软件的时候，跟这三个仓库有关：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.brew.git</span><br><span class="line">2.homebrew-core.git</span><br><span class="line">3.homebrew-bottles</span><br></pre></td></tr></table></figure></p>
+<p>使用阿里的Homebrew镜像源代替可以进行加速</p>
+<h5 id="替换brew-git"><a href="#替换brew-git" class="headerlink" title="替换brew.git"></a>替换brew.git</h5><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.aliyun.com/homebrew/brew.git</span><br></pre></td></tr></table></figure>
+<p>还原：<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/brew.git</span><br></pre></td></tr></table></figure></p>
+<h5 id="替换homebrew-core-git"><a href="#替换homebrew-core-git" class="headerlink" title="替换homebrew-core.git"></a>替换homebrew-core.git</h5><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure>
+<p>还原：<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure></p>
+<h5 id="替换homebrew-bottles访问地址"><a href="#替换homebrew-bottles访问地址" class="headerlink" title="替换homebrew-bottles访问地址"></a>替换homebrew-bottles访问地址</h5><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles'</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>还原的话就是删除HOMEBREW_BOTTLE_DOMAIN，上面的是zsh的命令，如果是bash的话请写在.bash_profile文件中。</p>
+<p>更新后成功：<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ brew upgrade yarn</span><br><span class="line">Updating Homebrew...</span><br><span class="line">==&gt; Auto-updated Homebrew!</span><br><span class="line">Updated 1 tap (homebrew/cask).</span><br><span class="line">==&gt; Updated Casks</span><br><span class="line">karabiner-elements ✔               hex-fiend                          qownnotes</span><br><span class="line">115browser</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -458,7 +474,7 @@
                 alt="kil" />
             
               <p class="site-author-name" itemprop="name">kil</p>
-              <p class="site-description motion-element" itemprop="description">潜心修行，任重道远</p>
+              <p class="site-description motion-element" itemprop="description">心如止水，潜心修行</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -490,7 +506,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -539,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统更新"><span class="nav-number">1.</span> <span class="nav-text">系统更新</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统更新"><span class="nav-number">1.</span> <span class="nav-text">系统更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#brew"><span class="nav-number">2.</span> <span class="nav-text">brew</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating-Homebrew…"><span class="nav-number">2.1.1.</span> <span class="nav-text">Updating Homebrew…</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭自动更新"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">关闭自动更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换镜像源加速"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">替换镜像源加速</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换brew-git"><span class="nav-number">2.1.1.2.1.</span> <span class="nav-text">替换brew.git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换homebrew-core-git"><span class="nav-number">2.1.1.2.2.</span> <span class="nav-text">替换homebrew-core.git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换homebrew-bottles访问地址"><span class="nav-number">2.1.1.2.3.</span> <span class="nav-text">替换homebrew-bottles访问地址</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

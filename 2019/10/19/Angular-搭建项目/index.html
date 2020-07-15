@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kil Notes">
 <meta property="og:description" content="初始化12$ mkdir angular_website &amp;amp;&amp;amp; cd angular_website$ yarn init 得到package.json 文件123456&amp;#123;  &quot;name&quot;: &quot;angulectron&quot;,  &quot;version&quot;: &quot;1.0.0&quot;,  &quot;main&quot;: &quot;index.js&quot;,  &quot;license&quot;: &quot;MIT&quot;&amp;#125; 添加基础依赖1$ y">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-14T06:29:56.764Z">
+<meta property="og:updated_time" content="2020-07-13T05:48:07.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建Angular项目">
 <meta name="twitter:description" content="初始化12$ mkdir angular_website &amp;amp;&amp;amp; cd angular_website$ yarn init 得到package.json 文件123456&amp;#123;  &quot;name&quot;: &quot;angulectron&quot;,  &quot;version&quot;: &quot;1.0.0&quot;,  &quot;main&quot;: &quot;index.js&quot;,  &quot;license&quot;: &quot;MIT&quot;&amp;#125; 添加基础依赖1$ y">
@@ -380,6 +380,15 @@
 <h4 id="将-css-文件重命名-scss"><a href="#将-css-文件重命名-scss" class="headerlink" title="将 .css 文件重命名 .scss"></a>将 .css 文件重命名 .scss</h4><p>app  &amp;&amp; webpack</p>
 <h4 id="创建项目时设置"><a href="#创建项目时设置" class="headerlink" title="创建项目时设置"></a>创建项目时设置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new your-project-name --style=scss</span><br></pre></td></tr></table></figure>
 <p>如果要为以后创建的所有项目设置默认值，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng config --global defaults.styleExt=scss</span><br></pre></td></tr></table></figure></p>
+<h1 id="版本升级"><a href="#版本升级" class="headerlink" title="版本升级"></a>版本升级</h1><p>error @<a href="mailto:angular-devkit/architect@0.900.0" target="_blank" rel="noopener">angular-devkit/architect@0.900.0</a>: The engine “yarn” is incompatible with this module. Expected version “&gt;= 1.13.0”. Got “1.12.3”<br>error Found incompatible module</p>
+<p>brew upgrade yarn</p>
+<h2 id="ng"><a href="#ng" class="headerlink" title="ng"></a>ng</h2><p>ng update @angular/cli@8 @angular/core@8</p>
+<p>ng update @angular/core –next –force (更新了angular相关依赖 到8.0)</p>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>ViewChild =&gt; @ViewChild(‘foo’, {static: false}) foo !: ElementRef;</p>
+<h2 id="重新安装"><a href="#重新安装" class="headerlink" title="重新安装"></a>重新安装</h2><p>node-sass</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>@<a href="mailto:angular/cdk@8.0.0" target="_blank" rel="noopener">angular/cdk@8.0.0</a></p>
+<h2 id="升级到10"><a href="#升级到10" class="headerlink" title="升级到10"></a>升级到10</h2><p>yarn remove @angular/cli<br>yarn add @<a href="mailto:angular/cli@10.0.2" target="_blank" rel="noopener">angular/cli@10.0.2</a> –dev</p>
+<p><a href="https://update.angular.io/#8.0:10.0" target="_blank" rel="noopener">https://update.angular.io/#8.0:10.0</a></p>
 
       
     </div>
@@ -493,7 +502,7 @@
                 alt="kil" />
             
               <p class="site-author-name" itemprop="name">kil</p>
-              <p class="site-description motion-element" itemprop="description">潜心修行，任重道远</p>
+              <p class="site-description motion-element" itemprop="description">心如止水，潜心修行</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -525,7 +534,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -574,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加基础依赖"><span class="nav-number">2.</span> <span class="nav-text">添加基础依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加基础文件"><span class="nav-number">3.</span> <span class="nav-text">添加基础文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-webpack-打包-angular-安装的依赖包"><span class="nav-number">4.</span> <span class="nav-text">seven webpack 打包 angular 安装的依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import-HeaderModule-not-resolve"><span class="nav-number">5.</span> <span class="nav-text">import HeaderModule not resolve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove-nghost-sfi-c0"><span class="nav-number">6.</span> <span class="nav-text">remove _nghost-sfi-c0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源的相对路径-与-绝对路径"><span class="nav-number">7.</span> <span class="nav-text">资源的相对路径 与 绝对路径</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化点"><span class="nav-number"></span> <span class="nav-text">优化点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css-to-scss"><span class="nav-number"></span> <span class="nav-text">css to scss</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件-把CSS预编译改成SASS"><span class="nav-number">1.</span> <span class="nav-text">[组件]把CSS预编译改成SASS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二中方法"><span class="nav-number">2.</span> <span class="nav-text">第二中方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将默认样式扩展名更改为-scss"><span class="nav-number">2.1.</span> <span class="nav-text">将默认样式扩展名更改为 scss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将-css-文件重命名-scss"><span class="nav-number">2.2.</span> <span class="nav-text">将 .css 文件重命名 .scss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目时设置"><span class="nav-number">2.3.</span> <span class="nav-text">创建项目时设置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加基础依赖"><span class="nav-number">2.</span> <span class="nav-text">添加基础依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加基础文件"><span class="nav-number">3.</span> <span class="nav-text">添加基础文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-webpack-打包-angular-安装的依赖包"><span class="nav-number">4.</span> <span class="nav-text">seven webpack 打包 angular 安装的依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import-HeaderModule-not-resolve"><span class="nav-number">5.</span> <span class="nav-text">import HeaderModule not resolve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove-nghost-sfi-c0"><span class="nav-number">6.</span> <span class="nav-text">remove _nghost-sfi-c0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源的相对路径-与-绝对路径"><span class="nav-number">7.</span> <span class="nav-text">资源的相对路径 与 绝对路径</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化点"><span class="nav-number"></span> <span class="nav-text">优化点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css-to-scss"><span class="nav-number"></span> <span class="nav-text">css to scss</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件-把CSS预编译改成SASS"><span class="nav-number">1.</span> <span class="nav-text">[组件]把CSS预编译改成SASS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二中方法"><span class="nav-number">2.</span> <span class="nav-text">第二中方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将默认样式扩展名更改为-scss"><span class="nav-number">2.1.</span> <span class="nav-text">将默认样式扩展名更改为 scss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将-css-文件重命名-scss"><span class="nav-number">2.2.</span> <span class="nav-text">将 .css 文件重命名 .scss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目时设置"><span class="nav-number">2.3.</span> <span class="nav-text">创建项目时设置</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本升级"><span class="nav-number"></span> <span class="nav-text">版本升级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ng"><span class="nav-number"></span> <span class="nav-text">ng</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改"><span class="nav-number"></span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重新安装"><span class="nav-number"></span> <span class="nav-text">重新安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载"><span class="nav-number"></span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级到10"><span class="nav-number"></span> <span class="nav-text">升级到10</span></a></div>
             
 
           </div>
