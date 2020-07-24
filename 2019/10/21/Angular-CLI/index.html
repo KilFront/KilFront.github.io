@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kil Notes">
 <meta property="og:description" content="把所有零散的Node工具都集成起来cli 背景在很早的时候，前端是没有好的工具，开发，测试，打包，部署，压缩2009年，出现nodejs，前端Big Bang；以前都是刀耕火种 集成工具 webpack typeScript编译器单元测试 karma jasmine Protractor 自动测试所有路由 material.angular.io ui  最后集成一个angular.json 指令1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-12T09:49:58.120Z">
+<meta property="og:updated_time" content="2020-07-16T08:46:38.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular-CLI">
 <meta name="twitter:description" content="把所有零散的Node工具都集成起来cli 背景在很早的时候，前端是没有好的工具，开发，测试，打包，部署，压缩2009年，出现nodejs，前端Big Bang；以前都是刀耕火种 集成工具 webpack typeScript编译器单元测试 karma jasmine Protractor 自动测试所有路由 material.angular.io ui  最后集成一个angular.json 指令1">
@@ -355,6 +355,7 @@
 <h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng version</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ng g c app</span><br><span class="line">CREATE src/app/app/app.component.ts (257 bytes)</span><br><span class="line">已有app文件，使用此指令依然创建app文件</span><br><span class="line"></span><br><span class="line">正确方法：</span><br><span class="line">ng g c app --flat</span><br><span class="line">CREATE src/app/app.component.ts (257 bytes)</span><br><span class="line">默认不创建文件夹，在已有app文件下</span><br></pre></td></tr></table></figure>
 <h3 id="本地版本升级-6-gt-7"><a href="#本地版本升级-6-gt-7" class="headerlink" title="本地版本升级 6 -&gt; 7"></a>本地版本升级 6 -&gt; 7</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall -g @angular/cli</span><br><span class="line">$ npm install -g @angular/cli@7.x.x</span><br><span class="line">$ ng -v</span><br></pre></td></tr></table></figure>
+<h1 id="修改默认4200端口"><a href="#修改默认4200端口" class="headerlink" title="修改默认4200端口"></a>修改默认4200端口</h1><p>It seems things have changed in recent versions of the CLI (I’m using 6.0.1). I was able to change the default port used by ng serve by adding a port option to my project’s <code>angular.json</code>:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"$schema"</span>: <span class="string">"./node_modules/@angular/cli/lib/config/schema.json"</span>,</span><br><span class="line">    <span class="attr">"projects"</span>: &#123;</span><br><span class="line">        <span class="attr">"my-project"</span>: &#123;</span><br><span class="line">            <span class="attr">"architect"</span>: &#123;</span><br><span class="line">                <span class="attr">"serve"</span>: &#123;</span><br><span class="line">                    <span class="attr">"options"</span>: &#123;</span><br><span class="line">                        <span class="attr">"port"</span>: <span class="number">4201</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -478,7 +479,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -500,7 +501,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -549,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#把所有零散的Node工具都集成起来"><span class="nav-number">1.</span> <span class="nav-text">把所有零散的Node工具都集成起来</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cli-背景"><span class="nav-number">1.1.</span> <span class="nav-text">cli 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成工具"><span class="nav-number">1.2.</span> <span class="nav-text">集成工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">2.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地版本升级-6-gt-7"><span class="nav-number">2.0.1.</span> <span class="nav-text">本地版本升级 6 -&gt; 7</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#把所有零散的Node工具都集成起来"><span class="nav-number">1.</span> <span class="nav-text">把所有零散的Node工具都集成起来</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cli-背景"><span class="nav-number">1.1.</span> <span class="nav-text">cli 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成工具"><span class="nav-number">1.2.</span> <span class="nav-text">集成工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">2.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地版本升级-6-gt-7"><span class="nav-number">2.0.1.</span> <span class="nav-text">本地版本升级 6 -&gt; 7</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改默认4200端口"><span class="nav-number">3.</span> <span class="nav-text">修改默认4200端口</span></a></li></ol></div>
             
 
           </div>

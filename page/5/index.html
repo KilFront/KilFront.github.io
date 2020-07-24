@@ -252,151 +252,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/11/跨平台框架/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kil">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar/pazu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kil Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/11/跨平台框架/" itemprop="url">跨平台框架</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-11T12:23:49+08:00">
-                2020-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Frame/" itemprop="url" rel="index">
-                    <span itemprop="name">Frame</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>做项目，还是 cordova，如果只是学习以后备用，那就选 Flutter</p>
-<h2 id="Cordova"><a href="#Cordova" class="headerlink" title="Cordova"></a>Cordova</h2><p>cordova 配合 ionic，开发简单，且 angular8 运行速度很快（学还是有点难度）。一般的应用，用户也区分不出混合开发还是原生开发。<br>唯一的劣势是，cordova 应用是基于系统 webview 的，最新的 html/js/CSS 特性可能在低版本的 webview （ android5.0 以下、ios10 以下）上显示不正常，如果用 angular 开发就更有问题了。<br>但现在千元机都是 android9.0，所以看起来这个问题影响也不大。</p>
-<h2 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h2><p>Flutter，速度很快，但和 cordova 一样，特殊应用需要依赖插件，插件质量不敢保证。另外就是 web 支持，本来 flutter 就不是做 web 的，现在强上个 web 支持，肯定没有 angular 或其他框架成熟。<br>编程语言是Drat</p>
-<h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><p>项目庞大之后的维护困难，第三方库的良莠不齐，兼容上需要耗费更多的精力导致放弃。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/product/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1186,12 +1041,18 @@
 <p>如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成 any 类型而完全不被类型检查：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myFavoriteNumber;</span><br><span class="line">myFavoriteNumber = <span class="string">'seven'</span>;</span><br><span class="line">myFavoriteNumber = <span class="number">7</span>;</span><br></pre></td></tr></table></figure></p>
 <h3 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h3><p>联合类型（Union Types）表示取值可以为多种类型中的一种。<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myFavoriteNumber: <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line">myFavoriteNumber = <span class="string">'seven'</span>;</span><br><span class="line">myFavoriteNumber = <span class="number">7</span>;</span><br></pre></td></tr></table></figure></p>
 <h3 id="对象的类型–接口"><a href="#对象的类型–接口" class="headerlink" title="对象的类型–接口"></a>对象的类型–接口</h3><p>在 TypeScript 中，我们使用接口（Interfaces）来定义对象的类型。</p>
-<p>在面向对象语言中，接口（Interfaces）是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类（classes）去实现（implement）。<br>TypeScript 中的接口是一个非常灵活的概念，除了可用于对类的一部分行为进行抽象以外，也常用于对「对象的形状（Shape）」进行描述。<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    age: <span class="number">25</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在面向对象语言中，接口（Interfaces）是一个很重要的概念，它是对行为的抽象，而具体如何行动需要由类（classes）去实现（implement）。<br>TypeScript 中的接口是一个非常灵活的概念，除了可用于对类的一部分行为进行抽象以外，也常用于对「对象的形状（Shape）」进行描述。<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line"></span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    age: <span class="number">25</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>上面的例子中，我们定义了一个接口 <code>Person</code>，接着定义了一个变量 <code>tom</code>，它的类型是 <code>Person</code>。这样，我们就约束了 <code>tom</code> 的形状必须和接口 <code>Person</code> 一致。<br>接口一般首字母大写。<a href="https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-1.1/8bc1fexb(v=vs.71" target="_blank" rel="noopener">有的编程语言中会建议接口的名称加上 I 前缀</a>?redirectedfrom=MSDN)。</p>
+<p>Q：typescript中，类作为类型是怎么回事呢，一般下不是使用接口来定义对象的类型嘛<br>A：类作为类型挺常见的，let a:Box意味着a变量只能存储Box（及其子类）的实例，interface反而比class类型出现的更晚一些</p>
 <h4 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性"></a>可选属性</h4><p>有时我们希望不要完全匹配一个形状，那么可以用可选属性：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age?: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    name: <span class="string">'Tom'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <h4 id="任意属性"><a href="#任意属性" class="headerlink" title="任意属性"></a>任意属性</h4><p>有时候我们希望一个接口允许有任意的属性，可以使用如下方式：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age?: <span class="built_in">number</span>;</span><br><span class="line">    [propName: <span class="built_in">string</span>]: <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    gender: <span class="string">'male'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>使用 [propName: string] 定义了任意属性取 string 类型的值。<br>需要注意的是，一旦定义了任意属性，那么确定属性和可选属性的类型都必须是它的类型的子集：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age?: <span class="built_in">number</span>;</span><br><span class="line">    [propName: <span class="built_in">string</span>]: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    age: <span class="number">25</span>,</span><br><span class="line">    gender: <span class="string">'male'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.ts(3,5): error TS2411: Property 'age' of type 'number' is not assignable to string index type 'string'.</span></span><br><span class="line"><span class="comment">// index.ts(7,5): error TS2322: Type '&#123; [x: string]: string | number; name: string; age: number; gender: string; &#125;' is not assignable to type 'Person'.</span></span><br><span class="line"><span class="comment">//   Index signatures are incompatible.</span></span><br><span class="line"><span class="comment">//     Type 'string | number' is not assignable to type 'string'.</span></span><br><span class="line"><span class="comment">//       Type 'number' is not assignable to type 'string'.</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h4><p>有时候我们希望对象中的一些字段只能在创建的时候被赋值，那么可以用 <code>readonly</code> 定义只读属性：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">    readonly id: <span class="built_in">number</span>;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age?: <span class="built_in">number</span>;</span><br><span class="line">    [propName: <span class="built_in">string</span>]: <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tom: Person = &#123;</span><br><span class="line">    id: <span class="number">89757</span>,</span><br><span class="line">    name: <span class="string">'Tom'</span>,</span><br><span class="line">    gender: <span class="string">'male'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tom.id = <span class="number">9527</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上例中，使用 readonly 定义的属性 id 初始化后，又被赋值了，所以报错了。</span></span><br><span class="line"><span class="comment">// index.ts(14,5): error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="Partial"><a href="#Partial" class="headerlink" title="Partial"></a>Partial</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> Game &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 游戏ID</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  _id: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  name: <span class="built_in">string</span> = <span class="string">"空白世界"</span>;</span><br><span class="line"></span><br><span class="line">  description: <span class="built_in">string</span> = <span class="string">"什么都没有的世界，需要玩家自己创造"</span>;</span><br><span class="line"></span><br><span class="line">  owner: Partial&lt;User&gt;;</span><br></pre></td></tr></table></figure>
+<p>Partial 作用是将传入的属性变为可选项.<br>首先我们需要理解两个关键字 keyof 和 in, keyof 可以用来取得一个对象接口的所有 key 值.<br>比如<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Foo &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> T = keyof Foo <span class="comment">// -&gt; "name" | "age"</span></span><br></pre></td></tr></table></figure></p>
+<p>而 in 则可以遍历枚举类型, 例如<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Keys = <span class="string">"a"</span> | <span class="string">"b"</span></span><br><span class="line"><span class="keyword">type</span> Obj =  &#123;</span><br><span class="line">  [p <span class="keyword">in</span> Keys]: <span class="built_in">any</span></span><br><span class="line">&#125; <span class="comment">// -&gt; &#123; a: any, b: any &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>keyof 产生枚举类型, in 使用枚举类型遍历, 所以他们经常一起使用, 看下 Partial 源码<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Partial&lt;T&gt; = &#123; [P <span class="keyword">in</span> keyof T]?: T[P] &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面语句的意思是 keyof T 拿到 T 所有属性名, 然后 in 进行遍历, 将值赋给 P, 最后 T[P] 取得相应属性的值.<br>结合中间的 ? 我们就明白了 Partial 的含义了.</p>
 <h3 id="数组的类型"><a href="#数组的类型" class="headerlink" title="数组的类型"></a>数组的类型</h3><p>在 TypeScript 中，数组类型有多种定义方式，比较灵活。</p>
 <h4 id="「类型-方括号」表示法"><a href="#「类型-方括号」表示法" class="headerlink" title="「类型 + 方括号」表示法"></a>「类型 + 方括号」表示法</h4><p>最简单的方法是使用「类型 + 方括号」来表示数组：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fibonacci: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></p>
 <h4 id="数组泛型"><a href="#数组泛型" class="headerlink" title="数组泛型"></a>数组泛型</h4><p>我们也可以使用数组泛型（Array Generic） <code>Array&lt;elemType&gt;</code> 来表示数组：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fibonacci: <span class="built_in">Array</span>&lt;<span class="built_in">number</span>&gt; = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br></pre></td></tr></table></figure></p>
@@ -1214,6 +1075,7 @@
 <p>上例中，我们重复定义了多次函数 reverse，前几次都是函数定义，最后一次是函数实现。在编辑器的代码提示中，可以正确的看到前两个提示。<br>注意，TypeScript 会优先从最前面的函数定义开始匹配，所以多个函数定义如果有包含关系，需要优先把精确的定义写在前面。</p>
 <h4 id="函数签名"><a href="#函数签名" class="headerlink" title="函数签名"></a>函数签名</h4><p>success: (a, b) =&gt; void</p>
 <h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;类型&gt;值</span><br><span class="line"><span class="comment">// 或</span></span><br><span class="line">值 <span class="keyword">as</span> 类型</span><br></pre></td></tr></table></figure>
+<h4 id="编辑器例子"><a href="#编辑器例子" class="headerlink" title="编辑器例子"></a>编辑器例子</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">destory() &#123;</span><br><span class="line">  <span class="keyword">this</span>._cap = &#123;&#125; <span class="keyword">as</span> Capsule;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="例子：将一个联合类型的变量指定为一个更加具体的类型"><a href="#例子：将一个联合类型的变量指定为一个更加具体的类型" class="headerlink" title="例子：将一个联合类型的变量指定为一个更加具体的类型"></a>例子：将一个联合类型的变量指定为一个更加具体的类型</h4><p>有时候，我们确实需要在还不确定类型的时候就访问其中一个类型的属性或方法，比如<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (something.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> something.length;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> something.toString().length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.ts(2,19): error TS2339: Property 'length' does not exist on type 'string | number'.</span></span><br><span class="line"><span class="comment">//   Property 'length' does not exist on type 'number'.</span></span><br><span class="line"><span class="comment">// index.ts(3,26): error TS2339: Property 'length' does not exist on type 'string | number'.</span></span><br><span class="line"><span class="comment">//   Property 'length' does not exist on type 'number'.</span></span><br></pre></td></tr></table></figure></p>
 <p>上例中，获取 something.length 的时候会报错。<br>此时可以使用类型断言，将 something 断言成 string：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((&lt;<span class="built_in">string</span>&gt;something).length) &#123;</span><br><span class="line">        <span class="keyword">return</span> (&lt;<span class="built_in">string</span>&gt;something).length;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> something.toString().length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1221,6 +1083,8 @@
 <h3 id="外部变量声明"><a href="#外部变量声明" class="headerlink" title="外部变量声明"></a>外部变量声明</h3><p>declare var 名字</p>
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>interface</p>
 <h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>约定、限制</p>
+<span class="label ib_blue">2020/7/21 添加</span>
+<p>如果实现 <code>implements</code> 了接口interface，则 在类中必须有接口的所有成员（属性），否则ts报错<br>Angular例子：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> GameComponent <span class="keyword">implements</span> OnInit, OnDestroy &#123;</span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnDestroy() &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Point &#123;</span><br><span class="line">  x: <span class="built_in">number</span>,</span><br><span class="line">  y: <span class="built_in">number</span>,</span><br><span class="line">  z?: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p: Point;</span><br><span class="line">p = &#123;x:<span class="number">12</span>, y:<span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h3><p>public     公有          任何人可以访问<br>private    私有          只有类内部可以访问<br>protected  受保护的-友元   只有子类能用</p>
 <h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>别根‘any’搞混了<br>泛：宽泛</p>
@@ -2042,7 +1906,7 @@
 <h2 id="历史提交记录"><a href="#历史提交记录" class="headerlink" title="历史提交记录"></a>历史提交记录</h2><p>git log</p>
 <h2 id="删除远程已提交的文件"><a href="#删除远程已提交的文件" class="headerlink" title="删除远程已提交的文件"></a>删除远程已提交的文件</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached 文件/文件夹名称</span><br><span class="line"><span class="comment"># 修改本地 .gitignore</span></span><br><span class="line">git commit -m <span class="string">''</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 <h2 id="放弃本地修改"><a href="#放弃本地修改" class="headerlink" title="放弃本地修改"></a>放弃本地修改</h2><p>git checkout .</p>
-<h2 id="删除已经github上已提交的文件"><a href="#删除已经github上已提交的文件" class="headerlink" title="删除已经github上已提交的文件"></a>删除已经github上已提交的文件</h2><p>$ git rm -r –cached target              # 删除target文件</p>
+<h2 id="暂存"><a href="#暂存" class="headerlink" title="暂存"></a>暂存</h2><p>我们有时会遇到这样的情况，正在dev分支开发新功能，做到一半时有人过来反馈一个bug，让马上解决，但是新功能做到了一半你又不想提交，这时就可以使用<code>git stash</code>命令先把当前进度保存起来，然后切换到另一个分支去修改bug，修改完提交后，再切回dev分支，使用<code>git stash pop</code>来恢复之前的进度继续开发新功能。下面来看一下git stash命令的常见用法</p>
 <h1 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h1><h3 id="index-lock"><a href="#index-lock" class="headerlink" title="index.lock"></a>index.lock</h3><p>error:<br>Another git process seems to be running in this repository, e.g.<br>an editor opened by ‘git commit’. Please make sure all processes<br>are terminated then try again. If it still fails, a git process<br>may have crashed in this repository earlier:<br>remove the file manually to continue.</p>
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .git</span><br><span class="line">rm index.lock</span><br></pre></td></tr></table></figure>
 <p>应该是windows对进程的管理有个上锁机制，正常情况下，会上锁，进程结束，然后解锁进程。但是由于我强制关闭了运行中的git,导致git崩溃，已经上锁的index.lock没有来得及解锁而仍然存在。当我再用git add的时候，git发现已经存在了index.lock这个文件，导致报错。</p>
@@ -2060,6 +1924,187 @@
 <p>忽略 build/ 目录下的所有文件<br>build/</p>
 <p>会忽略 doc/notes.txt 但不包括 doc/server/notes.txt<br>doc/notes.txt</p>
 <h1 id="依赖git上的库"><a href="#依赖git上的库" class="headerlink" title="依赖git上的库"></a>依赖git上的库</h1><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add git+ssh://git@code.apowo.com:PixelPai/game-core.git<span class="comment">#dev</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/23/Nodejs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/23/Nodejs/" itemprop="url">Nodejs</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-23T18:58:37+08:00">
+                2020-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">Nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="what"><a href="#what" class="headerlink" title="what"></a>what</h1><p>JavaScript的服务器版本</p>
+<p>优点：</p>
+<ul>
+<li>便于前端人员上手</li>
+<li>性能高 （基于chrome v8引擎开发，v8引擎会做预编译，比原生代码快）</li>
+<li>利于和前端代码整合  （比如校验，前后用一套）</li>
+</ul>
+<p>用途：</p>
+<ul>
+<li>很少用于主力服务器开发语言</li>
+<li>中间层语言 (大公司会用，为了安全)<ul>
+<li>充分利用已有代码、增强主服务代码的独立性</li>
+<li>安全性</li>
+<li>性能</li>
+<li>丰富接口功能</li>
+</ul>
+</li>
+<li>工具开发  （webpack）</li>
+</ul>
+<p><code><img src="/2020/02/23/Nodejs/middle.png"></code></p>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><p>npm —— nodejs package manager<br>cnpm —— 企业npm<br>yarn —— Facebook</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><p>npm 查看安装了哪些包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list --depth=0 --global</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm list -g</span><br><span class="line">/home/kil/.npm-global/lib</span><br><span class="line">├─┬ node-sass@4.13.1</span><br><span class="line">│ ├── async-foreach@0.1.3</span><br></pre></td></tr></table></figure>
+<h1 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h1><h2 id="使用npm安装全局n模块"><a href="#使用npm安装全局n模块" class="headerlink" title="使用npm安装全局n模块"></a>使用npm安装全局n模块</h2><p>npm install -g n</p>
+<h2 id="使用n模块升级node"><a href="#使用n模块升级node" class="headerlink" title="使用n模块升级node"></a>使用n模块升级node</h2><p>升级到稳定版<br>sudo n stable</p>
+<p>安装成功 node -v</p>
+<h2 id="更新全局安装包"><a href="#更新全局安装包" class="headerlink" title="更新全局安装包"></a>更新全局安装包</h2><p>npm update -g jshint</p>
+<h1 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h1><h2 id="定义模块"><a href="#定义模块" class="headerlink" title="定义模块"></a>定义模块</h2><h3 id="exports"><a href="#exports" class="headerlink" title="exports"></a>exports</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">exports.a = <span class="number">12</span>;</span><br><span class="line">exports.b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="module"><a href="#module" class="headerlink" title="module"></a>module</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'aaa'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="class"><span class="keyword">class</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(a, b) &#123;</span><br><span class="line">    <span class="keyword">this</span>.a = a;</span><br><span class="line">    <span class="keyword">this</span>.b = b;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  sum()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="引入模块"><a href="#引入模块" class="headerlink" title="引入模块"></a>引入模块</h2><p>require<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.writeFile(<span class="string">'a.txt'</span>, <span class="string">'adsdfs'</span>, err =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'有错'</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'成功'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="两种方法"><a href="#两种方法" class="headerlink" title="两种方法"></a>两种方法</h3><p>1、系统node_modules/本地node_modules/父目录node_modules<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'http'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>2、自定义模块/具体地址<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'/xx/xx/http'</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="koa"><a href="#koa" class="headerlink" title="koa"></a>koa</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = <span class="keyword">new</span> Koa();</span><br><span class="line">server.listen(<span class="number">8081</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'server start'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server.use(<span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'query:'</span>, ctx.query);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> &#123;a, b&#125; = ctx.query;</span><br><span class="line"></span><br><span class="line">  ctx.set(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>);</span><br><span class="line">  ctx.body=<span class="built_in">parseInt</span>(a) + <span class="built_in">parseInt</span>(b);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="npm-1"><a href="#npm-1" class="headerlink" title="npm"></a>npm</h1><h2 id="electron"><a href="#electron" class="headerlink" title="electron"></a>electron</h2><h3 id="安装慢"><a href="#安装慢" class="headerlink" title="安装慢"></a>安装慢</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g electron</span><br><span class="line">/usr/local/bin/electron -&gt; /usr/local/lib/node_modules/electron/cli.js</span><br><span class="line"></span><br><span class="line">&gt; core-js@3.6.5 postinstall /usr/local/lib/node_modules/electron/node_modules/core-js</span><br><span class="line">&gt; node -e &quot;try&#123;require(&apos;./postinstall&apos;)&#125;catch(e)&#123;&#125;&quot;</span><br><span class="line"></span><br><span class="line">Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!</span><br><span class="line"></span><br><span class="line">The project needs your help! Please consider supporting of core-js on Open Collective or Patreon:</span><br><span class="line">&gt; https://opencollective.com/core-js</span><br><span class="line">&gt; https://www.patreon.com/zloirock</span><br><span class="line"></span><br><span class="line">Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; electron@9.1.0 postinstall /usr/local/lib/node_modules/electron</span><br><span class="line">&gt; node install.js</span><br><span class="line"></span><br><span class="line">Downloading electron-v9.1.0-darwin-x64.zip: [=----------------] 6% ETA: 42269.4 seconds ^C</span><br></pre></td></tr></table></figure>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>npm config set electron_mirror <a href="http://npm.taobao.org/mirrors/electron/" target="_blank" rel="noopener">http://npm.taobao.org/mirrors/electron/</a></p>
+<p>npm config set electron_custom_dir “8.1.1”</p>
+<p>然后再全局安装 Electron：</p>
+<p>npm install electron -g</p>
+<h3 id="快速成功"><a href="#快速成功" class="headerlink" title="快速成功"></a>快速成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ npm install electron -g</span><br><span class="line">/usr/local/bin/electron -&gt; /usr/local/lib/node_modules/electron/cli.js</span><br><span class="line"></span><br><span class="line">&gt; electron@9.1.0 postinstall /usr/local/lib/node_modules/electron</span><br><span class="line">&gt; node install.js</span><br><span class="line"></span><br><span class="line">+ electron@9.1.0</span><br><span class="line">updated 1 package in 27.249s</span><br></pre></td></tr></table></figure>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>要理解node-gyp首先要知道什么是gyp(<a href="https://gyp.gsrc.io/index.md)。gyp其实是一个用来生成项目文件的工具，一开始是设计给chromium项目使用的，后来大家发现比较好用就用到了其他地方。生成项目文件后就可以调用GCC" target="_blank" rel="noopener">https://gyp.gsrc.io/index.md)。gyp其实是一个用来生成项目文件的工具，一开始是设计给chromium项目使用的，后来大家发现比较好用就用到了其他地方。生成项目文件后就可以调用GCC</a>, vsbuild, xcode等编译平台来编译。至于为什么要有node-gyp，是由于node程序中需要调用一些其他语言编写的工具甚至是dll，需要先编译一下，否则就会有跨平台的问题，例如在windows上运行的软件copy到mac上就不能用了，但是如果源码支持，编译一下，在mac上还是可以用的。</p>
+
           
         
       
@@ -2148,7 +2193,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2170,7 +2215,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/js/rxjs_filter.png">
 <meta property="og:image" content="http://yoursite.com/2019/11/05/Observable/img/js/rxjs_pairwise.png">
-<meta property="og:updated_time" content="2020-03-02T04:57:41.116Z">
+<meta property="og:updated_time" content="2020-07-22T03:59:44.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Observable(可观察对象)">
 <meta name="twitter:description" content="获取前后路由变化 地址123456this.router.events  .pipe(filter((evt: any) =&amp;gt; evt instanceof RoutesRecognized), pairwise())  .subscribe((events: RoutesRecognized[]) =&amp;gt; &amp;#123;    console.log(&apos;previous url&apos;, ev">
@@ -353,7 +353,7 @@
 <p>由于这些优点，可观察对象在 Angular 中得到广泛使用，也同样建议应用开发者好好使用它。</p>
 <h3 id="how"><a href="#how" class="headerlink" title="how"></a>how</h3><p>作为发布者，你创建一个 Observable 的实例，其中定义了一个订阅者（subscriber）函数。 当有消费者调用 subscribe() 方法时，这个函数就会执行。 订阅者函数用于定义“如何获取或生成那些要发布的值或消息”。</p>
 <p>要执行所创建的可观察对象，并开始从中接收通知，你就要调用它的 subscribe() 方法，并传入一个观察者（observer）。 这是一个 JavaScript 对象，它定义了你收到的这些消息的处理器（handler）。 subscribe() 调用会返回一个 Subscription 对象，该对象具有一个 unsubscribe() 方法。 当调用该方法时，你就会停止接收通知。</p>
-<h2 id="pipe-Operators-操作符"><a href="#pipe-Operators-操作符" class="headerlink" title="pipe (Operators 操作符)"></a>pipe (Operators 操作符)</h2><h3 id="what-1"><a href="#what-1" class="headerlink" title="what"></a>what</h3><p>简而言之，就是可以与当前的 let 操作符一起使用的函数。无论名称起的是否合适，这就是它的由来。基本上来说，pipeable 操作符可以是任何函数，但是它需要返回签名为 &lt;T, R&gt;(source: Observable<t>) =&gt; Observable<r> 的函数。</r></t></p>
+<h2 id="pipe-Operators-操作符-paip"><a href="#pipe-Operators-操作符-paip" class="headerlink" title="pipe (Operators 操作符) [paip]"></a>pipe (Operators 操作符) [paip]</h2><h3 id="what-1"><a href="#what-1" class="headerlink" title="what"></a>what</h3><p>简而言之，就是可以与当前的 let 操作符一起使用的函数。无论名称起的是否合适，这就是它的由来。基本上来说，pipeable 操作符可以是任何函数，但是它需要返回签名为 &lt;T, R&gt;(source: Observable<t>) =&gt; Observable<r> 的函数。</r></t></p>
 <p>现在 Observable 中有一个内置的 pipe 方法 (Observable.prototype.pipe)，它可以用类似于之前的链式调用的方式来组合操作符 (如下所示)。</p>
 <p>There is also a pipe utility function at rxjs/util/pipe that can be used to build reusable pipeable operators from other pipeable operators.</p>
 <p>在 rxjs/util/pipe 中还有一个名为 pipe 的工具函数，它可用于构建基于其他 pipeable 操作符的可复用的 pipeable 操作符。</p>
@@ -504,7 +504,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -526,7 +526,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -575,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#router-events-路由事件"><span class="nav-number">1.</span> <span class="nav-text">router.events(路由事件)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observable"><span class="nav-number">2.</span> <span class="nav-text">Observable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#what"><span class="nav-number">2.1.</span> <span class="nav-text">what</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why"><span class="nav-number">2.2.</span> <span class="nav-text">why</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how"><span class="nav-number">2.3.</span> <span class="nav-text">how</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pipe-Operators-操作符"><span class="nav-number">3.</span> <span class="nav-text">pipe (Operators 操作符)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#what-1"><span class="nav-number">3.1.</span> <span class="nav-text">what</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-1"><span class="nav-number">3.2.</span> <span class="nav-text">why</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter-Operators-操作符"><span class="nav-number">4.</span> <span class="nav-text">filter (Operators 操作符)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">5.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pairwise-Operators-操作符"><span class="nav-number">6.</span> <span class="nav-text">pairwise (Operators 操作符)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#router-events-路由事件"><span class="nav-number">1.</span> <span class="nav-text">router.events(路由事件)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observable"><span class="nav-number">2.</span> <span class="nav-text">Observable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#what"><span class="nav-number">2.1.</span> <span class="nav-text">what</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why"><span class="nav-number">2.2.</span> <span class="nav-text">why</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how"><span class="nav-number">2.3.</span> <span class="nav-text">how</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pipe-Operators-操作符-paip"><span class="nav-number">3.</span> <span class="nav-text">pipe (Operators 操作符) [paip]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#what-1"><span class="nav-number">3.1.</span> <span class="nav-text">what</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-1"><span class="nav-number">3.2.</span> <span class="nav-text">why</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter-Operators-操作符"><span class="nav-number">4.</span> <span class="nav-text">filter (Operators 操作符)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">5.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pairwise-Operators-操作符"><span class="nav-number">6.</span> <span class="nav-text">pairwise (Operators 操作符)</span></a></li></ol></div>
             
 
           </div>

@@ -1737,6 +1737,28 @@
 <h3 id="HTML词法、语法解析"><a href="#HTML词法、语法解析" class="headerlink" title="HTML词法、语法解析"></a>HTML词法、语法解析</h3><p>对我们来说HTML其实是一坨字符串，而实际上我们要面对的是”字符流”。为了把字符流解析成正确的可被浏览器识别的结构，我们需要做的事情分为两步：<br>词法分析：把字符流初步解析成我们可理解的”词”，学名叫token。<br>语法分析：把开始结束标签配对、属性赋值好、父子关系连接好、构成dom树。<br>html结构其实不算太复杂，我们平时见到的大部分都只是标签、属性、注释、CDATA节点。</p>
 <h3 id="屏幕绘制"><a href="#屏幕绘制" class="headerlink" title="屏幕绘制"></a>屏幕绘制</h3><p><code><img src="/2020/07/01/interview-browser/render.png"></code><br>DOM树的生成和渲染树建立比较好理解这个就不做展开。完成了这「两棵树」的构造后，就进入屏幕绘制阶段。<br>在绘制的过程中，会遍历渲染树，调用由浏览器的UI组件的paint()方法在屏幕上显示对应的内容，并根据渲染树布局，计算CSS样式(即每个节点在页面中的大小和位置等几何信息)。<br>HTML默认是从上到下流式布局的，CSS和JS的加入会打破这种布局，改变DOM的外观样式以及大小和位置。这就引出两个非常重要的概念：replaint重绘和reflow重排。<br>replaint重绘，屏幕的一部分重新绘制，不影响整体布局，比如某个CSS的背景色变了，但元素的几何尺寸和位置不变。eflow重排： 意味着元件的几何尺寸变了，我们需要重新验证并计算渲染树。是渲染树的一部分或全部发生了变化。无论是重绘还是重排，对浏览器而言都是一种「消耗」，所以我们应该尽量减少这两种状态的触发。</p>
 <p>作者：冴羽<br>链接：<a href="https://juejin.im/post/5e82aa8df265da47ca6910b5" target="_blank" rel="noopener">https://juejin.im/post/5e82aa8df265da47ca6910b5</a><br>来源：掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h1 id="GET与POST的区别"><a href="#GET与POST的区别" class="headerlink" title="GET与POST的区别"></a>GET与POST的区别</h1><h2 id="GET-从指定的资源请求数据。"><a href="#GET-从指定的资源请求数据。" class="headerlink" title="GET - 从指定的资源请求数据。"></a>GET - 从指定的资源请求数据。</h2><ul>
+<li>GET 请求可被缓存</li>
+<li>GET 请求保留在浏览器历史记录中</li>
+<li>GET 请求可被收藏为书签</li>
+<li>GET 请求不应在处理敏感数据时使用</li>
+<li>GET 请求有长度限制</li>
+<li>GET 请求只应当用于取回数据</li>
+</ul>
+<h2 id="POST-向指定的资源提交要被处理的数据"><a href="#POST-向指定的资源提交要被处理的数据" class="headerlink" title="POST - 向指定的资源提交要被处理的数据"></a>POST - 向指定的资源提交要被处理的数据</h2><ul>
+<li>POST 请求不会被缓存</li>
+<li>POST 请求不会保留在浏览器历史记录中</li>
+<li>POST 不能被收藏为书签</li>
+<li>POST 请求对数据长度没有要求</li>
+</ul>
+<p><code><img src="/2020/07/01/interview-browser/get&post1.png"></code></p>
+<p>然而这只是表层的区别，当你自信满满回答，面试人徽徽一笑这傻蛋！</p>
+<h2 id="若要搞明白get与post区别还得从底层分析："><a href="#若要搞明白get与post区别还得从底层分析：" class="headerlink" title="若要搞明白get与post区别还得从底层分析："></a>若要搞明白get与post区别还得从底层分析：</h2><p>无论是GET || POST 从底层上我们都要遵守HTTP协议，HTTP协议是什么呢？类似于我们的交通法规，无论你是挂着GET牌照还是POST牌照都要遵从HTTP的要求。<br>真正要传输数据还是要看我们TCP传输控制协议（TCP，Transmission Control Protocol）是一种面向连接的、可靠的、基于字节流的传输层通信协议。这是请求和服务端建立连接的暗语。<br>这就是TCP（C：天王盖地虎 S：宝塔镇河妖 C：来者都是客 S：吃饭）<br><code><img src="/2020/07/01/interview-browser/get&post2.gif"></code></p>
+<p>GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。<br>重大差异</p>
+<p>对于GET方式的请求，浏览器会把http，header和data一并发送出去，服务器响应200（返回数据）</p>
+<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
+<p>因此，理论上讲get的性能是不是更胜一筹，但是你要知道服务器的计算能力已经很🐂    了，已经不再是冯诺依曼时代的计算机了，1毫秒与3毫秒的差别在用户体验上是完全感知不到的。处于post对大小不限制，安全等众多优势于一身，因此我更推荐大家使用post。</p>
+<h1 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h1><p>不麻烦别人：nginx</p>
 
           
         
@@ -1826,7 +1848,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1848,7 +1870,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

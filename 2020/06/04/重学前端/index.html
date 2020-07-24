@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/06/04/重学前端/relearn.jpg">
 <meta property="og:image" content="http://yoursite.com/2020/06/04/重学前端/completion.png">
-<meta property="og:updated_time" content="2020-06-19T06:51:47.883Z">
+<meta property="og:updated_time" content="2020-07-16T03:43:16.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学前端">
 <meta name="twitter:description" content="重学前端-winter 前言发展史2006 目标 带你摸索出适合自己的前端学习方法； 帮助你建立起前端技术的知识架构； 让你理解前端技术背后的核心思想。  图谱 JavaScript三个角度  运行时 文法 执行过程  用一定的词法和语法，表达一定语义，从而操作运行时。 JavaScript 的类型系统就是它的 7 种基本类型和 7 种语言类型，实例就是它的内置对象部分 执行过程我们则需要按照从大">
@@ -459,6 +459,7 @@
 <p>实际上 JavaScript 中跟闭包对应的概念就是“函数”</p>
 <p>MDN解释<br>函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起构成闭包（closure）。也就是说，闭包可以让你从内部函数访问外部函数作用域。在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'size-12'</span>).onclick = makeSize(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'size-14'</span>).onclick = makeSize(<span class="number">14</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'size-16'</span>).onclick = makeSize(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeSize</span>(<span class="params">size</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 方法执行后 绑定的是 值</span></span><br><span class="line">  <span class="comment">// document.body.style.fontSize = size + 'px';</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'size'</span>, size);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 方法执行后，绑定的是 方法</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.body.style.fontSize = size + <span class="string">'px'</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>闭包：实现了私有变量，避免内存泄漏</p>
 <h3 id="执行上下文：执行的基础设施"><a href="#执行上下文：执行的基础设施" class="headerlink" title="执行上下文：执行的基础设施"></a>执行上下文：执行的基础设施</h3><p>在 ES2018 中，执行上下文又变成了这个样子，this 值被归入 lexical environment，但是增加了不少内容。</p>
 <ul>
 <li>lexical environment：词法环境，当获取变量或者 this 值时使用。</li>
@@ -650,7 +651,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -672,7 +673,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

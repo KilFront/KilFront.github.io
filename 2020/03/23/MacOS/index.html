@@ -88,7 +88,7 @@
 <meta property="og:description" content="系统更新 brewHomebrew是一款自由及开放源代码的软件包管理系统，用以简化macOS系统上的软件安装过程 版本1brew --version 更新1brew update 更新某个包时，查看更新信息1brew upgrade -d yarn 两种方式安装包12brew install yarn curl -o- -L https://yarnpkg.com/install.sh | bas">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/03/23/MacOS/mac_os.jpeg">
-<meta property="og:updated_time" content="2020-07-09T05:32:45.357Z">
+<meta property="og:updated_time" content="2020-07-22T02:47:43.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OS">
 <meta name="twitter:description" content="系统更新 brewHomebrew是一款自由及开放源代码的软件包管理系统，用以简化macOS系统上的软件安装过程 版本1brew --version 更新1brew update 更新某个包时，查看更新信息1brew upgrade -d yarn 两种方式安装包12brew install yarn curl -o- -L https://yarnpkg.com/install.sh | bas">
@@ -361,6 +361,7 @@
 <h5 id="替换homebrew-bottles访问地址"><a href="#替换homebrew-bottles访问地址" class="headerlink" title="替换homebrew-bottles访问地址"></a>替换homebrew-bottles访问地址</h5><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles'</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
 <p>还原的话就是删除HOMEBREW_BOTTLE_DOMAIN，上面的是zsh的命令，如果是bash的话请写在.bash_profile文件中。</p>
 <p>更新后成功：<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ brew upgrade yarn</span><br><span class="line">Updating Homebrew...</span><br><span class="line">==&gt; Auto-updated Homebrew!</span><br><span class="line">Updated 1 tap (homebrew/cask).</span><br><span class="line">==&gt; Updated Casks</span><br><span class="line">karabiner-elements ✔               hex-fiend                          qownnotes</span><br><span class="line">115browser</span><br></pre></td></tr></table></figure></p>
+<h1 id="hosts系统文件"><a href="#hosts系统文件" class="headerlink" title="hosts系统文件"></a>hosts系统文件</h1><p>Hosts是一个没有扩展名的系统文件，可以用记事本等工具打开，其作用就是将一些常用的网址域名与其对应的IP地址建立一个关联“数据库”，当用户在浏览器中输入一个需要登录的网址时，系统会首先自动从Hosts文件中寻找对应的IP地址，一旦找到，系统会立即打开对应网页，如果没有找到，则系统会再将网址提交DNS域名解析服务器进行IP地址的解析。<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/hosts</span><br><span class="line"></span><br><span class="line">127.0.0.1	www.163.com</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -484,7 +485,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -506,7 +507,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -555,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统更新"><span class="nav-number">1.</span> <span class="nav-text">系统更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#brew"><span class="nav-number">2.</span> <span class="nav-text">brew</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating-Homebrew…"><span class="nav-number">2.1.1.</span> <span class="nav-text">Updating Homebrew…</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭自动更新"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">关闭自动更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换镜像源加速"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">替换镜像源加速</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换brew-git"><span class="nav-number">2.1.1.2.1.</span> <span class="nav-text">替换brew.git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换homebrew-core-git"><span class="nav-number">2.1.1.2.2.</span> <span class="nav-text">替换homebrew-core.git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换homebrew-bottles访问地址"><span class="nav-number">2.1.1.2.3.</span> <span class="nav-text">替换homebrew-bottles访问地址</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统更新"><span class="nav-number">1.</span> <span class="nav-text">系统更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#brew"><span class="nav-number">2.</span> <span class="nav-text">brew</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating-Homebrew…"><span class="nav-number">2.1.1.</span> <span class="nav-text">Updating Homebrew…</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭自动更新"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">关闭自动更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换镜像源加速"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">替换镜像源加速</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换brew-git"><span class="nav-number">2.1.1.2.1.</span> <span class="nav-text">替换brew.git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换homebrew-core-git"><span class="nav-number">2.1.1.2.2.</span> <span class="nav-text">替换homebrew-core.git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换homebrew-bottles访问地址"><span class="nav-number">2.1.1.2.3.</span> <span class="nav-text">替换homebrew-bottles访问地址</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hosts系统文件"><span class="nav-number">3.</span> <span class="nav-text">hosts系统文件</span></a></li></ol></div>
             
 
           </div>
