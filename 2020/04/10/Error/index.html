@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="Error 原因：方法上面没有属性 getUserToken().parame webpacksass-loaderModule build failed: TypeError: this.getResolve is not a functionsass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1">
+<meta name="description" content="Error 原因：方法上面没有属性 getUserToken().parame webpacksass-loaderModule build failed: TypeError: this.getResolve is not a functionsass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1 AngularERROR in Could not resol">
 <meta name="keywords" content="Error">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Error">
 <meta property="og:url" content="http://yoursite.com/2020/04/10/Error/index.html">
 <meta property="og:site_name" content="Kil Notes">
-<meta property="og:description" content="Error 原因：方法上面没有属性 getUserToken().parame webpacksass-loaderModule build failed: TypeError: this.getResolve is not a functionsass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1">
+<meta property="og:description" content="Error 原因：方法上面没有属性 getUserToken().parame webpacksass-loaderModule build failed: TypeError: this.getResolve is not a functionsass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1 AngularERROR in Could not resol">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/04/10/Error/get_parame.png">
-<meta property="og:updated_time" content="2020-05-07T12:07:17.201Z">
+<meta property="og:updated_time" content="2020-07-31T01:48:11.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Error">
-<meta name="twitter:description" content="Error 原因：方法上面没有属性 getUserToken().parame webpacksass-loaderModule build failed: TypeError: this.getResolve is not a functionsass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1">
+<meta name="twitter:description" content="Error 原因：方法上面没有属性 getUserToken().parame webpacksass-loaderModule build failed: TypeError: this.getResolve is not a functionsass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1 AngularERROR in Could not resol">
 <meta name="twitter:image" content="http://yoursite.com/2020/04/10/Error/get_parame.png">
 
 
@@ -347,6 +347,21 @@
         <h1 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h1><p><code><img src="/2020/04/10/Error/get_parame.png"></code></p>
 <p>原因：方法上面没有属性 getUserToken().parame</p>
 <h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><h2 id="sass-loader"><a href="#sass-loader" class="headerlink" title="sass-loader"></a>sass-loader</h2><p>Module build failed: TypeError: this.getResolve is not a function<br>sass-loader的版本过高导致的编译错误，当前最高版本是8.x，需要退回到7.3.1</p>
+<h1 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h1><p>ERROR in Could not resolve module ./pages/suit/suit.module relative to app/app-routing.module.ts</p>
+<h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><h2 id="操作DOM"><a href="#操作DOM" class="headerlink" title="操作DOM"></a>操作DOM</h2><h3 id="error"><a href="#error" class="headerlink" title="error"></a>error</h3><p>vue是虚拟DOM，不应该使用操作原生DOM的方式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'pixi'</span>).appendChild(app.view);</span><br></pre></td></tr></table></figure></p>
+<h3 id="right"><a href="#right" class="headerlink" title="right"></a>right</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">"pixi"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">this</span>.$refs[<span class="string">'pixi'</span>] <span class="keyword">as</span> HTMLElement).appendChild(app.view);</span><br></pre></td></tr></table></figure>
+<p><code>ref</code> 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 <code>$refs</code> 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例</p>
+<p><code>as</code> 类型断言<br>语法：</p>
+<ul>
+<li>值 as 类型</li>
+<li>&lt;类型&gt;值</li>
+</ul>
+<p><code>&lt;&gt;</code> 语法在 ts 中也表示范型；建议在使用类型断言时，统一使用 <code>值 as 类型</code></p>
+<p>延伸：<br>语法：CAST (expression AS data_type)</p>
+<p>expression：任何有效的SQServer表达式。<br>AS：用于分隔两个参数，在AS之前的是要处理的数据，在AS之后是要转换的数据类型。<br>data_type：目标系统所提供的数据类型，包括bigint和sql_variant，不能使用用户定义的数据类型。</p>
+<h1 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h1><p>Uncaught SyntaxError: Invalid or unexpected token<br>未捕获的SyntaxError：无效或意外的令牌</p>
+<p>SyntaxError: Unexpected token ‘null’<br>语法错误:意外的标记“null”</p>
 
       
     </div>
@@ -470,7 +485,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -541,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Error"><span class="nav-number">1.</span> <span class="nav-text">Error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack"><span class="nav-number">2.</span> <span class="nav-text">webpack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sass-loader"><span class="nav-number">2.1.</span> <span class="nav-text">sass-loader</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Error"><span class="nav-number">1.</span> <span class="nav-text">Error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack"><span class="nav-number">2.</span> <span class="nav-text">webpack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sass-loader"><span class="nav-number">2.1.</span> <span class="nav-text">sass-loader</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular"><span class="nav-number">3.</span> <span class="nav-text">Angular</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue"><span class="nav-number">4.</span> <span class="nav-text">vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作DOM"><span class="nav-number">4.1.</span> <span class="nav-text">操作DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#error"><span class="nav-number">4.1.1.</span> <span class="nav-text">error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#right"><span class="nav-number">4.1.2.</span> <span class="nav-text">right</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS"><span class="nav-number">5.</span> <span class="nav-text">JS</span></a></li></ol></div>
             
 
           </div>

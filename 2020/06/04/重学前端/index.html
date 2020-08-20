@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,CSS,Front-End,Html," />
+  <meta name="keywords" content="JavaScript,Front-End,CSS,Html," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="重学前端-winter 前言发展史2006 目标 带你摸索出适合自己的前端学习方法； 帮助你建立起前端技术的知识架构； 让你理解前端技术背后的核心思想。  图谱 JavaScript三个角度  运行时 文法 执行过程  用一定的词法和语法，表达一定语义，从而操作运行时。 JavaScript 的类型系统就是它的 7 种基本类型和 7 种语言类型，实例就是它的内置对象部分 执行过程我们则需要按照从大">
-<meta name="keywords" content="JavaScript,CSS,Front-End,Html">
+<meta name="keywords" content="JavaScript,Front-End,CSS,Html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重学前端">
 <meta property="og:url" content="http://yoursite.com/2020/06/04/重学前端/index.html">
@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2020/06/04/重学前端/relearn.jpg">
 <meta property="og:image" content="http://yoursite.com/2020/06/04/重学前端/completion.png">
-<meta property="og:updated_time" content="2020-07-16T03:43:16.587Z">
+<meta property="og:updated_time" content="2020-08-05T08:42:51.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学前端">
 <meta name="twitter:description" content="重学前端-winter 前言发展史2006 目标 带你摸索出适合自己的前端学习方法； 帮助你建立起前端技术的知识架构； 让你理解前端技术背后的核心思想。  图谱 JavaScript三个角度  运行时 文法 执行过程  用一定的词法和语法，表达一定语义，从而操作运行时。 JavaScript 的类型系统就是它的 7 种基本类型和 7 种语言类型，实例就是它的内置对象部分 执行过程我们则需要按照从大">
@@ -363,19 +363,58 @@
 <p>JavaScript 的类型系统就是它的 7 种基本类型和 7 种语言类型，实例就是它的内置对象部分</p>
 <p>执行过程我们则需要按照从大结构到小结构的角度讲解，从最顶层的程序与模块、事件循环和微任务，到函数、再到语句级的执行。我们从粗到细地了解执行过程。</p>
 <p>实例部分，对 JavaScript 来说类似基础库，JavaScipt 的内置对象多达 150 以上，考虑到我们即使逐次讲解也必定不如 MDN 更加细致全面，所以我们会从应用和机制的角度，挑选其中几个体系来讲解。</p>
-<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>null 是 JavaScript 关键字</p>
-<ul>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><ul>
 <li><p>为什么有的编程规范要求用 void 0 代替 undefined？<br>JavaScript 的代码 undefined 是一个变量（变量可以被赋值改变），而并非是一个关键字，这是 JavaScript 语言公认的设计失误之一，所以，我们为了避免无意中被篡改，我建议使用 void 0 来获取 undefined 值。</p>
 </li>
 <li><p>字符串有最大长度吗？<br>String 有最大长度是 2^53 - 1</p>
 </li>
 </ul>
-<h3 id="7种语言类型"><a href="#7种语言类型" class="headerlink" title="7种语言类型"></a>7种语言类型</h3><p>Undefined；Null；Boolean；String；Number；Symbol；Object。</p>
-<h3 id="规范类型"><a href="#规范类型" class="headerlink" title="规范类型"></a>规范类型</h3><p>List 和 Record： 用于描述函数传参过程。<br>Set：主要用于解释字符集等。<br>Completion Record：用于描述异常、跳出等语句执行过程。<br>Reference：用于描述对象属性访问、delete 等。<br>Property Descriptor：用于描述对象的属性。<br>Lexical Environment 和 Environment Record：用于描述变量和作用域。<br>Data Block：用于描述二进制数据。</p>
+<h3 id="7种基本-语言-类型"><a href="#7种基本-语言-类型" class="headerlink" title="7种基本(语言)类型"></a>7种基本(语言)类型</h3><p>Undefined；Null；Boolean；String；Number；Symbol；Object。</p>
+<span class="label ib_yellow">BigInt制定中</span>
+<p>Reference类型 引用类型（标准中的类型，非语言中的类型）：</p>
+<ul>
+<li>Object</li>
+<li>Key</li>
+</ul>
+<p>JS 就是使用引用类型 来处理删除或者赋值 操作</p>
 <h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ul>
 <li>转义字符<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String</a></li>
 <li>字符串操作方法<br><a href="https://segmentfault.com/a/1190000016603159#item-1" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016603159#item-1</a></li>
 </ul>
+<p>string 串      </p>
+<ul>
+<li>character 字符</li>
+<li>code point 码点 （计算机中character 用次codepoint 表示）</li>
+<li>encoding 编码方式</li>
+</ul>
+<p>字形：一种形象的表示，比如 A，B，中文</p>
+<span class="label ib_purple">code point</span>
+<p>codePointAt() 方法返回 一个 Unicode 编码点值的非负整数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'a'</span>.codePointAt() <span class="comment">// 97</span></span><br></pre></td></tr></table></figure></p>
+<p>String.fromCodePoint() 静态方法返回使用指定的代码点序列创建的字符串。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.fromCodePoint(<span class="number">97</span>); <span class="comment">// a</span></span><br></pre></td></tr></table></figure></p>
+<p><code>计算机存储的基本单位是字节</code><br>每个字  =&gt;  存几个字节</p>
+<h4 id="number-to-string"><a href="#number-to-string" class="headerlink" title="number to string"></a>number to string</h4><ul>
+<li>String(number);</li>
+<li>number.toString();</li>
+</ul>
+<h4 id="编码集"><a href="#编码集" class="headerlink" title="编码集"></a>编码集</h4><ul>
+<li>ASCII</li>
+<li>Unicode</li>
+<li>UCS</li>
+<li>GB<ul>
+<li>GB2312</li>
+<li>GBK(GB13000)</li>
+<li>GB18030</li>
+</ul>
+</li>
+<li>ISO-8859</li>
+<li>BIG5</li>
+</ul>
+<h4 id="编码方式"><a href="#编码方式" class="headerlink" title="编码方式"></a>编码方式</h4><p>UTF</p>
+<ul>
+<li>UTF 8</li>
+<li>UTF 16</li>
+</ul>
+<h4 id="反引号"><a href="#反引号" class="headerlink" title="反引号"></a>反引号</h4><p>语法结构，而不是词法结构<br>string-template<br>&#39;ab${x}cd&#39;</p>
 <h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><ul>
 <li><p>NaN not a number</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'20a'</span>* <span class="number">5</span> ; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
@@ -391,6 +430,97 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'prototype'</span>, <span class="number">5</span> / <span class="number">0</span>); <span class="comment">// infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'prototype'</span>, <span class="number">5</span> / <span class="number">-0</span>); <span class="comment">// -infinity</span></span><br></pre></td></tr></table></figure>
 <p>比较浮点数的方法<br>检查等式左右两边差的绝对值是否小于最小精度<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( <span class="built_in">Math</span>.abs(<span class="number">0.1</span> + <span class="number">0.2</span> - <span class="number">0.3</span>) &lt;= <span class="built_in">Number</span>.EPSILON);</span><br></pre></td></tr></table></figure></p>
+<p>双精度浮点类型 doubel float<br>IEEE 754 标准定义的双精度64位格式</p>
+<ul>
+<li>Sign(1)</li>
+<li>exponent(11) 指数</li>
+<li>fraction(52), 1个1，后面52位</li>
+</ul>
+<p>0.1 + 0.2 != 0.3  是由于： 三次转换 + 一次精度损失 造成的</p>
+<h4 id="number-to-string-1"><a href="#number-to-string-1" class="headerlink" title="number to string"></a>number to string</h4><p>number.toString();<br>String(numer)<br>“” + number</p>
+<h4 id="grammar"><a href="#grammar" class="headerlink" title="grammar"></a>grammar</h4><ul>
+<li>DecimalLiteral<ul>
+<li>0</li>
+<li>0.</li>
+<li>.2</li>
+<li>1e3</li>
+</ul>
+</li>
+<li>BinaryIntegerLiteral<ul>
+<li>0b111</li>
+</ul>
+</li>
+<li>OctalIntegerLiteral<ul>
+<li>0o10</li>
+</ul>
+</li>
+<li>HexIntegerLiteral<ul>
+<li>0xFF</li>
+</ul>
+</li>
+</ul>
+<h5 id="特殊字符-微语法"><a href="#特殊字符-微语法" class="headerlink" title="特殊字符-微语法"></a>特殊字符-微语法</h5><p>回车 \n<br>Tab  \t<br>反斜杠 \<br>\a   a</p>
+<p>反斜杠<br>里面可以加回车</p>
+<h3 id="null"><a href="#null" class="headerlink" title="null"></a>null</h3><p>有值<br>typeof null  ===&gt; Object</p>
+<p>null 和 undefined 都表示空值<br>null 是 JavaScript 关键字<br>unefined 不是 JavaScript 关键字；是全局的变量</p>
+<h3 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h3><p>没有人定义过它的值</p>
+<span class="label ib_yellow">非关键字，不要进行赋值操作</span>
+<p>使用：void 0<br>void 是关键字</p>
+<h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><p>Object：<br>在英语中非常广泛的东西，它是一个物体，任何一个它既可以是抽象的物体，也可以是一个实际的物体。包罗万物的这样的一个抽象的词。<br>在中文中翻译成：对象</p>
+<p><code></code><br><code></code><br>分类<br><code></code><br>JS 中原型<br><code></code></p>
+<p>在 JavaScript 中，对象的定义是“属性的集合”。</p>
+<p>英文中：Object（对象）是一切事物的总称；这和面向对象编程的抽象思维有互通之处<br>中文中：当作一个专业名词</p>
+<p>面向对象编程也被认为是：更接近人类思维模式的一种编程范式</p>
+<p>在设计对象的状态和行为的时候，遵循行为改变状态的原则</p>
+<p>对象的唯一标识性，用内存地址的唯一性</p>
+<p>早点方式：原型<br>后来模仿Java：加入了new 、this</p>
+<p>描述对象</p>
+<ul>
+<li>使用类的方式，Java，C++</li>
+<li>基于原型，JavaScript</li>
+</ul>
+<p>原型系统就更多与高动态性语言配合，并且多数基于原型的语言提倡运行时的原型修改</p>
+<p>对象的特征</p>
+<ul>
+<li>对象具有唯一标识性：即使完全相同的两个对象，也并非同一个对象。（内存地址）</li>
+<li>对象有状态：对象具有状态，同一对象可能处于不同状态之下。</li>
+<li>对象具有行为：即对象的状态，可能因为它的行为产生变迁。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o1 == o2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript 中的行为和状态都能用属性来抽象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">  d: <span class="number">1</span>, <span class="comment">// 属性</span></span><br><span class="line">  f() &#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.d); &#125; <span class="comment">// 属性</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>在实现了对象基本特征的基础上, 我认为，JavaScript 中对象独有的特色是：对象具有高度的动态性，这是因为 JavaScript 赋予了使用者在运行时为对象添改状态和行为的能力。</strong><br>JavaScript 允许运行时向对象添加属性，这就跟绝大多数基于类的、静态的对象设计完全不同。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line">o.b = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(o.a, o.b); <span class="comment">//1 2</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; get a() &#123; <span class="keyword">return</span> <span class="number">1</span> &#125; &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o.a); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>但是 JavaScript 这样的半吊子模拟，缺少了继承等关键特性，导致大家试图对它进行修补，进而产生了种种互不相容的解决方案。庆幸的是，从 ES6 开始，JavaScript 提供了 class 关键字来定义类，尽管，这样的方案仍然是基于原型运行时系统的模拟，但是它修正了之前的一些常见的“坑”，统一了社区的方案，这对语言的发展有着非常大的好处。实际上，我认为“基于类”并非面向对象的唯一形态，如果我们把视线从“类”移开，Brendan 当年选择的原型系统，就是一个非常优秀的抽象对象的形式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'lily'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.__proto__.age = <span class="string">'18'</span></span><br><span class="line">obj.constructor.prototype.age = <span class="string">'18'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'obj'</span>, obj.age); <span class="comment">// 18</span></span><br></pre></td></tr></table></figure>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>kv 对</p>
+<p>k 两种类型</p>
+<ul>
+<li>string</li>
+<li>symbol</li>
+</ul>
+<h4 id="object-API-Grammar"><a href="#object-API-Grammar" class="headerlink" title="object API/Grammar"></a>object API/Grammar</h4><p>对象机制，通过这些语法创建对象、访问属性、定义新的属性、改变属性的特征值 [基本的面向对象能力]<br>{} .  []  Object.defineProperty</p>
+<p>基于原型的描述对象的方法<br>Object.create / Object.setPrototypeOf / Object.getPrototypeOf<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Animal properties and method encapsulation</span></span><br><span class="line"><span class="keyword">var</span> Animal = &#123;</span><br><span class="line">  type: <span class="string">"Invertebrates"</span>, <span class="comment">// 属性默认值</span></span><br><span class="line">  displayType : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  <span class="comment">// 用于显示type属性的方法</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.type);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一种新的动物——animal1 </span></span><br><span class="line"><span class="keyword">var</span> animal1 = <span class="built_in">Object</span>.create(Animal);</span><br><span class="line">animal1.displayType(); <span class="comment">// Output:Invertebrates</span></span><br></pre></td></tr></table></figure></p>
+<p>新的语法结构；基于分类的方式去描述对象，在运行时转换成JavaScript的原型相关的访问<br>new / class / extends</p>
+<p>历史包袱；不伦不类；需要prototype知识 [不建议使用] [ES3版本必须使用]<br>new / function / prototype</p>
+<h4 id="特殊对象"><a href="#特殊对象" class="headerlink" title="特殊对象"></a>特殊对象</h4><p>没有办法用普通对象，就是属性加原型来描述的这样的对象的行为<br>Function<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'typeof'</span>, <span class="keyword">typeof</span> fn);</span><br></pre></td></tr></table></figure></p>
+<p>Array</p>
+<p>Host Object<br>浏览器支持</p>
+<h4 id="固有对象"><a href="#固有对象" class="headerlink" title="固有对象"></a>固有对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 搜索匹配。返回一个结果数组或 null。</span></span><br><span class="line"><span class="keyword">const</span> REGEXP = <span class="regexp">/\d&#123;4&#125;/</span>;</span><br><span class="line"><span class="keyword">const</span> code = REGEXP.exec(<span class="built_in">Math</span>.random())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他方法返回一个四位数字字符串</span></span><br><span class="line">re.test(<span class="built_in">Math</span>.random());<span class="built_in">RegExp</span>.lastMatch;</span><br><span class="line"><span class="string">"9047"</span></span><br><span class="line">re.exec(<span class="built_in">Math</span>.random());</span><br><span class="line">[<span class="string">"9091"</span>, <span class="attr">index</span>: <span class="number">2</span>, <span class="attr">input</span>: <span class="string">"0.9091852183664082"</span>, <span class="attr">groups</span>: <span class="literal">undefined</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1e10</span>    <span class="comment">// 1 * 10 ^ 10</span></span><br><span class="line"><span class="number">10000000000</span></span><br></pre></td></tr></table></figure>
+<p>Math 方法</p>
+<ul>
+<li><p>向上取整<br>Math.ceil()<br>函数返回大于或等于一个给定数字的最小整数。</p>
+</li>
+<li><p>向下取整<br>Math.floor() 返回小于或等于一个给定数字的最大整数。</p>
+</li>
+</ul>
+<pre><code>// TODO： file
+console.log(&apos;path&apos;, f0.path);
+this.securtyUrl = this.sanitizer.bypassSecurityTrustUrl(f0.path);
+console.log(&apos;securtyUrl&apos;, this.securtyUrl);
+</code></pre><p>1</p>
+<pre><code>this.
+</code></pre><h3 id="symbol"><a href="#symbol" class="headerlink" title="symbol"></a>symbol</h3><p>用于Object属性名</p>
 <h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>用 === 比较</p>
 <h4 id="StringToNumber"><a href="#StringToNumber" class="headerlink" title="StringToNumber"></a>StringToNumber</h4><ul>
 <li>Number</li>
@@ -411,31 +541,37 @@
 <li>Lexical Environment 和 Environment Record：用于描述变量和作用域。</li>
 <li>Data Block：用于描述二进制数据。</li>
 </ul>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>在 JavaScript 中，对象的定义是“属性的集合”。</p>
-<p>英文中：Object（对象）是一切事物的总称；这和面向对象编程的抽象思维有互通之处<br>中文中：当作一个专业名词</p>
-<p>面向对象编程也被认为是：更接近人类思维模式的一种编程范式</p>
-<p>早点方式：原型<br>后来模仿Java：加入了new 、this</p>
-<p>描述对象</p>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>Member</p>
 <ul>
-<li>使用类的方式，Java，C++</li>
-<li>基于原型，JavaScript</li>
+<li>a.b</li>
+<li>a[b]</li>
+<li>foo<code>string</code></li>
+<li>super.b</li>
+<li>super[‘b’]</li>
+<li>new.target</li>
+<li>new Foo()</li>
 </ul>
-<p>原型系统就更多与高动态性语言配合，并且多数基于原型的语言提倡运行时的原型修改</p>
-<p>对象的特征</p>
+<p>Call (函数调用) [低于Member 运算]</p>
+<h3 id="Left-Handside-amp-Right-Handside"><a href="#Left-Handside-amp-Right-Handside" class="headerlink" title="Left Handside &amp; Right Handside"></a>Left Handside &amp; Right Handside</h3><p>a.b = c;<br>a + b = c; x</p>
+<h3 id="exponental"><a href="#exponental" class="headerlink" title="exponental"></a>exponental</h3><p>** 右结合运算符<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span>**<span class="number">2</span>**<span class="number">3</span> </span><br><span class="line"><span class="number">3</span>**(<span class="number">2</span>**<span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Equality"><a href="#Equality" class="headerlink" title="Equality"></a>Equality</h3><p>==<br>类型不同的时候，会优先把布尔型的变量，转换成Number 类型</p>
+<h2 id="JS语句"><a href="#JS语句" class="headerlink" title="JS语句"></a>JS语句</h2><h3 id="运行时相关概念"><a href="#运行时相关概念" class="headerlink" title="运行时相关概念"></a>运行时相关概念</h3><h4 id="Completion-Record"><a href="#Completion-Record" class="headerlink" title="Completion Record"></a>Completion Record</h4><p>语句完成状态记录</p>
 <ul>
-<li>对象具有唯一标识性：即使完全相同的两个对象，也并非同一个对象。（内存地址）</li>
-<li>对象有状态：对象具有状态，同一对象可能处于不同状态之下。</li>
-<li>对象具有行为：即对象的状态，可能因为它的行为产生变迁。</li>
+<li>[[type]]: normal, break, continue, return, or throw</li>
+<li>[[value]]: 基本类型</li>
+<li>[[target]]: label (!语句)</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o1 == o2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<p>JavaScript 中的行为和状态都能用属性来抽象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">  d: <span class="number">1</span>, <span class="comment">// 属性</span></span><br><span class="line">  f() &#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>.d); &#125; <span class="comment">// 属性</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>在实现了对象基本特征的基础上, 我认为，JavaScript 中对象独有的特色是：对象具有高度的动态性，这是因为 JavaScript 赋予了使用者在运行时为对象添改状态和行为的能力。</strong><br>JavaScript 允许运行时向对象添加属性，这就跟绝大多数基于类的、静态的对象设计完全不同。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line">o.b = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(o.a, o.b); <span class="comment">//1 2</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; get a() &#123; <span class="keyword">return</span> <span class="number">1</span> &#125; &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o.a); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<p>但是 JavaScript 这样的半吊子模拟，缺少了继承等关键特性，导致大家试图对它进行修补，进而产生了种种互不相容的解决方案。庆幸的是，从 ES6 开始，JavaScript 提供了 class 关键字来定义类，尽管，这样的方案仍然是基于原型运行时系统的模拟，但是它修正了之前的一些常见的“坑”，统一了社区的方案，这对语言的发展有着非常大的好处。实际上，我认为“基于类”并非面向对象的唯一形态，如果我们把视线从“类”移开，Brendan 当年选择的原型系统，就是一个非常优秀的抽象对象的形式。</p>
+<h3 id="复合语句"><a href="#复合语句" class="headerlink" title="复合语句"></a>复合语句</h3><p>return 可以打断一切；但在try （中return） catch finally （最终也要执行）；</p>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><h4 id="预处理（pre-process"><a href="#预处理（pre-process" class="headerlink" title="预处理（pre-process)"></a>预处理（pre-process)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> a; <span class="comment">// var a 这个变量声明到这个函数的作用级别</span></span><br><span class="line">&#125;();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a'</span>, a); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
 <h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>一个 JavaScript 引擎会常驻于内存中，它等待着我们（宿主）把 JavaScript 代码或者函数传递给它执行。</p>
 <p>在 ES3 和更早的版本中，JavaScript 本身还没有异步执行代码的能力，这也就意味着，宿主环境传递给 JavaScript 引擎一段代码，引擎就把代码直接顺次执行了，这个任务也就是宿主发起的任务。</p>
 <p>但是，在 ES5 之后，JavaScript 引入了 Promise，这样，不需要浏览器的安排，JavaScript 引擎本身也可以发起任务了。</p>
 <p>由于我们这里主要讲 JavaScript 语言，那么采纳 JSC 引擎的术语，我们把宿主发起的任务称为宏观任务，把 JavaScript 引擎发起的任务称为微观任务。</p>
+<ul>
+<li>宏任务就是传给JavaScript引擎的任务</li>
+<li>微任务就是在JavaScript引擎内部的任务</li>
+</ul>
+<p>macroTask 宏任务</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"a"</span>);</span><br><span class="line">    resolve()</span><br><span class="line">&#125;);</span><br><span class="line">r.then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"c"</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b"</span>)</span><br></pre></td></tr></table></figure>
 <p>abc<br>但是 Promise 的 resolve 始终是异步操作</p>
 <p>通过一系列的实验，我们可以总结一下如何分析异步执行的顺序：</p>
@@ -448,13 +584,15 @@
 </ul>
 <p>微任务优先的原理</p>
 <h3 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h3><p>async 函数强大之处在于，它是可以嵌套的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">await</span> foo(<span class="string">"a"</span>);</span><br><span class="line">  <span class="keyword">await</span> foo(<span class="string">"b"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="闭包和执行环境"><a href="#闭包和执行环境" class="headerlink" title="闭包和执行环境"></a>闭包和执行环境</h2><h3 id="闭包定义"><a href="#闭包定义" class="headerlink" title="闭包定义"></a>闭包定义</h3><ul>
+<h3 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h3><p>event loop<br>来源node 概念</p>
+<h2 id="闭包和执行环境"><a href="#闭包和执行环境" class="headerlink" title="闭包和执行环境"></a>闭包和执行环境</h2><p>每一个函数都会生成一个闭包</p>
+<h3 id="闭包定义"><a href="#闭包定义" class="headerlink" title="闭包定义"></a>闭包定义</h3><ul>
 <li>环境部分<ul>
 <li>环境：函数的词法环境（执行上下文的一部分）</li>
 <li>标识符列表：函数中用到的未声明的变量</li>
 </ul>
 </li>
-<li>表达式部分：函数体</li>
+<li>表达式（代码）部分：函数体</li>
 </ul>
 <p>实际上 JavaScript 中跟闭包对应的概念就是“函数”</p>
 <p>MDN解释<br>函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起构成闭包（closure）。也就是说，闭包可以让你从内部函数访问外部函数作用域。在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包。</p>
@@ -541,9 +679,9 @@
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
-          
             <a href="/tags/Front-End/" rel="tag"># Front-End</a>
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
             <a href="/tags/Html/" rel="tag"># Html</a>
           
@@ -651,7 +789,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -722,7 +860,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发展史"><span class="nav-number">1.1.</span> <span class="nav-text">发展史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.2.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图谱"><span class="nav-number">1.3.</span> <span class="nav-text">图谱</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript"><span class="nav-number">2.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型"><span class="nav-number">2.1.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7种语言类型"><span class="nav-number">2.1.1.</span> <span class="nav-text">7种语言类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规范类型"><span class="nav-number">2.1.2.</span> <span class="nav-text">规范类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">2.1.3.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">2.1.4.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">2.1.5.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#StringToNumber"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">StringToNumber</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#装箱和拆箱"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">装箱和拆箱</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐式装箱"><span class="nav-number">2.1.5.2.1.</span> <span class="nav-text">隐式装箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#显示装箱"><span class="nav-number">2.1.5.2.2.</span> <span class="nav-text">显示装箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拆箱"><span class="nav-number">2.1.5.2.3.</span> <span class="nav-text">拆箱</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7种规范类型"><span class="nav-number">2.1.6.</span> <span class="nav-text">7种规范类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">2.2.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行"><span class="nav-number">2.3.</span> <span class="nav-text">执行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#async-await"><span class="nav-number">2.3.1.</span> <span class="nav-text">async/await</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包和执行环境"><span class="nav-number">2.4.</span> <span class="nav-text">闭包和执行环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包定义"><span class="nav-number">2.4.1.</span> <span class="nav-text">闭包定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行上下文：执行的基础设施"><span class="nav-number">2.4.2.</span> <span class="nav-text">执行上下文：执行的基础设施</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#var-声明与赋值"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">var 声明与赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-关键字"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">this 关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#completion-record-类型"><span class="nav-number">2.4.3.</span> <span class="nav-text">completion record 类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">2.5.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本和模块"><span class="nav-number">2.5.1.</span> <span class="nav-text">脚本和模块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些不熟悉的概念"><span class="nav-number">3.</span> <span class="nav-text">一些不熟悉的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">3.1.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数声明与函数表达式"><span class="nav-number">3.2.</span> <span class="nav-text">函数声明与函数表达式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML"><span class="nav-number">4.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ruby标签"><span class="nav-number">4.1.</span> <span class="nav-text">ruby标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hgroup标签"><span class="nav-number">4.2.</span> <span class="nav-text">hgroup标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section标签"><span class="nav-number">4.3.</span> <span class="nav-text">section标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#典型body结构"><span class="nav-number">4.4.</span> <span class="nav-text">典型body结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#典型多文章结构"><span class="nav-number">4.5.</span> <span class="nav-text">典型多文章结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aside标签"><span class="nav-number">4.6.</span> <span class="nav-text">aside标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#address标签"><span class="nav-number">4.7.</span> <span class="nav-text">address标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用标签"><span class="nav-number">4.8.</span> <span class="nav-text">引用标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time标签"><span class="nav-number">4.9.</span> <span class="nav-text">time标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#figure，figcaption"><span class="nav-number">4.10.</span> <span class="nav-text">figure，figcaption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dfn"><span class="nav-number">4.11.</span> <span class="nav-text">dfn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元信息类标签"><span class="nav-number">4.12.</span> <span class="nav-text">元信息类标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#base-标签"><span class="nav-number">4.12.1.</span> <span class="nav-text">base 标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta标签"><span class="nav-number">4.12.2.</span> <span class="nav-text">meta标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#viewport"><span class="nav-number">4.12.2.1.</span> <span class="nav-text">viewport</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他预定义"><span class="nav-number">4.12.2.2.</span> <span class="nav-text">其他预定义</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css"><span class="nav-number">5.</span> <span class="nav-text">css</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">5.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">5.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#calc"><span class="nav-number">5.2.1.</span> <span class="nav-text">calc()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-、min-和-clamp"><span class="nav-number">5.2.2.</span> <span class="nav-text">max()、min() 和 clamp()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toggle"><span class="nav-number">5.2.3.</span> <span class="nav-text">toggle()</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发展史"><span class="nav-number">1.1.</span> <span class="nav-text">发展史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.2.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图谱"><span class="nav-number">1.3.</span> <span class="nav-text">图谱</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript"><span class="nav-number">2.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型"><span class="nav-number">2.1.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7种基本-语言-类型"><span class="nav-number">2.1.1.</span> <span class="nav-text">7种基本(语言)类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">2.1.2.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#number-to-string"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">number to string</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码集"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">编码集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码方式"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">编码方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反引号"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">反引号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">2.1.3.</span> <span class="nav-text">Number</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#number-to-string-1"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">number to string</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grammar"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">grammar</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊字符-微语法"><span class="nav-number">2.1.3.2.1.</span> <span class="nav-text">特殊字符-微语法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.1.4.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.5.</span> <span class="nav-text">undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object"><span class="nav-number">2.1.6.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">2.1.6.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-API-Grammar"><span class="nav-number">2.1.6.2.</span> <span class="nav-text">object API/Grammar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊对象"><span class="nav-number">2.1.6.3.</span> <span class="nav-text">特殊对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#固有对象"><span class="nav-number">2.1.6.4.</span> <span class="nav-text">固有对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#symbol"><span class="nav-number">2.1.7.</span> <span class="nav-text">symbol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">2.1.8.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#StringToNumber"><span class="nav-number">2.1.8.1.</span> <span class="nav-text">StringToNumber</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#装箱和拆箱"><span class="nav-number">2.1.8.2.</span> <span class="nav-text">装箱和拆箱</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#隐式装箱"><span class="nav-number">2.1.8.2.1.</span> <span class="nav-text">隐式装箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#显示装箱"><span class="nav-number">2.1.8.2.2.</span> <span class="nav-text">显示装箱</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拆箱"><span class="nav-number">2.1.8.2.3.</span> <span class="nav-text">拆箱</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7种规范类型"><span class="nav-number">2.1.9.</span> <span class="nav-text">7种规范类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式"><span class="nav-number">2.2.</span> <span class="nav-text">表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Left-Handside-amp-Right-Handside"><span class="nav-number">2.2.1.</span> <span class="nav-text">Left Handside &amp; Right Handside</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exponental"><span class="nav-number">2.2.2.</span> <span class="nav-text">exponental</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Equality"><span class="nav-number">2.2.3.</span> <span class="nav-text">Equality</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS语句"><span class="nav-number">2.3.</span> <span class="nav-text">JS语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行时相关概念"><span class="nav-number">2.3.1.</span> <span class="nav-text">运行时相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Completion-Record"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">Completion Record</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合语句"><span class="nav-number">2.3.2.</span> <span class="nav-text">复合语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明"><span class="nav-number">2.3.3.</span> <span class="nav-text">声明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#预处理（pre-process"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">预处理（pre-process)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行"><span class="nav-number">2.4.</span> <span class="nav-text">执行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#async-await"><span class="nav-number">2.4.1.</span> <span class="nav-text">async/await</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件循环"><span class="nav-number">2.4.2.</span> <span class="nav-text">事件循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包和执行环境"><span class="nav-number">2.5.</span> <span class="nav-text">闭包和执行环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包定义"><span class="nav-number">2.5.1.</span> <span class="nav-text">闭包定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行上下文：执行的基础设施"><span class="nav-number">2.5.2.</span> <span class="nav-text">执行上下文：执行的基础设施</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#var-声明与赋值"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">var 声明与赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-关键字"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">this 关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#completion-record-类型"><span class="nav-number">2.5.3.</span> <span class="nav-text">completion record 类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">2.6.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本和模块"><span class="nav-number">2.6.1.</span> <span class="nav-text">脚本和模块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些不熟悉的概念"><span class="nav-number">3.</span> <span class="nav-text">一些不熟悉的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">3.1.</span> <span class="nav-text">instanceof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数声明与函数表达式"><span class="nav-number">3.2.</span> <span class="nav-text">函数声明与函数表达式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML"><span class="nav-number">4.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ruby标签"><span class="nav-number">4.1.</span> <span class="nav-text">ruby标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hgroup标签"><span class="nav-number">4.2.</span> <span class="nav-text">hgroup标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section标签"><span class="nav-number">4.3.</span> <span class="nav-text">section标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#典型body结构"><span class="nav-number">4.4.</span> <span class="nav-text">典型body结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#典型多文章结构"><span class="nav-number">4.5.</span> <span class="nav-text">典型多文章结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aside标签"><span class="nav-number">4.6.</span> <span class="nav-text">aside标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#address标签"><span class="nav-number">4.7.</span> <span class="nav-text">address标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用标签"><span class="nav-number">4.8.</span> <span class="nav-text">引用标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time标签"><span class="nav-number">4.9.</span> <span class="nav-text">time标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#figure，figcaption"><span class="nav-number">4.10.</span> <span class="nav-text">figure，figcaption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dfn"><span class="nav-number">4.11.</span> <span class="nav-text">dfn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元信息类标签"><span class="nav-number">4.12.</span> <span class="nav-text">元信息类标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#base-标签"><span class="nav-number">4.12.1.</span> <span class="nav-text">base 标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta标签"><span class="nav-number">4.12.2.</span> <span class="nav-text">meta标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#viewport"><span class="nav-number">4.12.2.1.</span> <span class="nav-text">viewport</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他预定义"><span class="nav-number">4.12.2.2.</span> <span class="nav-text">其他预定义</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css"><span class="nav-number">5.</span> <span class="nav-text">css</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">5.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">5.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#calc"><span class="nav-number">5.2.1.</span> <span class="nav-text">calc()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-、min-和-clamp"><span class="nav-number">5.2.2.</span> <span class="nav-text">max()、min() 和 clamp()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toggle"><span class="nav-number">5.2.3.</span> <span class="nav-text">toggle()</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

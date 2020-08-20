@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Front-End," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="UTF8 编码方法一string -&amp;gt; utf8character -&amp;gt; unicode编码：str.codePointAt(); unicode -&amp;gt; binaryunicode.toString(2); 二进制补位12345678910110xxxxxxx110xxxxx 10xxxxxx1110xxxx 10xxxxxx 10xxxxxx11110xxx 10xxxxxx">
+<meta name="keywords" content="Front-End">
+<meta property="og:type" content="article">
+<meta property="og:title" content="advanced-exercise">
+<meta property="og:url" content="http://yoursite.com/2020/07/30/advanced-exercise/index.html">
+<meta property="og:site_name" content="Kil Notes">
+<meta property="og:description" content="UTF8 编码方法一string -&amp;gt; utf8character -&amp;gt; unicode编码：str.codePointAt(); unicode -&amp;gt; binaryunicode.toString(2); 二进制补位12345678910110xxxxxxx110xxxxx 10xxxxxx1110xxxx 10xxxxxx 10xxxxxx11110xxx 10xxxxxx">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-08-15T08:09:32.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="advanced-exercise">
+<meta name="twitter:description" content="UTF8 编码方法一string -&amp;gt; utf8character -&amp;gt; unicode编码：str.codePointAt(); unicode -&amp;gt; binaryunicode.toString(2); 二进制补位12345678910110xxxxxxx110xxxxx 10xxxxxx1110xxxx 10xxxxxx 10xxxxxx11110xxx 10xxxxxx">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/30/advanced-exercise/"/>
+
+
+
+
+
+  <title>advanced-exercise | Kil Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kil Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/30/advanced-exercise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar/pazu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kil Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">advanced-exercise</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-30T22:58:37+08:00">
+                2020-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Front-End/" itemprop="url" rel="index">
+                    <span itemprop="name">Front-End</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="UTF8-编码"><a href="#UTF8-编码" class="headerlink" title="UTF8 编码"></a>UTF8 编码</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>string -&gt; utf8<br>character -&gt; unicode编码：<br>str.codePointAt();</p>
+<p>unicode -&gt; binary<br>unicode.toString(2);</p>
+<p>二进制补位<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">0xxxxxxx</span><br><span class="line"></span><br><span class="line">110xxxxx 10xxxxxx</span><br><span class="line"></span><br><span class="line">1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line"></span><br><span class="line">11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br><span class="line"></span><br><span class="line">111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br><span class="line"></span><br><span class="line">1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure></p>
+<p>我们先举个简单的例子。把英文字母”A”转为UTF8编码。<br>1、“A”的charCode为65<br>2、65位于0-127的区间，所以“A”占一个字节<br>3、UTF8中一个字节的补位为0xxxxxxx，x表示的是空位，是用来补位的。<br>4、将65转为二进制得到1000001<br>5、将1000001按照从前到后的顺序，依次补到1xxxxxxx的空位中，得到01000001<br>6、将11000001转为字符串，得到”A”<br>7、最终，”A”为UTF8编码之后“A”</p>
+<p>通过这个小例子，我们是否再次验证了UTF-8是Unicode的超集！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// "中"的charCode为20013</span></span><br><span class="line"><span class="keyword">var</span> code = <span class="number">20013</span>;</span><br><span class="line">code.toString(<span class="number">2</span>); </span><br><span class="line"><span class="comment">// =&gt; 100111000101101 等同于 01001110 00101101</span></span><br></pre></td></tr></table></figure></p>
+<p>然后，我们按照上面“A”补位的方法，来给”中”补位。<br>将01001110 00101101按照从前到后的顺序依此补位到1110xxxx 10xxxxxx 10xxxxxx上.得到11100100 10111000 10101101.</p>
+<p>通过上面的步骤，我们得到了”中”的三个UTF8字节，11100100 10111000 10101101。<br>我们将每个字节转为16进制，得到0xE4 0xB8 0xAD;<br>那么这个0xE4 0xB8 0xAD就是我们最终得到的UTF8编码了。</p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>我们使用nodejs的buffer来验证一下是否正确。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> buffer = <span class="keyword">new</span> Buffer(<span class="string">'中'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(buffer.length); <span class="comment">// =&gt; 3</span></span><br><span class="line"><span class="built_in">console</span>.log(buffer); <span class="comment">// =&gt; &lt;Buffer e4 b8 ad&gt;</span></span><br><span class="line"><span class="comment">// 最终得到三个字节 0xe4 0xb8 0xad</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><span class="label ib_yellow">只会转义非英文字符</span>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'中'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> code = <span class="built_in">encodeURI</span>(str);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(code); <span class="comment">// =&gt; %E4%B8%AD</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面我们将%E4%B8%AD转为一个number数组。</span></span><br><span class="line"><span class="keyword">var</span> codeList = code.split(<span class="string">'%'</span>);</span><br><span class="line"> </span><br><span class="line">codeList = codeList.map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">parseInt</span>(item,<span class="number">16</span>));</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(codeList); <span class="comment">// =&gt; [228, 184, 173]</span></span><br></pre></td></tr></table></figure>
+<h2 id="二进制转换十六进制"><a href="#二进制转换十六进制" class="headerlink" title="二进制转换十六进制"></a>二进制转换十六进制</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">'11100100'</span>;</span><br><span class="line">x = <span class="built_in">parseInt</span>(x, <span class="number">2</span>); <span class="comment">//2进制转10进制</span></span><br><span class="line">x = x.toString(<span class="number">16</span>); <span class="comment">//10进制转16进制</span></span><br></pre></td></tr></table></figure>
+<h2 id="解析回来"><a href="#解析回来" class="headerlink" title="解析回来"></a>解析回来</h2><p>用decodeURI/decodeURIComponent就可以了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> codeList = [<span class="number">228</span>, <span class="number">184</span>, <span class="number">173</span>];</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> code = codeList.map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="string">'%'</span>+item.toString(<span class="number">16</span>)).join(<span class="string">''</span>);</span><br><span class="line"> </span><br><span class="line"><span class="built_in">decodeURI</span>(code); <span class="comment">// =&gt; 中</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="https://blog.csdn.net/themagickeyjianan/article/details/80725606" target="_blank" rel="noopener">参考链接</a></p>
+<h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><h2 id="不准使用正则表达式，纯粹用-JavaScript-的逻辑实现：在一个字符串中，找到字符“ab”"><a href="#不准使用正则表达式，纯粹用-JavaScript-的逻辑实现：在一个字符串中，找到字符“ab”" class="headerlink" title="不准使用正则表达式，纯粹用 JavaScript 的逻辑实现：在一个字符串中，找到字符“ab”"></a>不准使用正则表达式，纯粹用 JavaScript 的逻辑实现：在一个字符串中，找到字符“ab”</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findAB</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'i'</span>, i, str[i]);</span><br><span class="line">    <span class="keyword">if</span> (str[i] === <span class="string">'a'</span> &amp;&amp; str[i + <span class="number">1</span>] === <span class="string">'b'</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'ab'</span>, str[i] + str[i + <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">findAB(<span class="string">'sdsdab'</span>);</span><br></pre></td></tr></table></figure>
+<span class="label ib_yellow">注意，作业错误，此处应为：str.length - 1</span>
+<p>助教点评：<br>最后一个字符就是i = 4<br>str[i + 1]取得是什么？</p>
+<h3 id="优秀作业"><a href="#优秀作业" class="headerlink" title="优秀作业"></a>优秀作业</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">find</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> step = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> c <span class="keyword">of</span> str) &#123; <span class="comment">// of 作用在str上就是把每个字符取出来</span></span><br><span class="line">    <span class="keyword">if</span> (c=== <span class="string">'a'</span>) &#123;</span><br><span class="line">      step = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (step === <span class="number">1</span> &amp;&amp; c === <span class="string">'b'</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      step = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="状态机查找abcabx"><a href="#状态机查找abcabx" class="headerlink" title="状态机查找abcabx"></a>状态机查找abcabx</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> status = <span class="literal">false</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foundB</span>(<span class="params">c</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (c === <span class="string">'c'</span> &amp;&amp; !status) &#123;</span><br><span class="line">      status = <span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">return</span> foundC;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c === <span class="string">'x'</span> &amp;&amp; status) &#123;</span><br><span class="line">      <span class="keyword">return</span> end</span><br><span class="line">  &#125; <span class="keyword">else</span></span><br><span class="line">      <span class="keyword">return</span> start(c)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>助教点评：不正确 不符合状态机没有副作用的特性<br>状态机不应该用全局变量<br>只能用输入参数<br>Q：程序不是 最好不要重复写相同的方法嘛<br>A：这就是状态机 你可能需要再理解和感受一下</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Front-End/" rel="tag"># Front-End</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/10/advanced/" rel="next" title="advanced">
+                <i class="fa fa-chevron-left"></i> advanced
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/05/editor/" rel="prev" title="editor">
+                editor <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/avatar/pazu.jpg"
+                alt="kil" />
+            
+              <p class="site-author-name" itemprop="name">kil</p>
+              <p class="site-description motion-element" itemprop="description">心如止水，潜心修行</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kilfront" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kaifaweb@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UTF8-编码"><span class="nav-number">1.</span> <span class="nav-text">UTF8 编码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">1.2.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二"><span class="nav-number">1.3.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制转换十六进制"><span class="nav-number">1.4.</span> <span class="nav-text">二进制转换十六进制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析回来"><span class="nav-number">1.5.</span> <span class="nav-text">解析回来</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器"><span class="nav-number">2.</span> <span class="nav-text">浏览器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不准使用正则表达式，纯粹用-JavaScript-的逻辑实现：在一个字符串中，找到字符“ab”"><span class="nav-number">2.1.</span> <span class="nav-text">不准使用正则表达式，纯粹用 JavaScript 的逻辑实现：在一个字符串中，找到字符“ab”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优秀作业"><span class="nav-number">2.1.1.</span> <span class="nav-text">优秀作业</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态机查找abcabx"><span class="nav-number">2.2.</span> <span class="nav-text">状态机查找abcabx</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kil</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

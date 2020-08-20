@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Kil Notes">
 <meta property="og:description" content="一、安装brew install yarn 升级brew upgrade yarn 查看版本yarn –version 二、使用初始化新项目yarn init 添加依赖包yarn add [package]yarn add [package]@[version]yarn add [package]@[tag] yarn add [package] –dev 升级依赖包yarn upgrade [p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-09T08:49:19.642Z">
+<meta property="og:updated_time" content="2020-08-06T05:56:13.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yarn">
 <meta name="twitter:description" content="一、安装brew install yarn 升级brew upgrade yarn 查看版本yarn –version 二、使用初始化新项目yarn init 添加依赖包yarn add [package]yarn add [package]@[version]yarn add [package]@[tag] yarn add [package] –dev 升级依赖包yarn upgrade [p">
@@ -353,6 +353,9 @@
 <p>安装项目依赖<br>yarn</p>
 <h1 id="源"><a href="#源" class="headerlink" title="源"></a>源</h1><p>查看<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ yarn config get registry</span><br><span class="line">https://registry.yarnpkg.com</span><br></pre></td></tr></table></figure></p>
 <p>换源<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ yarn config <span class="built_in">set</span> registry <span class="string">'https://registry.npm.taobao.org'</span></span><br><span class="line">yarn config v1.22.4</span><br><span class="line">success Set <span class="string">"registry"</span> to <span class="string">"https://registry.npm.taobao.org"</span>.</span><br><span class="line">✨  Done <span class="keyword">in</span> 0.03s.</span><br></pre></td></tr></table></figure></p>
+<h1 id="link"><a href="#link" class="headerlink" title="link"></a>link</h1><p>改变依赖路径<br>yarn link game-capsule</p>
+<p>link suc：<br>node_modules game-capsule 出现 ↵ 字符</p>
+<p>查看link 文件<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l node_modules | grep ^l</span><br><span class="line">lrwxr-xr-x    1 niekaifa  staff     42  8  3 16:41 game-capsule -&gt; ../../../../.config/yarn/link/game-capsule</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -476,7 +479,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -547,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#源"><span class="nav-number">1.</span> <span class="nav-text">源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#源"><span class="nav-number">1.</span> <span class="nav-text">源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#link"><span class="nav-number">2.</span> <span class="nav-text">link</span></a></li></ol></div>
             
 
           </div>

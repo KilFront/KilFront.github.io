@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/07/01/interview-browser/render.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/01/interview-browser/get&post1.png">
 <meta property="og:image" content="http://yoursite.com/2020/07/01/interview-browser/get&post2.gif">
-<meta property="og:updated_time" content="2020-07-16T03:20:24.660Z">
+<meta property="og:updated_time" content="2020-08-19T01:50:03.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="interview-browser">
 <meta name="twitter:description" content="输入url后发生了什么这个问题的核心是在问从输入URL到页面渲染经历了哪些过程。从耗时过程来看，可以分为DNS解析、TCP连接、HTTP请求与响应、客户端浏览器解析渲染、连接结束。其中浏览器解析渲染包含HTML词法、语法的解析、CSS解析、DOM树生成、渲染树建立、屏幕绘制。下面针对几个较为重要的过程做下介绍。 DNS解析当我们在浏览器中输入如www.taobao.com的时候，DNS解析充当了一">
@@ -333,6 +333,9 @@
 <h3 id="HTML词法、语法解析"><a href="#HTML词法、语法解析" class="headerlink" title="HTML词法、语法解析"></a>HTML词法、语法解析</h3><p>对我们来说HTML其实是一坨字符串，而实际上我们要面对的是”字符流”。为了把字符流解析成正确的可被浏览器识别的结构，我们需要做的事情分为两步：<br>词法分析：把字符流初步解析成我们可理解的”词”，学名叫token。<br>语法分析：把开始结束标签配对、属性赋值好、父子关系连接好、构成dom树。<br>html结构其实不算太复杂，我们平时见到的大部分都只是标签、属性、注释、CDATA节点。</p>
 <h3 id="屏幕绘制"><a href="#屏幕绘制" class="headerlink" title="屏幕绘制"></a>屏幕绘制</h3><p><code><img src="/2020/07/01/interview-browser/render.png"></code><br>DOM树的生成和渲染树建立比较好理解这个就不做展开。完成了这「两棵树」的构造后，就进入屏幕绘制阶段。<br>在绘制的过程中，会遍历渲染树，调用由浏览器的UI组件的paint()方法在屏幕上显示对应的内容，并根据渲染树布局，计算CSS样式(即每个节点在页面中的大小和位置等几何信息)。<br>HTML默认是从上到下流式布局的，CSS和JS的加入会打破这种布局，改变DOM的外观样式以及大小和位置。这就引出两个非常重要的概念：replaint重绘和reflow重排。<br>replaint重绘，屏幕的一部分重新绘制，不影响整体布局，比如某个CSS的背景色变了，但元素的几何尺寸和位置不变。eflow重排： 意味着元件的几何尺寸变了，我们需要重新验证并计算渲染树。是渲染树的一部分或全部发生了变化。无论是重绘还是重排，对浏览器而言都是一种「消耗」，所以我们应该尽量减少这两种状态的触发。</p>
 <p>作者：冴羽<br>链接：<a href="https://juejin.im/post/5e82aa8df265da47ca6910b5" target="_blank" rel="noopener">https://juejin.im/post/5e82aa8df265da47ca6910b5</a><br>来源：掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h1 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h1><p>301<br>被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个 URI 之一</p>
+<p>302<br>请求的资源现在临时从不同的 URI 响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。</p>
+<p>304<br>如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。</p>
 <h1 id="GET与POST的区别"><a href="#GET与POST的区别" class="headerlink" title="GET与POST的区别"></a>GET与POST的区别</h1><h2 id="GET-从指定的资源请求数据。"><a href="#GET-从指定的资源请求数据。" class="headerlink" title="GET - 从指定的资源请求数据。"></a>GET - 从指定的资源请求数据。</h2><ul>
 <li>GET 请求可被缓存</li>
 <li>GET 请求保留在浏览器历史记录中</li>
@@ -480,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -551,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#输入url后发生了什么"><span class="nav-number">1.</span> <span class="nav-text">输入url后发生了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS解析"><span class="nav-number">1.0.1.</span> <span class="nav-text">DNS解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP连接"><span class="nav-number">1.0.2.</span> <span class="nav-text">TCP连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求与响应"><span class="nav-number">1.0.3.</span> <span class="nav-text">HTTP请求与响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML词法、语法解析"><span class="nav-number">1.0.4.</span> <span class="nav-text">HTML词法、语法解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕绘制"><span class="nav-number">1.0.5.</span> <span class="nav-text">屏幕绘制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GET与POST的区别"><span class="nav-number">2.</span> <span class="nav-text">GET与POST的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GET-从指定的资源请求数据。"><span class="nav-number">2.1.</span> <span class="nav-text">GET - 从指定的资源请求数据。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST-向指定的资源提交要被处理的数据"><span class="nav-number">2.2.</span> <span class="nav-text">POST - 向指定的资源提交要被处理的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#若要搞明白get与post区别还得从底层分析："><span class="nav-number">2.3.</span> <span class="nav-text">若要搞明白get与post区别还得从底层分析：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域问题"><span class="nav-number">3.</span> <span class="nav-text">跨域问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#输入url后发生了什么"><span class="nav-number">1.</span> <span class="nav-text">输入url后发生了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS解析"><span class="nav-number">1.0.1.</span> <span class="nav-text">DNS解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP连接"><span class="nav-number">1.0.2.</span> <span class="nav-text">TCP连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求与响应"><span class="nav-number">1.0.3.</span> <span class="nav-text">HTTP请求与响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML词法、语法解析"><span class="nav-number">1.0.4.</span> <span class="nav-text">HTML词法、语法解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕绘制"><span class="nav-number">1.0.5.</span> <span class="nav-text">屏幕绘制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态码"><span class="nav-number">2.</span> <span class="nav-text">状态码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GET与POST的区别"><span class="nav-number">3.</span> <span class="nav-text">GET与POST的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GET-从指定的资源请求数据。"><span class="nav-number">3.1.</span> <span class="nav-text">GET - 从指定的资源请求数据。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST-向指定的资源提交要被处理的数据"><span class="nav-number">3.2.</span> <span class="nav-text">POST - 向指定的资源提交要被处理的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#若要搞明白get与post区别还得从底层分析："><span class="nav-number">3.3.</span> <span class="nav-text">若要搞明白get与post区别还得从底层分析：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域问题"><span class="nav-number">4.</span> <span class="nav-text">跨域问题</span></a></li></ol></div>
             
 
           </div>
